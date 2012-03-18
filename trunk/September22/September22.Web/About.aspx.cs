@@ -11,7 +11,7 @@ namespace September22
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            System.Diagnostics.Debug.WriteLine(e.ToString());
         }
     }
 }
