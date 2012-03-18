@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "September22", "September22.csproj", "{F80E446F-36E9-44F1-9A09-A925A2E105FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "September22", "September22\September22.csproj", "{AFA05A2C-E38A-471A-A71D-FD9D738D0250}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F80E446F-36E9-44F1-9A09-A925A2E105FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F80E446F-36E9-44F1-9A09-A925A2E105FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F80E446F-36E9-44F1-9A09-A925A2E105FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F80E446F-36E9-44F1-9A09-A925A2E105FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFA05A2C-E38A-471A-A71D-FD9D738D0250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA05A2C-E38A-471A-A71D-FD9D738D0250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA05A2C-E38A-471A-A71D-FD9D738D0250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA05A2C-E38A-471A-A71D-FD9D738D0250}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
