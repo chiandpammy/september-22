@@ -102,9 +102,7 @@ first child of the left and right table columns */
     position: relative;
     margin: 0px;
     padding: 0px;
-    /*background: #4b6c9e;*/
     width: 100%;
-    /*width: 770px;*/
     height: 180px;
     top: 0px;
     left: 0px;
@@ -157,7 +155,7 @@ div.hideSkiplink
 
 div.menu
 {
-    padding: 180px 0px 4px 8px;
+    padding: 180px 20px 4px 8px;
 }
 
 div.menu ul
@@ -168,44 +166,11 @@ div.menu ul
     width: auto;
 }
 
-/*div.menu ul li
+div.menu ul li a, div.menu ul li a:visited
 {
+    color: #5e4040;
     text-decoration: none;
-}*/
-
-/*
-#navLeft h2 a, #navLeft h2 a:visited {
-	color: #369ea5;
 }
-*/
-
-/*div.menu ul li a:hover, .richText a:hover {
-	color: #369ea5;
-}
-*/
-
-div.menu ul li a:link, div.menu ul li a:visited{/*, .richText a:link, .richText a:visited, .contentText a:link, .contentText a:visited{*/
-	color: #5e4040;
-	text-decoration: none;
-}
-
-a.onstate:link, a.onstate:visited, div.menu ul li a:hover {
-	color: #369ea5 !important;
-	text-decoration: none;
-}
-
-/*div.menu ul li a, div.menu ul li a:visited
-{
-    background-color: #465c71;
-    border: 1px #4e667d solid;
-    color: #dde4ec;
-    color: #369ea5;
-    display: block;
-    line-height: 1.35em;
-    padding: 4px 20px;
-    text-decoration: none;
-    white-space: nowrap;
-}*/
 
 div.menu ul li a:hover
 {
@@ -215,8 +180,7 @@ div.menu ul li a:hover
 
 div.menu ul li a:active
 {
-    background-color: #465c71;
-    color: #cfdbe6;
+    color: #369ea5;
     text-decoration: none;
 }
 
