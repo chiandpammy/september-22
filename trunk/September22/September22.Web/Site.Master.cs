@@ -13,7 +13,7 @@ namespace September22
         {
             if (!Page.IsPostBack)
             {
-                BigLabel.Text = DateTime.Now.ToLongTimeString();
+                //BigLabel.Text = DateTime.Now.ToLongTimeString();
             }
         }
     }
