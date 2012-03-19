@@ -98,14 +98,14 @@ first child of the left and right table columns */
 
 .header
 {
-    background-image: url(../Images/twilight_Blue_headerImg.gif); 
+    background-image: url(../Images/header.png); 
     position: relative;
     margin: 0px;
     padding: 0px;
     /*background: #4b6c9e;*/
     width: 100%;
     /*width: 770px;*/
-    height: 160px;
+    height: 180px;
     top: 0px;
     left: 0px;
 }
