@@ -54,6 +54,7 @@
     <Content Include="About.aspx" />
     <Content Include="Images\background.png" />
     <Content Include="Images\background2.png" />
+    <Content Include="Images\header.png" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
