@@ -27,6 +27,7 @@
                     <Items>
                         <asp:MenuItem Text="Welcome" NavigateUrl="~/Default.aspx" />
                         <asp:MenuItem Text="About Us" NavigateUrl="~/About.aspx" />
+                        <asp:MenuItem Text="Our Story" NavigateUrl="~/About.aspx" />
                         <asp:MenuItem Text="Our Proposal" NavigateUrl="~/About.aspx" />
                         <asp:MenuItem Text="Ceremony and Reception" NavigateUrl="~/About.aspx" />
                         <asp:MenuItem Text="Wedding Party" NavigateUrl="~/About.aspx" />

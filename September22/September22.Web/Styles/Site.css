@@ -3,30 +3,36 @@
 
 body   
 {
-    /*background: #b6b7bc;*/
     background-image: url(../Images/background2.png); 
     background-repeat: repeat-y repeat-x;
     font-size: .80em;
     font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
     margin: 0px;
     padding: 0px;
-    color: #696969;
+    color: #5e4040;
 }
 
-a:link, a:visited
+/*color: #369ea5; teal color: #5e4040; brown*/
+a:link
 {
-    color: #034af3;
+    color: #5e4040;
+    text-decoration: none;
+}
+
+a:visited
+{
+    color: #5e4040;
 }
 
 a:hover
 {
-    color: #1d60ff;
-    text-decoration: none;
+    color: #369ea5;
+    /*text-decoration: none;*/
 }
 
 a:active
 {
-    color: #034af3;
+    color: #369ea5;
 }
 
 p
@@ -42,7 +48,7 @@ p
 h1, h2, h3, h4, h5, h6
 {
     font-size: 1.5em;
-    color: #666666;
+    color: #5e4040;
     font-variant: small-caps;
     text-transform: none;
     font-weight: 200;
@@ -166,15 +172,20 @@ div.menu ul
     width: auto;
 }
 
+/*
+div.menu ul li a.onstate:link, a.onstate:visited {
+    color: #369EA5 !important;
+}
+
 div.menu ul li a, div.menu ul li a:visited
 {
     color: #5e4040;
     text-decoration: none;
 }
 
-div.menu ul li a:hover
+div.menu ul li a:hover, a:active
 {
-    color: #369ea5;
+    color: #369ea5; 
     text-decoration: none;
 }
 
@@ -183,6 +194,7 @@ div.menu ul li a:active
     color: #369ea5;
     text-decoration: none;
 }
+*/
 
 /* FORM ELEMENTS   
 ----------------------------------------------------------*/
