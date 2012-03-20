@@ -55,8 +55,9 @@
     <Content Include="Images\background.png" />
     <Content Include="Images\background2.png" />
     <Content Include="Images\header.png" />
+    <Content Include="Map.aspx" />
     <Content Include="OurProposal.aspx" />
-    <Content Include="OurStory.aspx" />
+	<Content Include="OurStory.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -89,11 +90,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Map.aspx.cs">
+      <DependentUpon>Map.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+
+    <Compile Include="Map.aspx.designer.cs">
+      <DependentUpon>Map.aspx</DependentUpon>
+    </Compile>
     <Compile Include="OurProposal.aspx.cs">
       <DependentUpon>OurProposal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OurProposal.aspx.designer.cs">
+<Compile Include="OurProposal.aspx.designer.cs">
       <DependentUpon>OurProposal.aspx</DependentUpon>
     </Compile>
     <Compile Include="OurStory.aspx.cs">
