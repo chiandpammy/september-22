@@ -9,19 +9,19 @@ body
     font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
     margin: 0px;
     padding: 0px;
-    color: #5e4040;
+    color: #422727;
 }
 
-/*color: #369ea5; teal color: #5e4040; brown*/
+/*color: #369ea5; teal color: #422727; brown*/
 a:link
 {
-    color: #5e4040;
+    color: #422727;
     text-decoration: none;
 }
 
 a:visited
 {
-    color: #5e4040;
+    color: #422727;
 }
 
 a:hover
@@ -127,7 +127,7 @@ first child of the left and right table columns */
 
 .main
 {
-    padding: 0px 12px;
+    padding: 0px 12px 0px 50px;
     margin: 12px 8px 8px 8px;
     min-height: 420px;
 }

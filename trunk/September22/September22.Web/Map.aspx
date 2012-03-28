@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="Map of Events" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
     CodeBehind="Map.aspx.cs" Inherits="Setpember22.Map" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">

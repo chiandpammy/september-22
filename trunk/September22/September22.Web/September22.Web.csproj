@@ -52,12 +52,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="CeremonyAndReception.aspx" />
     <Content Include="Images\background.png" />
     <Content Include="Images\background2.png" />
     <Content Include="Images\header.png" />
     <Content Include="Map.aspx" />
     <Content Include="OurProposal.aspx" />
-	<Content Include="OurStory.aspx" />
+    <Content Include="OurStory.aspx" />
+    <Content Include="PhotoAlbum.aspx" />
+    <Content Include="Rsvp.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -71,6 +74,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="WeddingParty.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -79,6 +83,13 @@
     </Compile>
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CeremonyAndReception.aspx.cs">
+      <DependentUpon>CeremonyAndReception.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CeremonyAndReception.aspx.designer.cs">
+      <DependentUpon>CeremonyAndReception.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -94,7 +105,6 @@
       <DependentUpon>Map.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-
     <Compile Include="Map.aspx.designer.cs">
       <DependentUpon>Map.aspx</DependentUpon>
     </Compile>
@@ -102,7 +112,7 @@
       <DependentUpon>OurProposal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-<Compile Include="OurProposal.aspx.designer.cs">
+    <Compile Include="OurProposal.aspx.designer.cs">
       <DependentUpon>OurProposal.aspx</DependentUpon>
     </Compile>
     <Compile Include="OurStory.aspx.cs">
@@ -112,13 +122,34 @@
     <Compile Include="OurStory.aspx.designer.cs">
       <DependentUpon>OurStory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PhotoAlbum.aspx.cs">
+      <DependentUpon>PhotoAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhotoAlbum.aspx.designer.cs">
+      <DependentUpon>PhotoAlbum.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rsvp.aspx.cs">
+      <DependentUpon>Rsvp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rsvp.aspx.designer.cs">
+      <DependentUpon>Rsvp.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WeddingParty.aspx.cs">
+      <DependentUpon>WeddingParty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeddingParty.aspx.designer.cs">
+      <DependentUpon>WeddingParty.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
