@@ -2,7 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<h1>Meet our Wedding Party!</h1>
+<h1>Meet our Wedding Party!</h1>
+
 <h3>My wonderful bridesmaids</h3>
 
 <table border="0" cellpadding="2" cellspacing="0" width="100%">
@@ -16,8 +17,10 @@
 		</tr>
 		<tr>
 			<td style="padding: 5px;" width="150">
-				<img align="left" alt="" src="http://graph.facebook.com/778027537/picture?type=large" width="150" /></td>
-			<td valign="top">
+				<img align="left" alt="" src="http://graph.facebook.com/778027537/picture?type=large" width="150" /></td>
+
+			<td valign="top">
+
 				<b>April</b><br />
 				<br />
 				<!--Meg and Sara were college roommates. They were partners in crime and probably would not have made it through college without each other!-->
@@ -32,8 +35,10 @@
 		</tr>
         <tr>
 			<td style="padding: 5px;" width="150">
-				<img align="left" alt="" src="http://graph.facebook.com/754333847/picture?type=large" width="150" /></td>
-			<td valign="top">
+				<img align="left" alt="" src="http://graph.facebook.com/754333847/picture?type=large" width="150" /></td>
+
+			<td valign="top">
+
 				<b>Mina</b><br />
 				<br />
 				<!--Meg and Sara were college roommates. They were partners in crime and probably would not have made it through college without each other!-->
@@ -41,16 +46,20 @@
 		</tr>
         <tr>
 			<td style="padding: 5px;" width="150">
-				<img align="left" alt="" src="http://graph.facebook.com/32811574/picture?type=large" width="150" /></td>
-			<td valign="top">
+				<img align="left" alt="" src="http://graph.facebook.com/32811574/picture?type=large" width="150" /></td>
+
+			<td valign="top">
+
 				<b>Nana</b><br />
 				<br />
 				<!--Meg and Sara were college roommates. They were partners in crime and probably would not have made it through college without each other!-->
                 </td>
 		</tr>
 	</tbody>
-</table>
-<h3>My awesome groomsmen</h3>
+</table>
+
+<h3>My awesome groomsmen</h3>
+
 <table border="0" cellpadding="2" cellspacing="0" width="100%">
 	<tbody>
 		<tr>
@@ -58,7 +67,8 @@
 				<img align="left" alt="" src="http://static.weddingwire.com/static/wedding/5001_10000/9363/Image/iStock_000004318229XSmall.jpg" width="150" /></td>
 			<td valign="top">
 				<b>Sonny </b>- best man<%--<br /><br />
-				Sonny and Nick first met when they were on the same pee-wee football team, the Giants!&nbsp; They were only 7 years old at the time and they dreamed of becoming professional football players.&nbsp; Well that didn&rsquo;t work out for either of them, but they have remained best friends ever since!--%>                </td>
+				Sonny and Nick first met when they were on the same pee-wee football team, the Giants!&nbsp; They were only 7 years old at the time and they dreamed of becoming professional football players.&nbsp; Well that didn&rsquo;t work out for either of them, but they have remained best friends ever since!--%>
+                </td>
 		</tr>
 		<%--<tr>
 			<td style="text-align: left;" width="150">
