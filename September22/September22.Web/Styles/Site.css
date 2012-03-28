@@ -27,7 +27,6 @@ a:visited
 a:hover
 {
     color: #369ea5;
-    /*text-decoration: none;*/
 }
 
 a:active
@@ -48,7 +47,7 @@ p
 h1, h2, h3, h4, h5, h6
 {
     font-size: 1.5em;
-    color: #5e4040;
+    color: #369ea5;
     font-variant: small-caps;
     text-transform: none;
     font-weight: 200;
@@ -128,7 +127,7 @@ first child of the left and right table columns */
 .main
 {
     padding: 0px 12px 0px 50px;
-    margin: 12px 8px 8px 8px;
+    margin: 12px 10px 8px 130px;
     min-height: 420px;
 }
 
@@ -153,12 +152,6 @@ first child of the left and right table columns */
 /* TAB MENU   
 ----------------------------------------------------------*/
 
-div.hideSkiplink
-{
-    background-color:#3a4f63;
-    width:100%;
-}
-
 div.menu
 {
     padding: 180px 20px 4px 8px;
@@ -172,29 +165,6 @@ div.menu ul
     width: auto;
 }
 
-/*
-div.menu ul li a.onstate:link, a.onstate:visited {
-    color: #369EA5 !important;
-}
-
-div.menu ul li a, div.menu ul li a:visited
-{
-    color: #5e4040;
-    text-decoration: none;
-}
-
-div.menu ul li a:hover, a:active
-{
-    color: #369ea5; 
-    text-decoration: none;
-}
-
-div.menu ul li a:active
-{
-    color: #369ea5;
-    text-decoration: none;
-}
-*/
 
 /* FORM ELEMENTS   
 ----------------------------------------------------------*/
@@ -259,30 +229,6 @@ div.accountInfo
     float: left;
     text-align: left;
     width: auto;
-}
-
-.loginDisplay
-{
-    font-size: 1.1em;
-    display: block;
-    text-align: right;
-    padding: 10px;
-    color: White;
-}
-
-.loginDisplay a:link
-{
-    color: white;
-}
-
-.loginDisplay a:visited
-{
-    color: white;
-}
-
-.loginDisplay a:hover
-{
-    color: white;
 }
 
 .failureNotification
