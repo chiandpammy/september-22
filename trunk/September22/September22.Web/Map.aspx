@@ -63,7 +63,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-    <div id="map_canvas" style="width: 400px; height: 600px">
+    <div id="map_canvas" style="width: 600px; height: 400px">
     </div>
     <br />
     <br />
