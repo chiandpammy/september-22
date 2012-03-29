@@ -24,12 +24,7 @@ a:visited
     color: #422727;
 }
 
-a:hover
-{
-    color: #369ea5;
-}
-
-a:active
+a:hover, a:active
 {
     color: #369ea5;
 }
