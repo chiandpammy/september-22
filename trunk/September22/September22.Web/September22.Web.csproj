@@ -58,11 +58,20 @@
     <Content Include="Images\background.png" />
     <Content Include="Images\background2.png" />
     <Content Include="Images\header.png" />
+    <Content Include="Images\parallax_bg.jpg" />
+    <Content Include="Images\parallax_building_1.png" />
+    <Content Include="Images\parallax_building_2.png" />
+    <Content Include="Images\parallax_errortext.png" />
+    <Content Include="Images\parallax_octocat.png" />
+    <Content Include="Images\parallax_octocatshadow.png" />
+    <Content Include="Images\parallax_speeder.png" />
+    <Content Include="Images\parallax_speedershadow.png" />
     <Content Include="Map.aspx" />
     <Content Include="OurProposal.aspx" />
     <Content Include="OurStory.aspx" />
     <Content Include="PhotoAlbum.aspx" />
     <Content Include="Rsvp.aspx" />
+    <Content Include="Scripts\jquery-parallax.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -76,6 +85,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Error.aspx" />
     <Content Include="WeddingParty.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +156,13 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WeddingParty.aspx.cs">
       <DependentUpon>WeddingParty.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -166,7 +183,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>60091</DevelopmentServerPort>
+          <DevelopmentServerPort>49361</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
