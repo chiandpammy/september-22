@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Master/Site.master"
+    Inherits="Setpember22.Master.Master_Site_2Col" EnableViewState="false" CodeBehind="Site_2Col.master.cs" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <!-- Page (2 columns) -->
+    <div id="page" class="box">
+        <div id="page-in" class="box">
+
+            <!-- Strip -->
+            <div id="strip" class="box">
+                <!-- RSS feeds -->
+                <p id="rss">
+                    <strong>RSS:</strong> <a href="#">articles</a> / <a href="#">comments</a></p>
+                <hr class="noscreen" />
+                <!-- Breadcrumbs -->
+                <p id="breadcrumbs">
+                    You are here:
+                    <asp:SiteMapPath ID="siteMap" runat="server">
+                    </asp:SiteMapPath>
+            </div>
+            <!-- /Strip -->
+
+            <!-- Content -->
+            <div id="content">
+                <div>
+                    <asp:ContentPlaceHolder ID="LeftColumnContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <!-- /Content -->
+
+            <!-- Right column -->
+            <div id="col">
+                <div id="col-in">
+                    <asp:ContentPlaceHolder ID="RightColumnContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <!-- /Right column -->
+        </div>
+        <!-- /page-in -->
+    </div>
+    <!-- /page -->
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="FooterContent" runat="Server">
+    <!-- Footer -->
+    <div id="footer">
+        <div id="top">
+            <p><span class="noscreen">Back on top</span> <a href="#header" title="Back on top ^">^<span></span></a></p>
+        </div>
+        <p id="createdby">
+            <asp:HyperLink ID="hlTheme" runat="server" />
+        </p>
+        <p id="copyright">
+            © 2012 <a href="">Pammy</a> |
+            <asp:HyperLink ID="HyperLink2" runat="server" Text="Contact" NavigateUrl="" />
+            |
+            <asp:HyperLink ID="HyperLink3" runat="server" Text="SiteMap" NavigateUrl="" />
+            |
+            <asp:HyperLink ID="HyperLink1" runat="server" Text="FAQ" NavigateUrl="" />
+            |
+            <asp:HyperLink ID="HyperLink5" runat="server" Text="Login" NavigateUrl="" />
+            |
+            <asp:HyperLink ID="HyperLink4" runat="server" Text="About" NavigateUrl="" />
+        </p>
+    </div>
+    <!-- /footer -->
+</asp:Content>
