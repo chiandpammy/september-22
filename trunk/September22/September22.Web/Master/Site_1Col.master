@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Master/Site.master" AutoEventWireup="true"
+    CodeBehind="Site_1Col.master.cs" Inherits="Setpember22.Master.Site_1Col" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>    
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <!-- Page (2 columns) -->
+    <div id="page" class="box">
+        <div id="page-in" class="box">
+            <!-- Strip -->
+            <div id="strip" class="box">
+                <!-- RSS feeds -->
+                <hr class="noscreen" />
+                <!-- Breadcrumbs -->
+                <p id="breadcrumbs">
+                    You are here:
+                    <asp:SiteMapPath ID="siteMap" runat="server">
+                    </asp:SiteMapPath>
+            </div>
+            <!-- /Strip -->
+
+            <!-- Content -->
+            <div id="content">
+                <div>
+                    <asp:ContentPlaceHolder ID="MiddleColumnContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <!-- /Content -->
+        </div>
+        <!-- /page-in -->
+    </div>
+    <!-- /page -->
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="FooterContent" runat="server">
+    <!-- Footer -->
+    <div id="footer" class="col1">
+        <div id="top">
+            <p>
+                <span class="noscreen">Back on top</span> <a href="#header" title="Back on top ^">^<span></span></a></p>
+        </div>
+        <p id="createdby">
+            <asp:HyperLink ID="hlTheme" runat="server" />
+        </p>
+        <p id="copyright">
+            © 2012 <a href="">Pammy</a> |
+            <asp:HyperLink ID="HyperLink2" runat="server" Text="Contact" NavigateUrl="" />
+            |
+            <asp:HyperLink ID="HyperLink3" runat="server" Text="SiteMap" NavigateUrl="" />
+            |
+            <asp:HyperLink ID="HyperLink1" runat="server" Text="FAQ" NavigateUrl="" />
+            |
+            <asp:HyperLink ID="HyperLink5" runat="server" Text="Login" NavigateUrl="" />
+            |
+            <asp:HyperLink ID="HyperLink4" runat="server" Text="About" NavigateUrl="" />
+        </p>
+    </div>
+    <!-- /footer -->
+</asp:Content>

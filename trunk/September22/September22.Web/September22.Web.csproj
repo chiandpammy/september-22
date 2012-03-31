@@ -54,6 +54,48 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="App_Data\Wedding.sdf" />
+    <Content Include="App_Themes\Blue\default.css" />
+    <Content Include="App_Themes\Blue\Images\bg.gif" />
+    <Content Include="App_Themes\Blue\Images\bg_page.gif" />
+    <Content Include="App_Themes\Blue\Images\bg_page_in.jpg" />
+    <Content Include="App_Themes\Blue\Images\btn_more.gif" />
+    <Content Include="App_Themes\Blue\Images\col_bg.gif" />
+    <Content Include="App_Themes\Blue\Images\col_title_bg.gif" />
+    <Content Include="App_Themes\Blue\Images\col_top.gif" />
+    <Content Include="App_Themes\Blue\Images\content_article_bg.jpg" />
+    <Content Include="App_Themes\Blue\Images\content_article_bg_1col.jpg" />
+    <Content Include="App_Themes\Blue\Images\content_comments_bg.jpg" />
+    <Content Include="App_Themes\Blue\Images\content_title_bg.gif" />
+    <Content Include="App_Themes\Blue\Images\footer.jpg" />
+    <Content Include="App_Themes\Blue\Images\footer_1col.jpg" />
+    <Content Include="App_Themes\Blue\Images\header.jpg" />
+    <Content Include="App_Themes\Blue\Images\ico_archive.gif" />
+    <Content Include="App_Themes\Blue\Images\ico_archive2.gif" />
+    <Content Include="App_Themes\Blue\Images\ico_cat.gif" />
+    <Content Include="App_Themes\Blue\Images\ico_comments.gif" />
+    <Content Include="App_Themes\Blue\Images\ico_date.gif" />
+    <Content Include="App_Themes\Blue\Images\ico_links.gif" />
+    <Content Include="App_Themes\Blue\Images\ico_list.gif" />
+    <Content Include="App_Themes\Blue\Images\ico_rss.gif" />
+    <Content Include="App_Themes\Blue\Images\ico_top.gif" />
+    <Content Include="App_Themes\Blue\Images\ico_user.gif" />
+    <Content Include="App_Themes\Blue\Images\lava.gif" />
+    <Content Include="App_Themes\Blue\Images\lava3.gif" />
+    <Content Include="App_Themes\Blue\Images\Original\article_footer.jpg" />
+    <Content Include="App_Themes\Blue\Images\Original\content_article_bg.jpg" />
+    <Content Include="App_Themes\Blue\Images\Original\footer.jpg" />
+    <Content Include="App_Themes\Blue\Images\Original\lava.gif" />
+    <Content Include="App_Themes\Blue\Images\search_input.gif" />
+    <Content Include="App_Themes\Blue\Images\search_submit.gif" />
+    <Content Include="App_Themes\Blue\Images\tab_active_l.gif" />
+    <Content Include="App_Themes\Blue\Images\tab_active_r.gif" />
+    <Content Include="App_Themes\Blue\Images\tab_hover.gif" />
+    <Content Include="App_Themes\Blue\Images\tab_hover_l.gif" />
+    <Content Include="App_Themes\Blue\Images\tab_hover_r.gif" />
+    <Content Include="App_Themes\Blue\Images\tab_link.gif" />
+    <Content Include="App_Themes\Blue\Images\tab_link_l.gif" />
+    <Content Include="App_Themes\Blue\Images\tab_link_r.gif" />
+    <Content Include="App_Themes\Blue\Images\tmp_photo.gif" />
     <Content Include="CeremonyAndReception.aspx" />
     <Content Include="Images\background.png" />
     <Content Include="Images\background2.png" />
@@ -72,6 +114,14 @@
     <Content Include="PhotoAlbum.aspx" />
     <Content Include="Rsvp.aspx" />
     <Content Include="Scripts\jquery-parallax.js" />
+    <Content Include="Scripts\jquery-easing-min.js" />
+    <Content Include="Scripts\jquery-lavalamp-min.js" />
+    <Content Include="Scripts\PrimaryScript.js" />
+    <Content Include="Scripts\jquery-sliding.form.js" />
+    <Content Include="Scripts\style.css" />
+    <Content Include="Site\Error.aspx" />
+    <Content Include="Site\Home.aspx" />
+    <Content Include="Site\Home2.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -103,6 +153,7 @@
     <Compile Include="CeremonyAndReception.aspx.designer.cs">
       <DependentUpon>CeremonyAndReception.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Common\Navigation.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -110,6 +161,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Common\Enums.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -119,6 +171,27 @@
     </Compile>
     <Compile Include="Map.aspx.designer.cs">
       <DependentUpon>Map.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Site.master.cs">
+      <DependentUpon>Site.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Site.master.designer.cs">
+      <DependentUpon>Site.master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Site_1Col.master.cs">
+      <DependentUpon>Site_1Col.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Site_1Col.master.designer.cs">
+      <DependentUpon>Site_1Col.master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Site_2Col.master.cs">
+      <DependentUpon>Site_2Col.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Site_2Col.master.designer.cs">
+      <DependentUpon>Site_2Col.master</DependentUpon>
     </Compile>
     <Compile Include="OurProposal.aspx.cs">
       <DependentUpon>OurProposal.aspx</DependentUpon>
@@ -133,6 +206,9 @@
     </Compile>
     <Compile Include="OurStory.aspx.designer.cs">
       <DependentUpon>OurStory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PhotoAlbum.aspx.cs">
       <DependentUpon>PhotoAlbum.aspx</DependentUpon>
@@ -163,6 +239,28 @@
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Common\Utilities.cs" />
+    <Compile Include="Site\Copy of Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Copy of Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\Home2.aspx.cs">
+      <DependentUpon>Home2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Home2.aspx.designer.cs">
+      <DependentUpon>Home2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WeddingParty.aspx.cs">
       <DependentUpon>WeddingParty.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -171,9 +269,23 @@
       <DependentUpon>WeddingParty.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Master\Site.master" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Blue\default.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Master\Site_2Col.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Master\Site_1Col.master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

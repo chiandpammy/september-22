@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Setpember22.Master.Master_Site"EnableViewState="false" CodeBehind="Site.Master.cs" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+   <meta name="google" value="notranslate">
+    
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+        <Scripts>
+            <asp:ScriptReference Path="~/Scripts/jquery-1.4.1.js" />
+            <asp:ScriptReference Path="~/Scripts/jquery-1.4.1-vsdoc.js" />
+            <asp:ScriptReference Path="~/Scripts/jquery-easing-min.js" />
+            <asp:ScriptReference Path="~/Scripts/jquery-lavalamp-min.js" />
+            <asp:ScriptReference Path="~/Scripts/jquery-sliding.form.js" />
+            <asp:ScriptReference Path="~/Scripts/PrimaryScript.js" />
+        </Scripts>
+    </asp:ScriptManager>
+
+    <!-- Main -->
+    <div id="main" class="box">
+        <!-- Header -->
+        <div id="header">
+            <!-- Logotyp -->
+            <h1 id="logo">
+                <a href="./" title="CrystalX [Go to homepage]">Crystal<strong>X</strong><span></span></a></h1>
+            <hr class="noscreen" />
+            <!-- Search -->
+            <div id="search">
+                <fieldset>
+                    <legend>Search</legend>
+                    <label>
+                        <span class="noscreen">Find:</span> <span id="search-input-out">
+                            <asp:TextBox ID="txtSearch" runat="server" CssClass="search-input"></asp:TextBox>
+                        </span>
+                    </label>
+                    <asp:ImageButton ID="imgSearch" runat="server" SkinID="search-submit" CssClass="search-submit"
+                        OnClick="imgSearch_Click" />
+                </fieldset>
+            </div>
+            <!-- /search -->
+        </div>
+        <!-- /header -->
+
+        <!-- Main menu (tabs) -->
+        <div id="menu">
+            <ul id="lavalamp">
+                <%--<li class="current"><a href="#">Home</a></li>--%>
+                <%--<li>
+                    <asp:HyperLink ID="hlSection" runat="server" Text="Home" NavigateUrl="~/Site/Home.aspx"></asp:HyperLink>
+                    <%--<a href="#">Home</a>
+                </li>--%>
+                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="srcMenu">
+                    <ItemTemplate>
+                        <li>
+                            <asp:HyperLink ID="hlSection" runat="server" Text='<%# Eval("sectionName") %>' NavigateUrl='<%# "~/Site/Home.aspx?secID=" + Eval("sectionId") %>'></asp:HyperLink>
+                        </li>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </ul>
+        </div>
+        <asp:ObjectDataSource ID="srcMenu" runat="server" SelectMethod="GetSections" TypeName="September22.Common.Class1">
+        </asp:ObjectDataSource>
+        <!-- /tabs -->
+        
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+        
+        <asp:ContentPlaceHolder ID="FooterContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <!-- /main -->
+    </form>
+</body>
+</html>
