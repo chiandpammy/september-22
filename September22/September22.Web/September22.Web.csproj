@@ -57,6 +57,7 @@
     <Content Include="App_Themes\Blue\default.css" />
     <Content Include="App_Themes\Blue\Images\bg.gif" />
     <Content Include="App_Themes\Blue\Images\bg_page.gif" />
+    <Content Include="App_Themes\Blue\Images\bg_page_1col.gif" />
     <Content Include="App_Themes\Blue\Images\bg_page_in.jpg" />
     <Content Include="App_Themes\Blue\Images\btn_more.gif" />
     <Content Include="App_Themes\Blue\Images\col_bg.gif" />
@@ -66,6 +67,7 @@
     <Content Include="App_Themes\Blue\Images\content_article_bg_1col.jpg" />
     <Content Include="App_Themes\Blue\Images\content_comments_bg.jpg" />
     <Content Include="App_Themes\Blue\Images\content_title_bg.gif" />
+    <Content Include="App_Themes\Blue\Images\content_title_bg_1col.gif" />
     <Content Include="App_Themes\Blue\Images\footer.jpg" />
     <Content Include="App_Themes\Blue\Images\footer_1col.jpg" />
     <Content Include="App_Themes\Blue\Images\header.jpg" />
