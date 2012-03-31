@@ -122,6 +122,9 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 #page {width:770px; min-height:1px; background:#FFF url("./Images/bg_page.gif") 0 0 repeat-y; _height:1px;}
 #page-in {min-height:1px; padding:10px 0; background:url("./Images/bg_page_in.jpg") 0 0 no-repeat; _height:1px;}
 
+    /* Page - Overrides  */
+    .override #page {background:#FFF url("./Images/bg_page_1col.gif") 0 0 repeat-y;}
+    
 /* Strip */
 #strip {position:relative; clear:both; padding:3px 20px 10px 20px; color:#6182D1;}
 #strip p {margin:0;}
@@ -162,6 +165,11 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     #content .btn-more a {display:block; position:absolute; top:0; right:0; width:67px; _width:95px; height:21px; margin:0; padding:0 0 0 28px; background:url("./Images/btn_more.gif") 0 0 no-repeat; color:#FFF; text-decoration:none;}
     #content .btn-more a:hover {background:url("./Images/btn_more.gif") -95px 0 no-repeat;}
 
+    /* Content - Overrides  */
+    .override #content {width:730px;}
+    .override #content .article {background:url("./Images/content_article_bg_1col.jpg") 0 0 no-repeat;}
+    .override #content .article h2 {background:url("./Images/content_title_bg_1col.gif") 0 0 repeat-y;}
+
 /* Right column */
 #col {float:left; width:200px; margin:0; padding:0; background:#CEDBF9 url("./Images/col_bg.gif") 0 0 repeat-y;}
 #col-in {padding:20px 10px; background:url("./Images/col_top.gif") 0 0 no-repeat;}
@@ -178,12 +186,9 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     #col ul li ul li a {display:inline; padding:0px 0px 0px 22px; background: transparent; text-decoration:none;}
 
 /* Footer */
-#footer {position:relative; clear:both; width:770px; height:60px; margin-bottom:40px; background:url("./Images/footer.jpg") 0 0 no-repeat; color:#6685CC;}
+#footer {position:relative; clear:both; width:770px; height:60px; margin-bottom:40px; color:#6685CC; background:url("./Images/footer.jpg") 0 0 no-repeat;}
 #footer a {color:#6685CC;}
 #footer a:hover {color:#192666;}
-
-    /* Footer - 1 Column */
-    .col1 #footer {background:url("./Images/footer_1col.jpg") 0 0 no-repeat;}
 
     /* Footer - "back on top" */
     #top {position:absolute; top:55px; left:550px;}
@@ -197,7 +202,10 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     /* Footer - created by */
     #createdby {position:absolute; top:10px; left:562px; margin:0; color:#8CA3D8;}
     #createdby a {color:#8CA3D8;}
-
+    
+    /* Footer - Overrides */
+    .override #footer {background:url("./Images/footer_1col.jpg") 0 0 no-repeat;}
+    
 /* Menu*/
 #lavalamp {position: relative; overflow: hidden; margin:0 5px; padding:10px 0 10px 18px; background: #192666;}
 
