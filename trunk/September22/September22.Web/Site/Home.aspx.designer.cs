@@ -13,31 +13,13 @@ namespace September22.Site {
     public partial class Home {
         
         /// <summary>
-        /// lvContents control.
+        /// lvNavigation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvContents;
-        
-        /// <summary>
-        /// srcContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource srcContent;
-        
-        /// <summary>
-        /// lvNavigatoin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvNavigatoin;
+        protected global::System.Web.UI.WebControls.ListView lvNavigation;
         
         /// <summary>
         /// srcNavigation control.

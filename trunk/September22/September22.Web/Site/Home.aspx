@@ -30,7 +30,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftColumnContent" runat="Server">
-    <div id="wrapper" class="article">
+    <div id="wrapper">
         <div id="steps">
             <div class="step">
                 <h2><span>Pamela's Story...</span></h2>
@@ -94,7 +94,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="RightColumnContent" runat="Server">
     <div id="navigation">
-        <asp:ListView ID="lvNavigatoin" runat="server" DataSourceID="srcNavigation" ItemPlaceholderID="itemPlaceholder">
+        <asp:ListView ID="lvNavigation" runat="server" DataSourceID="srcNavigation" ItemPlaceholderID="itemPlaceholder">
             <ItemTemplate>
                 <h3>
                     <span>
