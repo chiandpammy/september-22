@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Setpember22.Master
+namespace September22.Master
 {
     public partial class Master_Site : System.Web.UI.MasterPage
     {

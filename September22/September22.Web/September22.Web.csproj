@@ -10,8 +10,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Setpember22</RootNamespace>
-    <AssemblyName>Setpember22</AssemblyName>
+    <RootNamespace>September22</RootNamespace>
+    <AssemblyName>September22</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
@@ -115,7 +115,6 @@
     <Content Include="Site\OurPhotos.aspx" />
     <Content Include="Site\OurProposal.aspx" />
     <Content Include="Site\OurStory.aspx" />
-    <Content Include="Site\PhotoAlbum.aspx" />
     <Content Include="Site\Rsvp.aspx" />
     <Content Include="Scripts\jquery-parallax.js" />
     <Content Include="Scripts\jquery-easing-min.js" />
@@ -220,13 +219,6 @@
     </Compile>
     <Compile Include="Common\PageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site\PhotoAlbum.aspx.cs">
-      <DependentUpon>PhotoAlbum.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site\PhotoAlbum.aspx.designer.cs">
-      <DependentUpon>PhotoAlbum.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site\Rsvp.aspx.cs">

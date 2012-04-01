@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Setpember22.Site
+namespace September22.Site
 {
-    public partial class Error : Setpember22.Common.PageBase
+    public partial class Error : September22.Common.PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

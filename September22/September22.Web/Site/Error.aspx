@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Site_1Col.master" AutoEventWireup="true"
-    CodeBehind="Error.aspx.cs" Inherits="Setpember22.Site.Error" %>
+    CodeBehind="Error.aspx.cs" Inherits="September22.Site.Error" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 

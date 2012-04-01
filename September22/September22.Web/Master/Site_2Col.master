@@ -1,5 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Master/Site.master"
-    Inherits="Setpember22.Master.Master_Site_2Col" EnableViewState="false" CodeBehind="Site_2Col.master.cs" %>
+    Inherits="September22.Master.Master_Site_2Col" EnableViewState="false" CodeBehind="Site_2Col.master.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">

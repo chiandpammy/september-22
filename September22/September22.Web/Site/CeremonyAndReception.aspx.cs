@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Setpember22
+namespace September22
 {
     public partial class CeremonyAndReception : System.Web.UI.Page
     {

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Setpember22.Master.Master_Site"EnableViewState="false" CodeBehind="Site.Master.cs" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="September22.Master.Master_Site"EnableViewState="false" CodeBehind="Site.Master.cs" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
