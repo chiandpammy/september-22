@@ -7,6 +7,22 @@
             $(this).next('.toggle_list').slideToggle("Slow");
         });
     }
+
+    setCurrentLavaLamp();
+};
+
+function setCurrentLavaLamp() {
+    var qrStr = window.location.search;
+    var spQrStr = qrStr.substring(1);
+    var arrQrStr = new Array();
+    var arr = spQrStr.split('&');
+
+    for (var i = 0; i < arr.length; i++) {
+        var queryvalue = arr[i].split('=');
+        var secId = queryvalue[1];
+        //alert("Name: " + queryvalue[0] + " Value: " + queryvalue[1]);
+        $
+    }
 };
 
 $(document).ready(initMenu);

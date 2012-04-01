@@ -98,7 +98,7 @@
     <Content Include="App_Themes\Blue\Images\tab_link_l.gif" />
     <Content Include="App_Themes\Blue\Images\tab_link_r.gif" />
     <Content Include="App_Themes\Blue\Images\tmp_photo.gif" />
-    <Content Include="CeremonyAndReception.aspx" />
+    <Content Include="Site\CeremonyAndReception.aspx" />
     <Content Include="Images\background.png" />
     <Content Include="Images\background2.png" />
     <Content Include="Images\header.png" />
@@ -110,11 +110,12 @@
     <Content Include="Images\parallax_octocatshadow.png" />
     <Content Include="Images\parallax_speeder.png" />
     <Content Include="Images\parallax_speedershadow.png" />
-    <Content Include="Map.aspx" />
-    <Content Include="OurProposal.aspx" />
-    <Content Include="OurStory.aspx" />
-    <Content Include="PhotoAlbum.aspx" />
-    <Content Include="Rsvp.aspx" />
+    <Content Include="Site\Map.aspx" />
+    <Content Include="Site\OurPhotos.aspx" />
+    <Content Include="Site\OurProposal.aspx" />
+    <Content Include="Site\OurStory.aspx" />
+    <Content Include="Site\PhotoAlbum.aspx" />
+    <Content Include="Site\Rsvp.aspx" />
     <Content Include="Scripts\jquery-parallax.js" />
     <Content Include="Scripts\jquery-easing-min.js" />
     <Content Include="Scripts\jquery-lavalamp-min.js" />
@@ -148,11 +149,11 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CeremonyAndReception.aspx.cs">
+    <Compile Include="Site\CeremonyAndReception.aspx.cs">
       <DependentUpon>CeremonyAndReception.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CeremonyAndReception.aspx.designer.cs">
+    <Compile Include="Site\CeremonyAndReception.aspx.designer.cs">
       <DependentUpon>CeremonyAndReception.aspx</DependentUpon>
     </Compile>
     <Compile Include="Common\Navigation.cs" />
@@ -167,11 +168,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Map.aspx.cs">
+    <Compile Include="Site\Map.aspx.cs">
       <DependentUpon>Map.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Map.aspx.designer.cs">
+    <Compile Include="Site\Map.aspx.designer.cs">
       <DependentUpon>Map.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master\Site.master.cs">
@@ -195,36 +196,43 @@
     <Compile Include="Master\Site_2Col.master.designer.cs">
       <DependentUpon>Site_2Col.master</DependentUpon>
     </Compile>
-    <Compile Include="OurProposal.aspx.cs">
+    <Compile Include="Site\OurPhotos.aspx.cs">
+      <DependentUpon>OurPhotos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\OurPhotos.aspx.designer.cs">
+      <DependentUpon>OurPhotos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\OurProposal.aspx.cs">
       <DependentUpon>OurProposal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OurProposal.aspx.designer.cs">
+    <Compile Include="Site\OurProposal.aspx.designer.cs">
       <DependentUpon>OurProposal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="OurStory.aspx.cs">
+    <Compile Include="Site\OurStory.aspx.cs">
       <DependentUpon>OurStory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OurStory.aspx.designer.cs">
+    <Compile Include="Site\OurStory.aspx.designer.cs">
       <DependentUpon>OurStory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Common\PageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PhotoAlbum.aspx.cs">
+    <Compile Include="Site\PhotoAlbum.aspx.cs">
       <DependentUpon>PhotoAlbum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PhotoAlbum.aspx.designer.cs">
+    <Compile Include="Site\PhotoAlbum.aspx.designer.cs">
       <DependentUpon>PhotoAlbum.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rsvp.aspx.cs">
+    <Compile Include="Site\Rsvp.aspx.cs">
       <DependentUpon>Rsvp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Rsvp.aspx.designer.cs">
+    <Compile Include="Site\Rsvp.aspx.designer.cs">
       <DependentUpon>Rsvp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
