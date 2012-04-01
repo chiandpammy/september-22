@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Home" Language="C#" MasterPageFile="~/Master/Site_2Col.Master" AutoEventWireup="true"
-    Inherits="September22.Site.Home" EnableViewState="false" EnableEventValidation="false"
+    Inherits="September22.Home" EnableViewState="false" EnableEventValidation="false"
     CodeBehind="Home.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">

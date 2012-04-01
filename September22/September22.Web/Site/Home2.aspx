@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home2" Language="C#" MasterPageFile="~/Master/Site_2Col.Master" AutoEventWireup="true" Inherits="September22.Site.Home2" EnableViewState="false" EnableEventValidation="false" Codebehind="Home2.aspx.cs" %>
+﻿<%@ Page Title="Home2" Language="C#" MasterPageFile="~/Master/Site_2Col.Master" AutoEventWireup="true" Inherits="September22.Home2" EnableViewState="false" EnableEventValidation="false" Codebehind="Home2.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 
