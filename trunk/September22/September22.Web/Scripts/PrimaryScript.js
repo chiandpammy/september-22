@@ -72,11 +72,11 @@ $(document).ready(function () {
         $('#parallax_bg').plaxify({ "xRange": 0, "yRange": 20, "invert": true })
         $('#parallax_error_text').plaxify({ "xRange": 20, "yRange": 10 })
         $('#parallax_octocat').plaxify({ "xRange": 10, "yRange": 10 })
-        $('#parallax_speeder').plaxify({ "xRange": 10, "yRange": 10 })
         $('#parallax_octocatshadow').plaxify({ "xRange": 10, "yRange": 10 })
-        $('#parallax_speedershadow').plaxify({ "xRange": 10, "yRange": 10 })
-        $('#parallax_building_1').plaxify({ "xRange": 50, "yRange": 20 })
-        $('#parallax_building_2').plaxify({ "xRange": 75, "yRange": 30, "invert": true })
+        $('#parallax_speeder').plaxify({ "xRange": 30, "yRange": 30 })
+        $('#parallax_speedershadow').plaxify({ "xRange": 30, "yRange": 30 })
+        $('#parallax_building_1').plaxify({ "xRange": 60, "yRange": 30, "invert": true })
+        $('#parallax_building_2').plaxify({ "xRange": 80, "yRange": 40, "invert": true })
     }
 })
 
