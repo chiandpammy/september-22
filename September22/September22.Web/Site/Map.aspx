@@ -70,7 +70,7 @@
 <asp:Content runat="server" ID="Content2" ContentPlaceHolderID="LeftColumnContent">
     <h2><span>Map</span></h2>
     <br />
-    <div id="map_canvas" style="width: 470px; height: 500px"></div>
+    <div id="map_canvas" style="height:400px; width:470px;"></div>
     <br />
 </asp:Content>
 <asp:Content runat="Server" ID="Content3" ContentPlaceHolderID="RightColumnContent">
@@ -79,6 +79,9 @@
         <ul>
             <li>
                 <asp:LinkButton ID="LinkButton1" runat="server" UseSubmitBehavior="false" OnClientClick="return focus_uni_club()" >Ceremony</asp:LinkButton>
+            </li>
+                        <li>
+                <asp:LinkButton ID="LinkButton2" runat="server" UseSubmitBehavior="false" OnClientClick="return focus_uni_club()" >Ceremony</asp:LinkButton>
             </li>
         </ul>
     </div>
