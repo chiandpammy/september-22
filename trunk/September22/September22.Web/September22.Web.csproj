@@ -114,7 +114,6 @@
     <Content Include="Images\parallax_speedershadow.png" />
     <Content Include="Site\Map.aspx" />
     <Content Include="Site\OurPhotos.aspx" />
-    <Content Include="Site\OurProposal.aspx" />
     <Content Include="Site\OurStory.aspx" />
     <Content Include="Site\Rsvp.aspx" />
     <Content Include="Scripts\body_bg.png" />
@@ -204,13 +203,6 @@
     </Compile>
     <Compile Include="Site\OurPhotos.aspx.designer.cs">
       <DependentUpon>OurPhotos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Site\OurProposal.aspx.cs">
-      <DependentUpon>OurProposal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site\OurProposal.aspx.designer.cs">
-      <DependentUpon>OurProposal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site\OurStory.aspx.cs">
       <DependentUpon>OurStory.aspx</DependentUpon>

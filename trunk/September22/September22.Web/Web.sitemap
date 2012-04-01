@@ -2,7 +2,6 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="~/Site/Home.aspx" title="Home">
     <siteMapNode url="~/Site/OurStory.aspx" title="Our Story" />
-    <siteMapNode url="~/Site/OurProposal.aspx" title="Our Proposal" />
     <siteMapNode url="~/Site/OurPhotos.aspx" title="Our Photos" />
     <siteMapNode url="~/Site/CeremonyAndReception.aspx" title="Ceremony and Reception" />
     <siteMapNode url="~/Site/WeddingParty.aspx" title="Wedding Party" />
