@@ -79,16 +79,16 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 #main {width:770px; margin:50px auto 0 auto; _text-align:left;}
 
 /* Header */
-#header {position:relative; width:770px; height:100px; margin:0; padding:0; background:transparent url("./Images/header.png") 0 0 no-repeat; color:#FFF;}
+#header {position:relative; width:770px; height:150px; margin:0; padding:0; background:transparent url("./Images/header.png") 0 0 no-repeat; color:#FFF;}
 
     /* Header - logo */
-    #header #logo {position:absolute; top:35px; left:35px; margin:0;}
+    #header #logo {visibility:hidden; position:absolute; top:35px; left:35px; margin:0;}
 
     #header #logo a {color:#FFF;}
     #header #logo a:hover {color:#B5C4E3; text-decoration:underline;}
     
     /* Header - Search */
-    #header #search {position:absolute; top:35px; right:20px;}
+    #header #search {visibility:hidden; position:absolute; top:35px; right:20px;}
     #header #search form {position:relative;}
     #header #search #search-input-out {position:absolute; top:0; right:45px; width:155px; height:28px; margin:0; padding:0; border:0; background:url("./Images/search_input.gif") 0 0 no-repeat; font:bold 90%/100% "verdana",sans-serif; color:#192666;}
     #header #search .search-input {width:140px; margin:5px 8px; padding:3px 0; border:0; background:#FFF; font:bold 100%/100% "verdana",sans-serif; color:#192666;}
