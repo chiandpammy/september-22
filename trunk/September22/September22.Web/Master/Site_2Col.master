@@ -27,7 +27,7 @@
 
             <!-- Content -->
             <div id="content">
-                <div>
+                <div class="article">
                     <asp:ContentPlaceHolder ID="LeftColumnContent" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>

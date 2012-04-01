@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Map of Events" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+﻿<%@ Page Title="Map of Events" Language="C#" MasterPageFile="~/Master/Site_1Col.master" AutoEventWireup="true"
     CodeBehind="Map.aspx.cs" Inherits="September22.Map" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
@@ -62,7 +62,7 @@
         window.onload = initialize;
     </script>
 </asp:Content>
-<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MiddleColumnContent">
     <div id="map_canvas" style="width: 600px; height: 400px">
     </div>
     <br />

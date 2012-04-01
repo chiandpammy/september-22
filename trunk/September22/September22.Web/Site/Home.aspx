@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Site_2Col.Master" AutoEventWireup="true"
+﻿<%@ Page Title="Home" Language="C#" MasterPageFile="~/Master/Site_2Col.Master" AutoEventWireup="true"
     Inherits="September22.Site.Home" EnableViewState="false" EnableEventValidation="false"
     CodeBehind="Home.aspx.cs" %>
 
