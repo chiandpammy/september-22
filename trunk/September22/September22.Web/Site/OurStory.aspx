@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Our Story" Language="C#" MasterPageFile="~/Master/Site_2Col.Master" AutoEventWireup="true" CodeBehind="OurStory.aspx.cs" Inherits="September22.OurStory" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="../Styles/jquery-sliding.form.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Wedding/jquery-sliding.form.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftColumnContent" runat="Server">
     <div id="wrapper">
