@@ -47,8 +47,8 @@
             <div class="step">
                 <h2><span>Our Proposal</span></h2>
                 <p>
-                    Coming soon!
-                    </p>
+                    
+                </p>
             </div>
         </div>
     </div>
