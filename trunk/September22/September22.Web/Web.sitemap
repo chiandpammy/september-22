@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="~/Site/Home.aspx" title="Home">
-    <siteMapNode url="~/Site/Home.aspx?secID=1" title="Our Story" />
-    <siteMapNode url="~/Site/Home.aspx?secID=2" title="Our Proposal" />
-    <siteMapNode url="~/Site/Home.aspx?secID=3" title="Our Photos" />
-    <siteMapNode url="~/Site/Home.aspx?secID=4" title="Ceremony and Reception" />
-    <siteMapNode url="~/Site/Home.aspx?secID=5" title="Wedding Party" />
-    <siteMapNode url="~/Site/Home.aspx?secID=6" title="Map of Events" />
-    <siteMapNode url="~/Site/Home.aspx?secID=7" title="RSVP" />
+    <siteMapNode url="~/Site/OurStory.aspx" title="Our Story" />
+    <siteMapNode url="~/Site/OurProposal.aspx" title="Our Proposal" />
+    <siteMapNode url="~/Site/OurPhotos.aspx" title="Our Photos" />
+    <siteMapNode url="~/Site/CeremonyAndReception.aspx" title="Ceremony and Reception" />
+    <siteMapNode url="~/Site/WeddingParty.aspx" title="Wedding Party" />
+    <siteMapNode url="~/Site/Map.aspx" title="Map of Events" />
+    <siteMapNode url="~/Site/Rsvp.aspx" title="RSVP" />
   </siteMapNode>
 </siteMap>
