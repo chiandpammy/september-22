@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftColumnContent" runat="server">
-<h1>Meet our Wedding Party!</h1>
 
 <h2><span>My wonderful bridesmaids</span></h2>
 

@@ -1,9 +1,8 @@
-﻿<%@ Page Title="Map of Events" Language="C#" MasterPageFile="~/Master/Site_1Col.master" AutoEventWireup="true"
+﻿<%@ Page Title="Map of Events" Language="C#" MasterPageFile="~/Master/Site_2Col.master" AutoEventWireup="true"
     CodeBehind="Map.aspx.cs" Inherits="September22.Map" %>
 
-<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false">
-    </script>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript">
         var map;
         var uni_club;
@@ -62,11 +61,20 @@
         window.onload = initialize;
     </script>
 </asp:Content>
-<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MiddleColumnContent">
-    <div id="map_canvas" style="width: 600px; height: 400px">
+<asp:Content runat="server" ID="Content2" ContentPlaceHolderID="LeftColumnContent">
+    <h2><span>Map</span></h2>
+    <br />
+    <div id="map_canvas" style="width: 470px; height: 400px">
     </div>
     <br />
     <br />
-    <asp:Button ID="Button1" runat="server" Text="Button1" OnClientClick="return recenter()" UseSubmitBehavior="false" />
-    <asp:Button ID="Button2" runat="server" Text="Button2" OnClientClick="return recenter()" UseSubmitBehavior="false" />
+    <asp:Button ID="Button3" runat="server" Text="Button1" OnClientClick="return recenter()" UseSubmitBehavior="false" />
+</asp:Content>
+<asp:Content runat="Server" ID="Content3" ContentPlaceHolderID="RightColumnContent">
+    <div id="navigation">
+        <h3><span>Points of Interest</span></h3>
+        <ul>
+            <li><asp:HyperLink ID="HyperLink1" runat="server" Text="Ceremony"></asp:HyperLink></li>
+        </ul>
+    </div>
 </asp:Content>
