@@ -55,7 +55,6 @@
     <Content Include="About.aspx" />
     <Content Include="App_Data\Wedding.sdf" />
     <Content Include="App_Themes\Blue\default.css" />
-    <Content Include="App_Themes\Blue\Images\background2.png" />
     <Content Include="App_Themes\Blue\Images\bg.gif" />
     <Content Include="App_Themes\Blue\Images\bg_page.gif" />
     <Content Include="App_Themes\Blue\Images\bg_page_1col.gif" />
@@ -99,6 +98,50 @@
     <Content Include="App_Themes\Blue\Images\tab_link_l.gif" />
     <Content Include="App_Themes\Blue\Images\tab_link_r.gif" />
     <Content Include="App_Themes\Blue\Images\tmp_photo.gif" />
+    <Content Include="App_Themes\Wedding\default.css" />
+    <Content Include="App_Themes\Wedding\Images\bg.png" />
+    <Content Include="App_Themes\Wedding\Images\bg_page.gif" />
+    <Content Include="App_Themes\Wedding\Images\bg_page_1col.gif" />
+    <Content Include="App_Themes\Wedding\Images\bg_page_in.gif" />
+    <Content Include="App_Themes\Wedding\Images\btn_more.gif" />
+    <Content Include="App_Themes\Wedding\Images\col_bg.gif" />
+    <Content Include="App_Themes\Wedding\Images\col_title_bg.gif" />
+    <Content Include="App_Themes\Wedding\Images\col_top.gif" />
+    <Content Include="App_Themes\Wedding\Images\content_article_bg.jpg" />
+    <Content Include="App_Themes\Wedding\Images\content_article_bg_1col.jpg" />
+    <Content Include="App_Themes\Wedding\Images\content_comments_bg.jpg" />
+    <Content Include="App_Themes\Wedding\Images\content_title_bg.gif" />
+    <Content Include="App_Themes\Wedding\Images\content_title_bg_1col.gif" />
+    <Content Include="App_Themes\Wedding\Images\footer.gif" />
+    <Content Include="App_Themes\Wedding\Images\footer_1col.gif" />
+    <Content Include="App_Themes\Wedding\Images\header.gif" />
+    <Content Include="App_Themes\Wedding\Images\ico_archive.gif" />
+    <Content Include="App_Themes\Wedding\Images\ico_archive2.gif" />
+    <Content Include="App_Themes\Wedding\Images\ico_cat.gif" />
+    <Content Include="App_Themes\Wedding\Images\ico_comments.gif" />
+    <Content Include="App_Themes\Wedding\Images\ico_date.gif" />
+    <Content Include="App_Themes\Wedding\Images\ico_links.gif" />
+    <Content Include="App_Themes\Wedding\Images\ico_list.gif" />
+    <Content Include="App_Themes\Wedding\Images\ico_rss.gif" />
+    <Content Include="App_Themes\Wedding\Images\ico_top.gif" />
+    <Content Include="App_Themes\Wedding\Images\ico_user.gif" />
+    <Content Include="App_Themes\Wedding\Images\lava.gif" />
+    <Content Include="App_Themes\Wedding\Images\lava3.gif" />
+    <Content Include="App_Themes\Wedding\Images\Original\article_footer.jpg" />
+    <Content Include="App_Themes\Wedding\Images\Original\content_article_bg.jpg" />
+    <Content Include="App_Themes\Wedding\Images\Original\footer.jpg" />
+    <Content Include="App_Themes\Wedding\Images\Original\lava.gif" />
+    <Content Include="App_Themes\Wedding\Images\search_input.gif" />
+    <Content Include="App_Themes\Wedding\Images\search_submit.gif" />
+    <Content Include="App_Themes\Wedding\Images\tab_active_l.gif" />
+    <Content Include="App_Themes\Wedding\Images\tab_active_r.gif" />
+    <Content Include="App_Themes\Wedding\Images\tab_hover.gif" />
+    <Content Include="App_Themes\Wedding\Images\tab_hover_l.gif" />
+    <Content Include="App_Themes\Wedding\Images\tab_hover_r.gif" />
+    <Content Include="App_Themes\Wedding\Images\tab_link.gif" />
+    <Content Include="App_Themes\Wedding\Images\tab_link_l.gif" />
+    <Content Include="App_Themes\Wedding\Images\tab_link_r.gif" />
+    <Content Include="App_Themes\Wedding\Images\tmp_photo.gif" />
     <Content Include="Images\parallax_bg.jpg" />
     <Content Include="Site\CeremonyAndReception.aspx" />
     <Content Include="Images\background.png" />
@@ -283,6 +326,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master\Site_1Col.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Wedding\default.skin" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -52,9 +52,9 @@ namespace September22.Common
             }
             else
             {
-                SetTheme(Themes.Blue.ToString());
+                SetTheme(Themes.Wedding.ToString());
 
-                return Themes.Blue.ToString();
+                return Themes.Wedding.ToString();
             }
         }
 
@@ -69,6 +69,10 @@ namespace September22.Common
 
             switch (currentTheme)
             {
+                case Themes.Wedding:
+                    nextTheme = Themes.Blue;
+                    break;
+
                 case Themes.Blue:
                     nextTheme = Themes.Red;
                     break;
@@ -82,7 +86,7 @@ namespace September22.Common
                     break;
 
                 default:
-                    nextTheme = Themes.Blue;
+                    nextTheme = Themes.Wedding;
                     break;
             }
 
