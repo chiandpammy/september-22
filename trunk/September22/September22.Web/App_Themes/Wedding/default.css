@@ -175,7 +175,7 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 /* Right column */
 #col {float:left; width:200px; margin:0; padding:0; background:#C7EAFB url("./Images/col_bg.gif") 0 0 repeat-y;}
 #col-in {padding:20px 10px; background:url("./Images/col_top.gif") 0 0 no-repeat;}
-#col h3 {padding:13px 15px 14px 15px; margin:0 -10px 15px -10px; background:#A0B9F3 url("./Images/col_title_bg.png") 0 0 repeat-y; color:#192666;}
+#col h3 {padding:13px 15px 14px 15px; margin:0 -10px 15px -10px; background:#A0B9F3 url("./Images/col_title_bg.gif") 0 0 repeat-y; color:#192666;}
     
     #col ul {margin:15px 0; padding:0; list-style:none;}
     #col ul li {margin:0; padding:0; border-bottom:1px solid #E0E8FA;}
@@ -188,7 +188,7 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     #col ul li ul li a {display:inline; padding:0px 0px 0px 22px; background: transparent; text-decoration:none;}
 
 /* Footer */
-#footer {position:relative; clear:both; width:770px; height:60px; margin-bottom:40px; color:#6685CC; background:url("./Images/footer.gif") 0 0 no-repeat;}
+#footer {position:relative; clear:both; width:770px; height:60px; margin-bottom:40px; color:#6685CC; background:url("./Images/footer.png") 0 0 no-repeat;}
 #footer a {color:#6685CC;}
 #footer a:hover {color:#192666;}
 
