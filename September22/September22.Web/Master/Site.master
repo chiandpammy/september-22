@@ -16,6 +16,7 @@
             <asp:ScriptReference Path="~/Scripts/jquery-easing-min.js" />
             <asp:ScriptReference Path="~/Scripts/jquery-lavalamp-min.js" />
             <asp:ScriptReference Path="~/Scripts/jquery-sliding.form.js" />
+            <asp:ScriptReference Path="~/Scripts/jquery-plax.js" />
             <asp:ScriptReference Path="~/Scripts/PrimaryScript.js" />
         </Scripts>
     </asp:ScriptManager>

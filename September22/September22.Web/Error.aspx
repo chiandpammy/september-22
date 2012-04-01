@@ -7,7 +7,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-	<div style="position: relative; margin-left: -235px; margin-top: -8px;" >
+	<div style="position: relative>; margin-left: -235px; margin-top: -8px;" >
         <style type="text/css">
 			* {
 				margin: 0px;
