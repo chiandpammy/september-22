@@ -13,8 +13,8 @@
                     I was taking an extra computer science class to try to graduate on-time. Chi was
                     just getting in another technical class under his belt, but I didn't know him then.
                     I walked into the room and took a seat in the front row, oblivious to whomever was
-                    sitting behind me. At the end of class, I walked out in my heels and a skirt with
-                    no umbrella... only to find it raining outside.
+                    sitting in the rows behind me. At the end of class, I walked out in my new outfit with
+                    my heels and no umbrella... only to find it raining outside.
                 </p>
             </div>
             <div class="step">
@@ -26,12 +26,7 @@
             <div class="step">
                 <h2><span>Our Proposal</span></h2>
                 <p>
-                    It was the summer of 2002, on June 10th, the first day of the second summer session.
-                    I was taking an extra computer science class to try to graduate on-time. Chi was
-                    just getting in another technical class under his belt, but I didn't know him then.
-                    I walked into the room and took a seat in the front row, oblivious to whomever was
-                    sitting behind me. At the end of class, I walked out in my heels and a skirt with
-                    no umbrella... only to find it raining outside.
+                    Coming soon!
                     </p>
             </div>
         </div>

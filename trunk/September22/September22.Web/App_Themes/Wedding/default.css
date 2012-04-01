@@ -169,6 +169,8 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     .override #content {width:730px;}
     .override #content .article {background:url("./Images/content_article_bg_1col.jpg") 0 0 no-repeat;}
     .override #content .article h2 {background:url("./Images/content_title_bg_1col.gif") 0 0 repeat-y;}
+    
+    /*.slidingformoverride #content .article h2 {margin: 0px; padding:20 0px;}*/
 
 /* Right column */
 #col {float:left; width:200px; margin:0; padding:0; background:#CEDBF9 url("./Images/col_bg.gif") 0 0 repeat-y;}

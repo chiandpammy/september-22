@@ -1,0 +1,26 @@
+﻿#wrapper
+{
+    position: relative;
+    width: 470px;
+    overflow: hidden;
+    height: 100%;
+}
+
+#steps
+{
+    position: relative;
+    width: 510px;
+    overflow: hidden;
+}
+
+#steps > .step
+{
+    width: 510px;
+    float: left;
+}
+
+#steps > .step p
+{
+    padding: 0 50 0 10px; 
+    padding-right: 50px;
+}
