@@ -55,6 +55,7 @@
     <Content Include="About.aspx" />
     <Content Include="App_Data\Wedding.sdf" />
     <Content Include="App_Themes\Blue\default.css" />
+    <Content Include="App_Themes\Blue\Images\background2.png" />
     <Content Include="App_Themes\Blue\Images\bg.gif" />
     <Content Include="App_Themes\Blue\Images\bg_page.gif" />
     <Content Include="App_Themes\Blue\Images\bg_page_1col.gif" />

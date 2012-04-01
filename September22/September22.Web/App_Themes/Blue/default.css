@@ -12,7 +12,11 @@
 */
 
 * {min-height:1px;}
-body {border:0; margin:0; padding:0; background:#F2F5FE url("./Images/bg.gif") 0 0 repeat-x; font:70%/160% "verdana",sans-serif; color:#192666; _text-align:center;}
+body {border:0; margin:0; padding:0; 
+      /*background:#F2F5FE url("./Images/bg.gif") 0 0 repeat-x; */
+      background-image: url(./Images/background2.png); 
+    background-repeat: repeat-y repeat-x;
+      font:70%/160% "verdana",sans-serif; color:#192666; _text-align:center;}
 
 a {color:#192666;}
 a:hover {color:#4F6AD7;}
