@@ -7,8 +7,8 @@
         var map;
         var uni_club;
         function initialize() {
-            //club location
-            uni_club = new google.maps.LatLng(41.880, -87.625)
+            //location
+            uni_club = new google.maps.LatLng(41.880969, -87.624979)
 
             var options =
             {
@@ -39,13 +39,18 @@
                 {
                     position: uni_club,
                     map: map,
-                    title: 'Click me'
+                    title: 'Ceremony at University Club of Chicago'
                 }
             );
+            
 
             var infowindow = new google.maps.InfoWindow(
                 {
-                    content: "University Club of Chicago<br />76 East Monroe Street<br/>Chicago, IL 60603<br />"
+                    content: "<a href=\"http://www.ucco.com\" target=\"_blank\"><b>University Club of Chicago</b><a>"
+                        + "<br />76 East Monroe Street<br/>Chicago, IL 60603"
+                        + "<br /><a href=\"http://maps.google.com/maps?saddr=&daddr=76%20East%20Monroe%20Street%20Chicago,%20IL%2060603\" target=\"_blank\">Directions To Here<a>"
+                        + "&nbsp;&nbsp;&nbsp;&nbsp;"
+                        + "<a href=\"http://maps.google.com/maps?saddr=76%20East%20Monroe%20Street%20Chicago,%20IL%2060603&daddr=\" target=\"_blank\">Directions From Here<a>"
                 }
             );
 
@@ -54,7 +59,7 @@
             });
         }
 
-        function recenter() {
+        function focus_uni_club() {
             map.panTo(uni_club);
         }
 
@@ -64,17 +69,16 @@
 <asp:Content runat="server" ID="Content2" ContentPlaceHolderID="LeftColumnContent">
     <h2><span>Map</span></h2>
     <br />
-    <div id="map_canvas" style="width: 470px; height: 400px">
-    </div>
+    <div id="map_canvas" style="width: 470px; height: 400px"></div>
     <br />
-    <br />
-    <asp:Button ID="Button3" runat="server" Text="Button1" OnClientClick="return recenter()" UseSubmitBehavior="false" />
 </asp:Content>
 <asp:Content runat="Server" ID="Content3" ContentPlaceHolderID="RightColumnContent">
     <div id="navigation">
         <h3><span>Points of Interest</span></h3>
         <ul>
-            <li><asp:HyperLink ID="HyperLink1" runat="server" Text="Ceremony"></asp:HyperLink></li>
+            <li>
+                <asp:LinkButton ID="LinkButton1" runat="server" UseSubmitBehavior="false" OnClientClick="return focus_uni_club()" >Ceremony</asp:LinkButton>
+            </li>
         </ul>
     </div>
 </asp:Content>
