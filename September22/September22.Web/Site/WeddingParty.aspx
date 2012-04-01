@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Wedding Party" Language="C#" MasterPageFile="~/Master/Site_2Col.master" AutoEventWireup="true" CodeBehind="WeddingParty.aspx.cs" Inherits="September22.WeddingParty" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="../Styles/jquery-sliding.form.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Wedding/jquery-sliding.form.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftColumnContent" runat="server">
 <div id="wrapper">
@@ -33,7 +33,9 @@
 				            <img align="left" alt="" src="http://graph.facebook.com/nyvellee/picture?type=large" width="150" /></td>
 			            <td valign="top">
 				            <b>Janice</b><br /><br />
-				            Janice and Pamela met when they were 5 years old and have been close friends ever since.&nbsp;Janice is one of those friends who's impossible not to like.  Whether it's been 5 years or 5 minutes since the last time you've seen her, all the time instantly melts away, and it's as if she'd never left your side.</td>
+				            Janice and Pamela met when they were 5 years old and have been close friends ever since.&nbsp;Though time and space have separated them on and off through the years, whenever they get together, it feels as if they've never truly been apart.
+                            <%--Janice is one of those friends who's impossible not to like.  Whether it's been 5 years or 5 minutes since the last time you've seen her, all the time instantly melts away, and it's as if she'd never left your side.--%>
+                            </td>
 		            </tr>
                     <tr>
 			            <td style="padding: 5px;" width="150">
