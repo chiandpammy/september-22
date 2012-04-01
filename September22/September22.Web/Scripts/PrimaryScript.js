@@ -26,9 +26,6 @@ function setCurrentLavaLamp() {
         case "OurStory.aspx":
             $("#liOurStory").addClass('current');
             break;
-        case "OurProposal.aspx":
-            $("#liOurProposal").addClass('current');
-            break;
         case "OurPhotos.aspx":
             $("#liOurPhotos").addClass('current');
             break;
