@@ -116,12 +116,12 @@
     <Content Include="Site\OurProposal.aspx" />
     <Content Include="Site\OurStory.aspx" />
     <Content Include="Site\Rsvp.aspx" />
-    <Content Include="Scripts\jquery-parallax.js" />
+    <Content Include="Scripts\body_bg.png" />
     <Content Include="Scripts\jquery-easing-min.js" />
     <Content Include="Scripts\jquery-lavalamp-min.js" />
+    <Content Include="Scripts\jquery-plax.js" />
     <Content Include="Scripts\PrimaryScript.js" />
     <Content Include="Scripts\jquery-sliding.form.js" />
-    <Content Include="Scripts\style.css" />
     <Content Include="Site\Error.aspx" />
     <Content Include="Site\Home.aspx" />
     <Content Include="Site\Home2.aspx" />
