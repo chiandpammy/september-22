@@ -3,31 +3,7 @@
     CodeBehind="Home.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <style>
-        #wrapper
-        {
-            position: relative;
-            width: 470px;
-            overflow: hidden;
-            height: 100%;
-        }
-        #steps
-        {
-            position: relative;
-            width: 510px;
-            overflow: hidden;
-        }
-        .step
-        {
-            width: 510px;
-            float: left;
-        }
-        .step p
-        {
-            padding: 0 50 0 10px; 
-            padding-right:50px;
-        }
-    </style>
+    <link href="../Styles/Steps.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftColumnContent" runat="Server">
     <div id="wrapper">
