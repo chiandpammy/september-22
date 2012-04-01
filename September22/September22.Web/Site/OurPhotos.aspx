@@ -2,5 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MiddleColumnContent" runat="server">
-hi
+    <h2><span>Our Photos</span></h2>
+    one day....
 </asp:Content>
