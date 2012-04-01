@@ -7,8 +7,8 @@
     <div id="steps">
         <div class="step">
             <h2><span>My wonderful bridesmaids</span></h2>
-
-            <table border="0" cellpadding="2" cellspacing="0" width="470px">
+            <p>
+                <table border="0" cellpadding="2" cellspacing="0" width="470px">
 	            <tbody>
 		            <tr>
 			            <td width="150">
@@ -61,11 +61,12 @@
 		            </tr>
 	            </tbody>
             </table>
+            </p>
         </div>
         <div class="step">
             <h2><span>Men of Honor</span></h2>
             <p>We haven't found any!</p>
-        </div>            
+        </div>
     </div>
 </div>
 </asp:Content>

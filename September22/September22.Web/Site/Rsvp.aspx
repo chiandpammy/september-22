@@ -4,6 +4,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MiddleColumnContent" runat="server">
     <h2><span>RSVP</span></h2>
     <p>
-        soon
+        Coming soon!
     </p>
 </asp:Content>
