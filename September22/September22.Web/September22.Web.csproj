@@ -143,19 +143,7 @@
     <Content Include="App_Themes\Wedding\Images\tab_link_l.gif" />
     <Content Include="App_Themes\Wedding\Images\tab_link_r.gif" />
     <Content Include="App_Themes\Wedding\Images\tmp_photo.gif" />
-    <Content Include="Images\parallax_bg.jpg" />
     <Content Include="Site\CeremonyAndReception.aspx" />
-    <Content Include="Images\background.png" />
-    <Content Include="Images\background2.png" />
-    <Content Include="Images\header.png" />
-    <Content Include="Images\parallax_bg_orig.jpg" />
-    <Content Include="Images\parallax_building_1.png" />
-    <Content Include="Images\parallax_building_2.png" />
-    <Content Include="Images\parallax_errortext.png" />
-    <Content Include="Images\parallax_octocat.png" />
-    <Content Include="Images\parallax_octocatshadow.png" />
-    <Content Include="Images\parallax_speeder.png" />
-    <Content Include="Images\parallax_speedershadow.png" />
     <Content Include="Site\Map.aspx" />
     <Content Include="Site\OurPhotos.aspx" />
     <Content Include="Site\OurStory.aspx" />
@@ -330,6 +318,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Themes\Wedding\default.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Themes\Wedding\Images\header.psd" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
