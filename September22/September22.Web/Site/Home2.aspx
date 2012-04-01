@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Site_2Col.Master" AutoEventWireup="true" Inherits="September22.Site.Home2" EnableViewState="false" EnableEventValidation="false" Codebehind="Home2.aspx.cs" %>
+﻿<%@ Page Title="Home2" Language="C#" MasterPageFile="~/Master/Site_2Col.Master" AutoEventWireup="true" Inherits="September22.Site.Home2" EnableViewState="false" EnableEventValidation="false" Codebehind="Home2.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 
@@ -6,36 +6,34 @@
     <!-- Article -->
     <asp:ListView ID="lvContents" runat="server" DataSourceID="srcContent" ItemPlaceholderID="itemPlaceholderContent" OnDataBound="lvContents_DataBound">
         <ItemTemplate>
-            <div class="article">
-                <h2>
-                    <span>
-                        <%--<asp:HyperLink ID="hlTitle" runat="server" Text='<%# Eval("PostTitle") %>' />--%>
-                        aaaa
-                    </span>
-                </h2>
-                <p class="info">
-                    <span class="date">
-                        <asp:Label ID="lblDateTime" runat="server" Text='<%# Eval("CreatedDateTime") %>' />
-                    </span>
-                    <span class="cat">
-                        <asp:HyperLink ID="hlCatetory" runat="server" Text='<%# Eval("CreatingUserName") %>' />
-                    </span>
-                    <span class="user">
-                        <asp:HyperLink ID="hlUserName" runat="server" Text='<%# Eval("CreatingUserName") %>' />
-                    </span>
-                    <span class="comments">
-                        <asp:HyperLink ID="hlComment" runat="server" Text='<%# "Comments (" + Eval("CommentCount") + ")"%>' />
-                    </span>
-                </p>
-                <p>
-                    <asp:Label ID="lblPost" runat="server" Text='<%# Eval("ContentHTML") %>'></asp:Label>
-                </p>
-                <p class="btn-more box">
-                    <strong>
-                        <asp:HyperLink ID="hlPost" runat="server" Text="Continue" NavigateUrl='<%# "~/Site/Home.aspx?postID=" + Eval("PostID") %>' /></span>
-                    </strong>
-                </p>
-            </div>
+            <h2>
+                <span>
+                    <%--<asp:HyperLink ID="hlTitle" runat="server" Text='<%# Eval("PostTitle") %>' />--%>
+                    aaaa
+                </span>
+            </h2>
+            <p class="info">
+                <span class="date">
+                    <asp:Label ID="lblDateTime" runat="server" Text='<%# Eval("CreatedDateTime") %>' />
+                </span>
+                <span class="cat">
+                    <asp:HyperLink ID="hlCatetory" runat="server" Text='<%# Eval("CreatingUserName") %>' />
+                </span>
+                <span class="user">
+                    <asp:HyperLink ID="hlUserName" runat="server" Text='<%# Eval("CreatingUserName") %>' />
+                </span>
+                <span class="comments">
+                    <asp:HyperLink ID="hlComment" runat="server" Text='<%# "Comments (" + Eval("CommentCount") + ")"%>' />
+                </span>
+            </p>
+            <p>
+                <asp:Label ID="lblPost" runat="server" Text='<%# Eval("ContentHTML") %>'></asp:Label>
+            </p>
+            <p class="btn-more box">
+                <strong>
+                    <asp:HyperLink ID="hlPost" runat="server" Text="Continue" NavigateUrl='<%# "~/Site/Home.aspx?postID=" + Eval("PostID") %>' /></span>
+                </strong>
+            </p>
             <asp:ListView ID="lvComments" runat="server" ItemPlaceholderID="itemPlaceholderConmment" DataSource='<%# Eval("Comments") %>'>
                 <ItemTemplate>
                         <p class="info">

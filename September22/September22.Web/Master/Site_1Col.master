@@ -23,7 +23,7 @@
                 <!-- /Strip -->
                 <!-- Content -->
                 <div id="content">
-                    <div>
+                    <div class="article">
                         <asp:ContentPlaceHolder ID="MiddleColumnContent" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>

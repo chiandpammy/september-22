@@ -1,8 +1,8 @@
-﻿<%@ Page Title="Our Story" Language="C#" MasterPageFile="~/Master/Site_2Col.master" AutoEventWireup="true" CodeBehind="OurStory.aspx.cs" Inherits="September22.OurStory" %>
+﻿<%@ Page Title="Our Story" Language="C#" MasterPageFile="~/Master/Site_1Col.master" AutoEventWireup="true" CodeBehind="OurStory.aspx.cs" Inherits="September22.OurStory" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
-<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MiddleColumnContent">
     <h2>
         Pamela's Story...
     </h2>

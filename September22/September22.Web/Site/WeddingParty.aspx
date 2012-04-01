@@ -1,10 +1,10 @@
-﻿<%@ Page Title="Wedding Party" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WeddingParty.aspx.cs" Inherits="September22.WeddingParty" %>
+﻿<%@ Page Title="Wedding Party" Language="C#" MasterPageFile="~/Master/Site_2Col.master" AutoEventWireup="true" CodeBehind="WeddingParty.aspx.cs" Inherits="September22.WeddingParty" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="LeftColumnContent" runat="server">
 <h1>Meet our Wedding Party!</h1>
 
-<h3>My wonderful bridesmaids</h3>
+<h2><span>My wonderful bridesmaids</span></h2>
 
 <table border="0" cellpadding="2" cellspacing="0" width="100%">
 	<tbody>
@@ -55,37 +55,6 @@
 				<!--Meg and Sara were college roommates. They were partners in crime and probably would not have made it through college without each other!-->
                 </td>
 		</tr>
-	</tbody>
-</table>
-
-<h3>My awesome groomsmen</h3>
-
-<table border="0" cellpadding="2" cellspacing="0" width="100%">
-	<tbody>
-		<tr>
-			<td width="150">
-				<img align="left" alt="" src="http://static.weddingwire.com/static/wedding/5001_10000/9363/Image/iStock_000004318229XSmall.jpg" width="150" /></td>
-			<td valign="top">
-				<b>Sonny </b>- best man<%--<br /><br />
-				Sonny and Nick first met when they were on the same pee-wee football team, the Giants!&nbsp; They were only 7 years old at the time and they dreamed of becoming professional football players.&nbsp; Well that didn&rsquo;t work out for either of them, but they have remained best friends ever since!--%>
-                </td>
-		</tr>
-		<%--<tr>
-			<td style="text-align: left;" width="150">
-				<img alt="" src="http://static.weddingwire.com/static/wedding/5001_10000/9363/Image/iStock_000007559809XSmall-tall(1).jpg" width="150" /></td>
-			<td valign="top">
-				<b>Brian</b><br />
-				<br />
-				Brian, Nick, and Sonny thought of themselves as &quot;The Crew&quot; in high school.Brian was initiated into &quot;The Crew&quot; as a freshman and from then on, the guys were great friends and troublemakers.</td>
-		</tr>
-		<tr>
-			<td style="padding: 5px 0pt 0pt;" valign="top" width="150">
-				<img alt="" left="" src="http://static.weddingwire.com/static/wedding/5001_10000/9363/Image/iStock_000002995263XSmall.jpg" width="150" /></td>
-			<td valign="top">
-				<b>Sam</b><br />
-				<br />
-				As you can see from the photo, Sam was one of Nick&rsquo;s crazy fraternity brothers.&nbsp; Sam is always the life of the party - you will all get to see him in action at the reception! He and Nick became great friends in college and will remain great friends until Sam does something crazy!</td>
-		</tr>--%>
 	</tbody>
 </table>
 </asp:Content>

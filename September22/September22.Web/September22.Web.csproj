@@ -139,7 +139,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Error.aspx" />
-    <Content Include="WeddingParty.aspx" />
+    <Content Include="Site\WeddingParty.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -264,11 +264,11 @@
     <Compile Include="Site\Home2.aspx.designer.cs">
       <DependentUpon>Home2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WeddingParty.aspx.cs">
+    <Compile Include="Site\WeddingParty.aspx.cs">
       <DependentUpon>WeddingParty.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WeddingParty.aspx.designer.cs">
+    <Compile Include="Site\WeddingParty.aspx.designer.cs">
       <DependentUpon>WeddingParty.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

@@ -12,16 +12,38 @@
 };
 
 function setCurrentLavaLamp() {
-    var qrStr = window.location.search;
-    var spQrStr = qrStr.substring(1);
-    var arrQrStr = new Array();
-    var arr = spQrStr.split('&');
+    $('#lavalamp li').each(function () {
+        $(this).removeClass('current');
+    });
 
-    for (var i = 0; i < arr.length; i++) {
-        var queryvalue = arr[i].split('=');
-        var secId = queryvalue[1];
-        //alert("Name: " + queryvalue[0] + " Value: " + queryvalue[1]);
-        $
+    var url = window.location.href;
+    var lampPage = url.substring(url.indexOf("Site/") + 5);
+
+    switch (lampPage) {
+        case "OurStory.aspx":
+            $("#liOurStory").addClass('current');
+            break;
+        case "OurProposal.aspx":
+            $("#liOurProposal").addClass('current');
+            break;
+        case "OurPhotos.aspx":
+            $("#liOurPhotos").addClass('current');
+            break;
+        case "CeremonyAndReception.aspx":
+            $("#liCeremonyAndReception").addClass('current');
+            break;
+        case "WeddingParty.aspx":
+            $("#liWeddingParty").addClass('current');
+            break;
+        case "Map.aspx":
+            $("#liMap").addClass('current');
+            break;
+        case "Rsvp.aspx":
+            $("#liRsvp").addClass('current');
+            break;
+        default:
+            $("#liOurStory").addClass('current');
+            break;
     }
 };
 
