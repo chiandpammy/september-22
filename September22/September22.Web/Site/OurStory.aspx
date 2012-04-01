@@ -9,12 +9,28 @@
             <div class="step">
                 <h2><span>Pamela Says</span></h2>
                 <p>
-                    It was the summer of 2002, on June 10th, the first day of the second summer session.
-                    I was taking an extra computer science class to try to graduate on-time. Chi was
-                    just getting in another technical class under his belt, but I didn't know him then.
-                    I walked into the room and took a seat in the front row, oblivious to whomever was
-                    sitting in the rows behind me. At the end of class, I walked out in my new outfit with
-                    my heels and no umbrella... only to find it raining outside.
+                    I first met Chi in the summer of 2002, on June 10th, a Monday... the first day of 
+                    the second summer session. I was taking an extra computer science class to try to
+                    graduate on-time. I walked into the room and took a seat in the front row, oblivious
+                    to whomever was sitting in the rows behind me. At the end of class, I walked out
+                    with my new heels and no umbrella... only to find it raining outside. Of course.
+                </p>
+                <p>
+                    Well, tough. I had to get across campus for my next class. As I looked out of DCL, 
+                    there was a guy standing by the door, offering to share his umbrella with me. I 
+                    thought, "Wow, chivalry isn't dead after all." So we walked out together, huddled
+                    under his umbrella, and before long, we stopped at Everitt Lab, where his next class
+                    would be. I said goodbye and leapfrogged from one building to the next until I got
+                    to my next class.
+                </p>
+                <p>
+                    An informal study group started meeting in the union after classes ended, and I 
+                    saw Chi there most days. That first weekend after class started, though, I went out
+                    of town and didn't get back 'til late Sunday, and of course I hadn't started on my 
+                    homework. I did see Chi online, though, and so I IMed him asking if he'd help me.
+                    He got on Durai's bike and rode across campus to let me copy his homework.
+                </p>
+                <p>
                 </p>
             </div>
             <div class="step">
