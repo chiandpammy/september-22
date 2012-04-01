@@ -115,6 +115,7 @@
     <Content Include="App_Themes\Wedding\Images\footer.gif" />
     <Content Include="App_Themes\Wedding\Images\footer_1col.gif" />
     <Content Include="App_Themes\Wedding\Images\header.gif" />
+    <Content Include="App_Themes\Wedding\Images\header.png" />
     <Content Include="App_Themes\Wedding\Images\ico_archive.gif" />
     <Content Include="App_Themes\Wedding\Images\ico_archive2.gif" />
     <Content Include="App_Themes\Wedding\Images\ico_cat.gif" />
