@@ -99,11 +99,12 @@
     <Content Include="App_Themes\Blue\Images\tab_link_l.gif" />
     <Content Include="App_Themes\Blue\Images\tab_link_r.gif" />
     <Content Include="App_Themes\Blue\Images\tmp_photo.gif" />
+    <Content Include="Images\parallax_bg.jpg" />
     <Content Include="Site\CeremonyAndReception.aspx" />
     <Content Include="Images\background.png" />
     <Content Include="Images\background2.png" />
     <Content Include="Images\header.png" />
-    <Content Include="Images\parallax_bg.jpg" />
+    <Content Include="Images\parallax_bg_orig.jpg" />
     <Content Include="Images\parallax_building_1.png" />
     <Content Include="Images\parallax_building_2.png" />
     <Content Include="Images\parallax_errortext.png" />
