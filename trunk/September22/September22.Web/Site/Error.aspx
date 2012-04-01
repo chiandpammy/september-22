@@ -75,7 +75,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MiddleColumnContent" runat="server">
-    <h2><span>Error</span></h2>
+    <h2><span>Oops!</span></h2>
     <br />
     <br />
     <div style="position: relative; margin-left: -20px;" >
