@@ -49,10 +49,11 @@
         <!-- Main menu (tabs) -->
         <div id="menu">
             <ul id="lavalamp">
+                <li id="liHome" class="current"><a href="../Site/Home.aspx">Home</a></li>
                 <li id="liOurStory"><a href="../Site/OurStory.aspx">Our Story</a></li>
                 <li id="liOurProposal"><a href="../Site/OurProposal.aspx">Our Proposal</a></li>
-                <li id="liOurPhotos" class="current"><a href="../Site/OurPhotos.aspx">Our Photos</a></li>
-                <li id="liCeremonyAndReception"><a href="../Site/CeremonyAndReception.aspx">Ceremony and Reception</a></li>
+                <li id="liOurPhotos"><a href="../Site/OurPhotos.aspx">Our Photos</a></li>
+                <%--<li id="liCeremonyAndReception"><a href="../Site/CeremonyAndReception.aspx">Ceremony and Reception</a></li>--%>
                 <li id="liWeddingParty"><a href="../Site/WeddingParty.aspx">Wedding Party</a></li>
                 <li id="liMap"><a href="../Site/Map.aspx">Map of Events</a></li>
                 <li id="liRsvp"><a href="../Site/Rsvp.aspx">RSVP</a></li>

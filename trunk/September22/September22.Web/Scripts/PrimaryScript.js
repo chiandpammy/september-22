@@ -20,6 +20,9 @@ function setCurrentLavaLamp() {
     var lampPage = url.substring(url.indexOf("Site/") + 5);
 
     switch (lampPage) {
+        case "Home.aspx":
+            $("#liHome").addClass('current');
+            break;
         case "OurStory.aspx":
             $("#liOurStory").addClass('current');
             break;
@@ -42,7 +45,7 @@ function setCurrentLavaLamp() {
             $("#liRsvp").addClass('current');
             break;
         default:
-            $("#liOurStory").addClass('current');
+            $("#liHome").addClass('current');
             break;
     }
 };

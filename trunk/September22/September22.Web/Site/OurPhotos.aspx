@@ -3,5 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MiddleColumnContent" runat="server">
     <h2><span>Our Photos</span></h2>
-    one day....
+    <p>
+        one day....
+    </p>
 </asp:Content>

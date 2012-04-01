@@ -9,7 +9,7 @@
     <div id="wrapper">
         <div id="steps">
             <div class="step">
-                <h2><span>Pamela's Story...</span></h2>
+                <h2><span>Welcome</span></h2>
                 <p>
                     It was the summer of 2002, on June 10th, the first day of the second summer session.
                     I was taking an extra computer science class to try to graduate on-time. Chi was

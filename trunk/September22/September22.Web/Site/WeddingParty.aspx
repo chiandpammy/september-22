@@ -8,7 +8,7 @@
         <div class="step">
             <h2><span>My wonderful bridesmaids</span></h2>
 
-            <table border="0" cellpadding="2" cellspacing="0" width="100%">
+            <table border="0" cellpadding="2" cellspacing="0" width="470px">
 	            <tbody>
 		            <tr>
 			            <td width="150">
