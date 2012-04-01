@@ -48,6 +48,7 @@
                 {
                     content: "<a href=\"http://www.ucco.com\" target=\"_blank\"><b>University Club of Chicago</b><a>"
                         + "<br />76 East Monroe Street<br/>Chicago, IL 60603"
+                        + "<br />"
                         + "<br /><a href=\"http://maps.google.com/maps?saddr=&daddr=76%20East%20Monroe%20Street%20Chicago,%20IL%2060603\" target=\"_blank\">Directions To Here<a>"
                         + "&nbsp;&nbsp;&nbsp;&nbsp;"
                         + "<a href=\"http://maps.google.com/maps?saddr=76%20East%20Monroe%20Street%20Chicago,%20IL%2060603&daddr=\" target=\"_blank\">Directions From Here<a>"
@@ -69,7 +70,7 @@
 <asp:Content runat="server" ID="Content2" ContentPlaceHolderID="LeftColumnContent">
     <h2><span>Map</span></h2>
     <br />
-    <div id="map_canvas" style="width: 470px; height: 400px"></div>
+    <div id="map_canvas" style="width: 470px; height: 500px"></div>
     <br />
 </asp:Content>
 <asp:Content runat="Server" ID="Content3" ContentPlaceHolderID="RightColumnContent">

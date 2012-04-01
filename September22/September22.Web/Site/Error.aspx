@@ -77,7 +77,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MiddleColumnContent" runat="server">
     <h2><span>Oops!</span></h2>
     <br />
-    <br />
     <div style="position: relative; margin-left: -20px;" >
         <div id="parallax_field">
             <img alt="building" id="parallax_bg" src="../Images/parallax_bg.jpg" height="415" width="730" />
