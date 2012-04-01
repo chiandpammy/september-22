@@ -145,13 +145,13 @@ namespace September22.Common
         {
             List<Section> sections = new List<Section>()
             {
-                new Section() { sectionId = 1, sectionName="Our Story"},
-                new Section() { sectionId = 2, sectionName="Our Proposal"},
-                new Section() { sectionId = 3, sectionName="Our Photos"},
-                new Section() { sectionId = 4, sectionName="Ceremony and Reception"},
-                new Section() { sectionId = 5, sectionName="Wedding Party"},
-                new Section() { sectionId = 6, sectionName="Map of Events"},
-                new Section() { sectionId = 7, sectionName="RSVP"}
+                new Section() { sectionId = 0, sectionName="Our Story"},
+                new Section() { sectionId = 1, sectionName="Our Proposal"},
+                new Section() { sectionId = 2, sectionName="Our Photos"},
+                new Section() { sectionId = 3, sectionName="Ceremony and Reception"},
+                new Section() { sectionId = 4, sectionName="Wedding Party"},
+                new Section() { sectionId = 5, sectionName="Map of Events"},
+                new Section() { sectionId = 6, sectionName="RSVP"}
             };
 
             return sections.ToList();

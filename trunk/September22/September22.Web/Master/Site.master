@@ -48,18 +48,27 @@
         <!-- Main menu (tabs) -->
         <div id="menu">
             <ul id="lavalamp">
+                <li class="current"><a href="OurStory.aspx">Our Story</a></li>
+                <li class="current"><a href="OurProposal.aspx">Our Proposal</a></li>
+                <li class="current"><a href="OurPhotos.aspx">Our Photos</a></li>
+                <li class="current"><a href="CeremonyAndReception.aspx">Ceremony and Reception</a></li>
+                <li class="current"><a href="WeddingParty.aspx">Wedding Party</a></li>
+                <li class="current"><a href="Map.aspx">Map of Events</a></li>
+                <li class="current"><a href="Rsvp.aspx">RSVP</a></li>
                 <%--<li class="current"><a href="#">Home</a></li>--%>
+
                 <%--<li>
                     <asp:HyperLink ID="hlSection" runat="server" Text="Home" NavigateUrl="~/Site/Home.aspx"></asp:HyperLink>
                     <%--<a href="#">Home</a>
                 </li>--%>
-                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="srcMenu">
+                
+                <%--<asp:Repeater ID="rptMenu" runat="server" DataSourceID="srcMenu">
                     <ItemTemplate>
                         <li>
                             <asp:HyperLink ID="hlSection" runat="server" Text='<%# Eval("sectionName") %>' NavigateUrl='<%# "~/Site/Home.aspx?secID=" + Eval("sectionId") %>'></asp:HyperLink>
                         </li>
                     </ItemTemplate>
-                </asp:Repeater>
+                </asp:Repeater>--%>
             </ul>
         </div>
         <asp:ObjectDataSource ID="srcMenu" runat="server" SelectMethod="GetSections" TypeName="September22.Common.Class1">
