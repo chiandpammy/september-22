@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace September22.Site
+namespace September22
 {
     public partial class Error : September22.Common.PageBase
     {

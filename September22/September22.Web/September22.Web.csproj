@@ -243,11 +243,11 @@
       <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="Common\Utilities.cs" />
-    <Compile Include="Site\Copy of Home.aspx.cs">
+    <Compile Include="Site\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site\Copy of Home.aspx.designer.cs">
+    <Compile Include="Site\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site\Error.aspx.cs">

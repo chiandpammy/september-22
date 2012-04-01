@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace September22.Site {
+namespace September22 {
     
     
     public partial class Home2 {
