@@ -120,7 +120,7 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 
 /* Page (2 columns) */
 #page {width:770px; min-height:1px; background:#FFF url("./Images/bg_page.gif") 0 0 repeat-y; _height:1px;}
-#page-in {min-height:1px; padding:10px 0; background:url("./Images/bg_page_in.jpg") 0 0 no-repeat; _height:1px;}
+#page-in {min-height:1px; padding:10px 0px 0px 0px; background:url("./Images/bg_page_in.jpg") 0 0 no-repeat; _height:1px;}
 
     /* Page - Overrides  */
     .override #page {background:#FFF url("./Images/bg_page_1col.gif") 0 0 repeat-y;}
