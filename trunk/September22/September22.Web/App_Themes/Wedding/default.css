@@ -188,7 +188,7 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     #col ul li ul li a {display:inline; padding:0px 0px 0px 22px; background: transparent; text-decoration:none;}
 
 /* Footer */
-#footer {position:relative; clear:both; width:770px; height:60px; margin-bottom:40px; color:#6685CC; background:url("./Images/footer.png") 0 0 no-repeat;}
+#footer {position:relative; clear:both; width:770px; height:60px; margin-bottom:40px; color:#6685CC; background:url("./Images/footer.gif") 0 0 no-repeat;}
 #footer a {color:#6685CC;}
 #footer a:hover {color:#192666;}
 
