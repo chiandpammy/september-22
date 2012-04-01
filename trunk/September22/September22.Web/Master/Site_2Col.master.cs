@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Setpember22.Common;
+using September22.Common;
 
-namespace Setpember22.Master
+namespace September22.Master
 {
     public partial class Master_Site_2Col : System.Web.UI.MasterPage
     {

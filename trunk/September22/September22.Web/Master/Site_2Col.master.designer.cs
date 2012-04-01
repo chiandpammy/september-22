@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Setpember22.Master {
+namespace September22.Master {
     
     
     public partial class Master_Site_2Col {

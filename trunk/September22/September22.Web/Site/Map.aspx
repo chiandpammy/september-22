@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Map of Events" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
-    CodeBehind="Map.aspx.cs" Inherits="Setpember22.Map" %>
+    CodeBehind="Map.aspx.cs" Inherits="September22.Map" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false">
