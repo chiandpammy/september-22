@@ -10,6 +10,7 @@ namespace September22.Common
     /// </summary>
     public enum Themes
     {
+        Wedding,
         Blue,
         Red,
         Grey
