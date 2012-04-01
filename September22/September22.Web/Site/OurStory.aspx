@@ -31,6 +31,11 @@
                     He got on Durai's bike and rode across campus to let me copy his homework.
                 </p>
                 <p>
+                    After that, I started hanging out with him more during and after the study group
+                    sessions. We'd often go out to eat afterwards, sometimes with the group; other times,
+                    it would just be the two of us. We spent 5 hours talking in the Empire Chinese restaurant
+                    one day. We kept in touch over the break before fall session, and we started seeing
+                    each other soon after school started that fall.
                 </p>
             </div>
             <div class="step">
