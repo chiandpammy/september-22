@@ -125,6 +125,7 @@
     <Content Include="App_Themes\Wedding\Images\ico_rss.gif" />
     <Content Include="App_Themes\Wedding\Images\ico_top.gif" />
     <Content Include="App_Themes\Wedding\Images\ico_user.gif" />
+    <Content Include="App_Themes\Wedding\Images\just_engaged.png" />
     <Content Include="App_Themes\Wedding\Images\lava.gif" />
     <Content Include="App_Themes\Wedding\Images\Original\article_footer.jpg" />
     <Content Include="App_Themes\Wedding\Images\Original\content_article_bg.jpg" />
