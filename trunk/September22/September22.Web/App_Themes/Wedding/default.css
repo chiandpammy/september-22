@@ -208,7 +208,7 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     /* Footer - Overrides */
     .override #footer {background:url("./Images/footer_1col.gif") 0 0 no-repeat;}
     
-/* Menu*/
+/* Menu */
 #lavalamp {position: relative; overflow: hidden; margin:0 5px; padding:10px 0 10px 18px; background: #00447e;}
 
     #lavalamp  li {float: left; list-style: none;}

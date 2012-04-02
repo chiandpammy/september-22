@@ -81,7 +81,7 @@
                 <asp:LinkButton ID="LinkButton1" runat="server" UseSubmitBehavior="false" OnClientClick="return focus_uni_club()" >Ceremony</asp:LinkButton>
             </li>
                         <li>
-                <asp:LinkButton ID="LinkButton2" runat="server" UseSubmitBehavior="false" OnClientClick="return focus_uni_club()" >Ceremony</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton2" runat="server" UseSubmitBehavior="false" OnClientClick="return focus_uni_club()" >Reception</asp:LinkButton>
             </li>
         </ul>
     </div>
