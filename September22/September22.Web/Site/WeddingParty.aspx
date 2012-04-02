@@ -64,7 +64,7 @@
             </p>
         </div>
         <div class="step">
-            <h2><span>Men Not Afraid</span></h2>
+            <h2><span>Men who are not afraid to walk</span></h2>
             <p>We haven't found any!</p>
         </div>
     </div>
@@ -75,7 +75,7 @@
         <h3><span>The Wedding Party!</span></h3>
         <ul>
             <li><asp:HyperLink ID="hlBridesmaids" runat="server" Text="Women of Distinction" NavigateUrl="#"></asp:HyperLink></li>
-            <li><asp:HyperLink ID="hlGroomsmen" runat="server" Text="Men of Honor" NavigateUrl="#"></asp:HyperLink></li>
+            <li><asp:HyperLink ID="hlGroomsmen" runat="server" Text="Men not afraid" NavigateUrl="#"></asp:HyperLink></li>
         </ul>
     </div>
 </asp:Content>
