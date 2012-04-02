@@ -72,8 +72,25 @@
                     speak. Then, I gave Chi a big kiss before I was promptly directed to go choose my setting.
                 </p>
                 <p>
-                    
+                    After choosing my setting, we went on to Gibson's for dinner, having missed our reservation
+                    by hours. Soon afterwards, I was anxious to see my complete ring. My parents were coming in
+                    two weeks after our anniversary for my birthday celebration, and I wanted to show them my ring.
+                    Chi informed me, however, that it wouldn't arrive in time for their visit; so I was a little
+                    disappointed.
                 </p>
+                <p>
+                    When my birthday rolled around, we had a great time playing Whirlyball, followed by a fabulous
+                    dinner party at Sunda. When the birthday cake came out, there was an extra surprise that came
+                    with it: a sparkly golden frog. Chi explained that it was a Korean birthday tradition. He told
+                    me to pick up the frog; so I picked up the frog. He said to kiss the frog; so I kissed the frog.
+                    He told me to open the frog, and my jaw dropped. Inside the frog's mouth was my ring! When I
+                    looked at Chi, he was down on one knee, and he was asking me to marry him all over again in
+                    in front of my family and friends.
+                </p>
+                
+                <div style="display: block; margin-left: auto; margin-right: auto">
+                    <img alt="Just Engaged!" title="Just Engaged!" src="../App_Themes/Wedding/Images/just_engaged.png" />
+                </div>
             </div>
         </div>
     </div>
