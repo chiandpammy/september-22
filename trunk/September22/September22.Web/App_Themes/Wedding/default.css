@@ -141,7 +141,7 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 #content {float:left; width:510px; _width:550px; margin:0; padding:0 20px 0 20px;}
 
     /* Content - article */
-    #content .article {clear:both; margin:0; padding:20px; background:url("./Images/content_article_bg.jpg") 0 0 no-repeat;}
+    #content .article {clear:both; margin:0; padding:20px; background:url("./Images/content_article_bg.png") 0 0 no-repeat;}
     #content .article h2 {margin:0 -20px; padding:10px; background:#DEE5FD url("./Images/content_title_bg.gif") 0 0 repeat-y; color:#192666;}
     #content .article h2 span {background:url("./Images/ico_list.gif") 0 50% no-repeat; padding-left:25px;}
     #content .article p {text-align:justify;}
