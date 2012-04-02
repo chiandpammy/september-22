@@ -84,16 +84,16 @@
     <br />
     <div id="parallax_shell">
         <div id="parallax_field">
-            <img alt="building" id="parallax_bg" src="../App_Themes/Wedding/Images/parallax_bg.jpg" height="415" width="730" />
+            <img alt="building" id="parallax_bg" src="../App_Themes/Wedding/Images/parallax_bg.jpg" />
         </div>
         <div id="parallax_illustration">
-            <img alt="404 | “This is not the web page you are looking for”" id="parallax_error_text" src="../App_Themes/Wedding/Images/parallax_errortext.png" height="249" width="271" />
-            <img alt="Octobi Wan Catnobi" id="parallax_octocat" src="../App_Themes/Wedding/Images/parallax_octocat.png" height="230" width="188" />
-            <img alt="land speeder" id="parallax_speeder" src="../App_Themes/Wedding/Images/parallax_speeder.png" height="156" width="440" />
-            <img alt="Octobi Wan Catnobi's shadow" id="parallax_octocatshadow" src="../App_Themes/Wedding/Images/parallax_octocatshadow.png" height="49" width="166" />
-            <img alt="land speeder's shadow" id="parallax_speedershadow" src="../App_Themes/Wedding/Images/parallax_speedershadow.png" height="75" width="430" />
-            <img alt="building" id="parallax_building_1" src="../App_Themes/Wedding/Images/parallax_building_1.png" height="123" width="304" />
-            <img alt="building" id="parallax_building_2" src="../App_Themes/Wedding/Images/parallax_building_2.png" height="50" width="116" />
+            <img alt="404 | “This is not the web page you are looking for”" id="parallax_error_text" src="../App_Themes/Wedding/Images/parallax_errortext.png" />
+            <img alt="Octobi Wan Catnobi" id="parallax_octocat" src="../App_Themes/Wedding/Images/parallax_octocat.png" />
+            <img alt="land speeder" id="parallax_speeder" src="../App_Themes/Wedding/Images/parallax_speeder.png" />
+            <img alt="Octobi Wan Catnobi's shadow" id="parallax_octocatshadow" src="../App_Themes/Wedding/Images/parallax_octocatshadow.png" />
+            <img alt="land speeder's shadow" id="parallax_speedershadow" src="../App_Themes/Wedding/Images/parallax_speedershadow.png" />
+            <img alt="building" id="parallax_building_1" src="../App_Themes/Wedding/Images/parallax_building_1.png" />
+            <img alt="building" id="parallax_building_2" src="../App_Themes/Wedding/Images/parallax_building_2.png" />
         </div>
     </div>
 </asp:Content>
