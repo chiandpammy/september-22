@@ -4,8 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftColumnContent" runat="server">
 <div id="wrapper">
-    <div id="steps">
-        <div class="step">
+        <div id="steps">
+            <div class="step">
             <h2><span>Women of Distinction</span></h2>
             <p>
                 <table border="0" cellpadding="2" cellspacing="0" width="470px">
