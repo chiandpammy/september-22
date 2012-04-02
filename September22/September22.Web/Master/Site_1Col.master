@@ -47,7 +47,9 @@
                 <asp:HyperLink ID="hlTheme" runat="server" />
             </p>
             <p id="copyright">
-                © 2012 <a href="">Pammy</a> |
+                © 2012
+                <asp:HyperLink ID="HyperLink6" runat="server" Text="Pammy" NavigateUrl="~/Site/Error.aspx" ToolTip="and Chi" />
+                |
                 <asp:HyperLink ID="HyperLink2" runat="server" Text="Contact" NavigateUrl="" />
                 |
                 <asp:HyperLink ID="HyperLink3" runat="server" Text="SiteMap" NavigateUrl="" />
