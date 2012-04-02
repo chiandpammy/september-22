@@ -47,6 +47,31 @@
             <div class="step">
                 <h2><span>Our Proposal</span></h2>
                 <p>
+                    We got engaged on our ninth anniversary on September 22, 2011. It started out as 
+                    most of our anniversary date nights do. Chi picks out the restaurant and makes the
+                    reservation, and all I have to do is make myself pretty for the evening. This particular
+                    evening, there were just a few hints that something was different about that night.
+                </p>
+                <p>
+                    First, there was the mysterious appearance of a large white envelope that Chi almost
+                    dropped on the way to the car... an envelope that Chi refused to let me see on the way
+                    to the restaurant. Then, there was the phone call Chi made from the car when we hit 
+                    traffic on the highway, apologizing for us being late. Chi <b>never</b> calls a restaurant
+                    to apologize. He might tell them we're running late and ask them to change our reservation,
+                    but he wouldn't apologize for being late. It just goes against everything he believes in. ;)
+                </p>
+                <p>
+                    So we pulled up to what I had assumed was the restaurant parking lot, when Chi asked
+                    me "Do you know where we are, honey?" I then looked around, and I saw a convenience store,
+                    a dry cleaners, and a jewelry store. Chi told me we were going to the jewelry store,
+                    and I got excited because I was going to get something sparkly. =) When we stepped inside,
+                    we were the only ones in the store, and the owner and a salesperson were looking at us
+                    expectantly. Chi handed the owner the mysterious white envelope, from which the owner then
+                    retrieved and started examining my diamond!!! I was shocked speechless. I grabbed Chi and
+                    looked from him to the owner and back again, just giggling and squealing for joy, unable to
+                    speak. Then, I gave Chi a big kiss before I was promptly directed to go choose my setting.
+                </p>
+                <p>
                     
                 </p>
             </div>
