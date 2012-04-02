@@ -131,6 +131,14 @@
     <Content Include="App_Themes\Wedding\Images\Original\content_article_bg.jpg" />
     <Content Include="App_Themes\Wedding\Images\Original\footer.jpg" />
     <Content Include="App_Themes\Wedding\Images\Original\lava.gif" />
+    <Content Include="App_Themes\Wedding\Images\parallax_bg.jpg" />
+    <Content Include="App_Themes\Wedding\Images\parallax_building_1.png" />
+    <Content Include="App_Themes\Wedding\Images\parallax_building_2.png" />
+    <Content Include="App_Themes\Wedding\Images\parallax_errortext.png" />
+    <Content Include="App_Themes\Wedding\Images\parallax_octocat.png" />
+    <Content Include="App_Themes\Wedding\Images\parallax_octocatshadow.png" />
+    <Content Include="App_Themes\Wedding\Images\parallax_speeder.png" />
+    <Content Include="App_Themes\Wedding\Images\parallax_speedershadow.png" />
     <Content Include="App_Themes\Wedding\Images\search_input.gif" />
     <Content Include="App_Themes\Wedding\Images\search_submit.gif" />
     <Content Include="App_Themes\Wedding\Images\tab_active_l.gif" />
@@ -157,7 +165,6 @@
     <Content Include="Site\Error.aspx" />
     <Content Include="Site\Home.aspx" />
     <Content Include="Site\Home2.aspx" />
-    <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
@@ -317,6 +324,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Themes\Wedding\default.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Styles\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
