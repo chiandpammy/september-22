@@ -11,7 +11,19 @@ namespace September22
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                //check master for label
+                if (Master.Master != null && Master.Master.FindControl("MainContent") != null)
+                {
+                    Label SiteMapLabel = (Label)Master.Master.FindControl("MainContent").FindControl("SiteMapLabel");
+                    //update text
+                    if (SiteMapLabel != null)
+                    {
+                        SiteMapLabel.Text = "You are lost!";
+                    }
+                }
+            }
         }
     }
 }
