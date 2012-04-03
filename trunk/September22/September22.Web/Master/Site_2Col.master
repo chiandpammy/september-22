@@ -19,9 +19,8 @@
                 <hr class="noscreen" />
                 <!-- Breadcrumbs -->
                 <p id="breadcrumbs">
-                    You are here:
-                    <asp:SiteMapPath ID="siteMap" runat="server">
-                    </asp:SiteMapPath>
+                    <asp:Label ID="SiteMapLabel" runat="server" Text="You are here:"></asp:Label>
+                    <asp:SiteMapPath ID="siteMap" runat="server"></asp:SiteMapPath>
             </div>
             <!-- /Strip -->
 
