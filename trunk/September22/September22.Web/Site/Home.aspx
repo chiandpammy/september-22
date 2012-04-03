@@ -1,10 +1,10 @@
-﻿<%@ Page Title="Home" Language="C#" MasterPageFile="~/Master/Site_2Col.Master" AutoEventWireup="true"
+﻿<%@ Page Title="Home" Language="C#" MasterPageFile="~/Master/Site_1Col.Master" AutoEventWireup="true"
     Inherits="September22.Home" EnableViewState="false" EnableEventValidation="false"
     CodeBehind="Home.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="LeftColumnContent" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MiddleColumnContent" runat="Server">
     <h2><span>Hello, friends and family!</span></h2>
 
     <p>
@@ -28,6 +28,4 @@
         Looking forward to seeing you on September 22,<br />
         Chi and Pammy
     </p>
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="RightColumnContent" runat="Server">
 </asp:Content>
