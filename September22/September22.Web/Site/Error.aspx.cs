@@ -17,10 +17,11 @@ namespace September22
                 if (Master.Master != null && Master.Master.FindControl("MainContent") != null)
                 {
                     Label SiteMapLabel = (Label)Master.Master.FindControl("MainContent").FindControl("SiteMapLabel");
+                    
                     //update text
                     if (SiteMapLabel != null)
                     {
-                        SiteMapLabel.Text = "You are lost!";
+                        SiteMapLabel.Text = "You must be lost!";
                     }
                 }
             }
