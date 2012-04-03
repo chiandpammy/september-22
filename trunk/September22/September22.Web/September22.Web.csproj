@@ -164,7 +164,6 @@
     <Content Include="Scripts\jquery-sliding.form.js" />
     <Content Include="Site\Error.aspx" />
     <Content Include="Site\Home.aspx" />
-    <Content Include="Site\Home2.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
@@ -258,13 +257,6 @@
     </Compile>
     <Compile Include="Site\Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Site\Home2.aspx.cs">
-      <DependentUpon>Home2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site\Home2.aspx.designer.cs">
-      <DependentUpon>Home2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site\WeddingParty.aspx.cs">
       <DependentUpon>WeddingParty.aspx</DependentUpon>
