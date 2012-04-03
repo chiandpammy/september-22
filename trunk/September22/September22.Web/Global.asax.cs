@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 
@@ -9,11 +10,21 @@ namespace September22
 {
     public class Global : System.Web.HttpApplication
     {
-
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
+            RegisterRoutes(RouteTable.Routes);
+        }
 
+        private void RegisterRoutes(RouteCollection routeCollection)
+        {
+            routeCollection.MapPageRoute(string.Empty, "Error/", "~/Site/Error.aspx");
+            routeCollection.MapPageRoute(string.Empty, "Home/", "~/Site/Home.aspx");
+            routeCollection.MapPageRoute(string.Empty, "Map/", "~/Site/Map.aspx");
+            routeCollection.MapPageRoute(string.Empty, "Photo/", "~/Site/OurPhotos.aspx");
+            routeCollection.MapPageRoute(string.Empty, "Story/", "~/Site/OurStory.aspx");
+            routeCollection.MapPageRoute(string.Empty, "RSVP/", "~/Site/Rsvp.aspx");
+            routeCollection.MapPageRoute(string.Empty, "Party/", "~/Site/WeddingParty.aspx");
         }
 
         void Application_End(object sender, EventArgs e)
