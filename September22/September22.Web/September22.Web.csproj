@@ -183,7 +183,7 @@
     <Content Include="Scripts\body_bg.png" />
     <Content Include="Scripts\jquery-lavalamp-min.js" />
     <Content Include="Scripts\jquery-plax.js" />
-    <Content Include="Scripts\PrimaryScript.js" />
+    <Content Include="Scripts\initialization.js" />
     <Content Include="Scripts\jquery-sliding.form.js" />
     <Content Include="Site\Error.aspx" />
     <Content Include="Site\Home.aspx" />
