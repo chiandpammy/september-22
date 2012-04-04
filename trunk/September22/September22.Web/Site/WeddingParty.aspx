@@ -56,7 +56,7 @@
 
                             <b>Nana</b><br />
                             <br />
-                            <!--Meg and Sara were college roommates. They were partners in crime and probably would not have made it through college without each other!-->
+                            Nana is actually the blue creature in the middle.
                             </td>
                     </tr>
                 </tbody>
