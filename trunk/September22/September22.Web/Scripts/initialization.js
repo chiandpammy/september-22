@@ -1,4 +1,4 @@
-﻿function initMenu() {
+﻿function initializeMenu() {
     if ($(".toggle_list") != null) {
         $(".toggle_list").hide();
 
@@ -82,7 +82,7 @@ function initializeAdGallery() {
 };
 
 $(document).ready(function () {
-    initMenu();
+    initializeMenu();
     setCurrentLavaLamp();
     initializeParallax();
     initializeAdGallery();
