@@ -70,7 +70,7 @@
 <asp:Content runat="server" ID="Content2" ContentPlaceHolderID="LeftColumnContent">
     <h2><span>Map</span></h2>
     <br />
-    <div id="map_canvas" style="height:400px; width:470px;"></div>
+    <div id="map_canvas" style="height:470px; width:470px;"></div>
     <br />
 </asp:Content>
 <asp:Content runat="Server" ID="Content3" ContentPlaceHolderID="RightColumnContent">

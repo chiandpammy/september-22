@@ -21,7 +21,7 @@
         }
         #parallax_field #parallax_bg {
             position: absolute;
-            top: 0px;
+            top: -20px;
             left: 0px;
             width: 110%;
             height: 425px;

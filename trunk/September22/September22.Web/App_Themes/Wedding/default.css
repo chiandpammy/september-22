@@ -123,7 +123,7 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 #page-in {min-height:1px; padding:10px 0px 0px 0px; background:url("./Images/bg_page_in.gif") 0 0 no-repeat; _height:1px;}
 
     /* Page - Overrides  */
-    .override #page {background:transparent url("./Images/bg_page_1col.gif") 0 0 repeat-y;}
+    .override #page {width:770px; background:transparent url("./Images/bg_page_1col.gif") 0 0 repeat-y;}
     
 /* Strip */
 #strip {position:relative; clear:both; padding:3px 20px 10px 20px; color:#6182D1;}
@@ -167,7 +167,7 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 
     /* Content - Overrides  */
     .override #content {width:730px;}
-    .override #content .article {background:url("./Images/content_article_bg_1col.jpg") 0 0 no-repeat;}
+    .override #content .article {background:url("./Images/content_article_bg_1col.png") 0 0 no-repeat;}
     .override #content .article h2 {background:url("./Images/content_title_bg_1col.gif") 0 0 repeat-y;}
     
     /*.slidingformoverride #content .article h2 {margin: 0px; padding:20 0px;}*/
