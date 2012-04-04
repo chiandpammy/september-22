@@ -38,34 +38,6 @@ function setCurrentLavaLamp() {
     else {
         $("#liHome").addClass('current');
     }
-
-//    var lampPage = url.substring(url.indexOf("/Site") + 5);
-//    switch (lampPage) {
-//        case "Home.aspx":
-//            $("#liHome").addClass('current');
-//            break;
-//        case "OurStory.aspx":
-//            $("#liOurStory").addClass('current');
-//            break;
-//        case "OurPhotos.aspx":
-//            $("#liOurPhotos").addClass('current');
-//            break;
-//        case "CeremonyAndReception.aspx":
-//            $("#liCeremonyAndReception").addClass('current');
-//            break;
-//        case "WeddingParty.aspx":
-//            $("#liWeddingParty").addClass('current');
-//            break;
-//        case "Map.aspx":
-//            $("#liMap").addClass('current');
-//            break;
-//        case "Rsvp.aspx":
-//            $("#liRsvp").addClass('current');
-//            break;
-//        default:
-//            $("#liHome").addClass('current');
-//            break;
-//    }
 };
 
 $(document).ready(initMenu);
@@ -91,4 +63,34 @@ $(document).ready(function () {
     $('#parallax_building_2').plaxify({ "xRange": 40, "yRange": 20, "invert": true })
 
     $.plax.enable({ "activityTarget": $('#parallax_shell') })
-})
+/*})
+
+$(document).ready(function () {*/
+    $('img.image1').data('ad-desc', 'Whoa! This description is set through elm.data("ad-desc") instead of using the longdesc attribute.<br>And it contains <strong>H</strong>ow <strong>T</strong>o <strong>M</strong>eet <strong>L</strong>adies... <em>What?</em> That aint what HTML stands for? Man...');
+    $('img.image1').data('ad-title', 'Title through $.data');
+    /*$('img.image4').data('ad-desc', 'This image is wider than the wrapper, so it has been scaled down');
+    $('img.image5').data('ad-desc', 'This image is higher than the wrapper, so it has been scaled down');*/
+    var galleries = $('.ad-gallery').adGallery();
+    $('#switch-effect').change(
+      function() {
+        galleries[0].settings.effect = $(this).val();
+        return false;
+      }
+    );
+    $('#toggle-slideshow').click(
+      function() {
+        galleries[0].slideshow.toggle();
+        return false;
+      }
+    );
+    $('#toggle-description').click(
+      function() {
+        if(!galleries[0].settings.description_wrapper) {
+          galleries[0].settings.description_wrapper = $('#descriptions');
+        } else {
+          galleries[0].settings.description_wrapper = false;
+        }
+        return false;
+      }
+    );
+  });
