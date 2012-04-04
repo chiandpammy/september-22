@@ -171,6 +171,7 @@
     <Content Include="Scripts\ad_scroll_back.png" />
     <Content Include="Scripts\ad_scroll_forward.png" />
     <Content Include="Scripts\jquery.ad-gallery.js" />
+    <Content Include="Scripts\jquery.easing.1.3.js" />
     <Content Include="Scripts\loader.gif" />
     <Content Include="Scripts\opa75.png" />
     <Content Include="September22.Web.Publish.xml" />
@@ -180,7 +181,6 @@
     <Content Include="Site\OurStory.aspx" />
     <Content Include="Site\Rsvp.aspx" />
     <Content Include="Scripts\body_bg.png" />
-    <Content Include="Scripts\jquery-easing-min.js" />
     <Content Include="Scripts\jquery-lavalamp-min.js" />
     <Content Include="Scripts\jquery-plax.js" />
     <Content Include="Scripts\PrimaryScript.js" />
