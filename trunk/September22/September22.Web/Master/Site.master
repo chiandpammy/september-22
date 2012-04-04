@@ -18,7 +18,6 @@
             <asp:ScriptReference Path="~/Scripts/jquery-sliding.form.js" />
             <asp:ScriptReference Path="~/Scripts/jquery-plax.js" />
             <asp:ScriptReference Path="~/Scripts/jquery.ad-gallery.js" />
-            <asp:ScriptReference Path="~/Scripts/jquery.ad-gallery.pack.js" />
             <asp:ScriptReference Path="~/Scripts/PrimaryScript.js" />
         </Scripts>
     </asp:ScriptManager>

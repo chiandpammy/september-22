@@ -171,7 +171,6 @@
     <Content Include="Scripts\ad_scroll_back.png" />
     <Content Include="Scripts\ad_scroll_forward.png" />
     <Content Include="Scripts\jquery.ad-gallery.js" />
-    <Content Include="Scripts\jquery.ad-gallery.pack.js" />
     <Content Include="Scripts\loader.gif" />
     <Content Include="Scripts\opa75.png" />
     <Content Include="September22.Web.Publish.xml" />
