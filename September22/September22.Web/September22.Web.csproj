@@ -109,7 +109,7 @@
     <Content Include="App_Themes\Wedding\Images\col_title_bg.gif" />
     <Content Include="App_Themes\Wedding\Images\col_top.gif" />
     <Content Include="App_Themes\Wedding\Images\content_article_bg.png" />
-    <Content Include="App_Themes\Wedding\Images\content_article_bg_1col.jpg" />
+    <Content Include="App_Themes\Wedding\Images\content_article_bg_1col.png" />
     <Content Include="App_Themes\Wedding\Images\content_comments_bg.jpg" />
     <Content Include="App_Themes\Wedding\Images\content_title_bg.gif" />
     <Content Include="App_Themes\Wedding\Images\content_title_bg_1col.gif" />
