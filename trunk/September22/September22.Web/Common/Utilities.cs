@@ -14,9 +14,6 @@ namespace September22.Common
 
         public Utilities()
         {
-            //
-            // TODO: Add constructor logic here
-            //
         }
 
         /// <summary>

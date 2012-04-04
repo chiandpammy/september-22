@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="Our Story" Language="C#" MasterPageFile="~/Master/Site_2Col.Master" AutoEventWireup="true" CodeBehind="OurStory.aspx.cs" Inherits="September22.OurStory" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="../App_Themes/Wedding/jquery-sliding.form.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftColumnContent" runat="Server">
     <div id="wrapper">
@@ -41,7 +40,7 @@
             <div class="step">
                 <h2><span>Chi Says</span></h2>
                 <p>
-                    Hi
+                    He's taking the 5th!
                 </p>
             </div>
             <div class="step">

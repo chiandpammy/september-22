@@ -13,9 +13,6 @@ namespace September22.Common
     {
         public PageBase()
         {
-            //
-            // TODO: Add constructor logic here
-            //
         }
 
         protected override void OnPreInit(EventArgs e)
