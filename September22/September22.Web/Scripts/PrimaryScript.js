@@ -7,8 +7,6 @@
             $(this).next('.toggle_list').slideToggle("Slow");
         });
     }
-
-    setCurrentLavaLamp();
 };
 
 function setCurrentLavaLamp() {
@@ -40,19 +38,7 @@ function setCurrentLavaLamp() {
     }
 };
 
-$(document).ready(initMenu);
-
-$(function () {
-    $("#lavalamp").lavaLamp({
-        fx: "easeOutBack",
-        speed: 600,
-        click: function (event, menuItem) {
-            return true;
-        }
-    });
-});
-
-$(document).ready(function () {
+function initializeParallax() {
     $('#parallax_bg').plaxify({ "xRange": 0, "yRange": 20, "invert": true })
     $('#parallax_error_text').plaxify({ "xRange": 20, "yRange": 10 })
     $('#parallax_octocat').plaxify({ "xRange": 10, "yRange": 10 })
@@ -63,9 +49,9 @@ $(document).ready(function () {
     $('#parallax_building_2').plaxify({ "xRange": 40, "yRange": 20, "invert": true })
 
     $.plax.enable({ "activityTarget": $('#parallax_shell') })
-/*})
+};
 
-$(document).ready(function () {*/
+function initializeAdGallery() {
     $('img.image1').data('ad-desc', 'Whoa! This description is set through elm.data("ad-desc") instead of using the longdesc attribute.<br>And it contains <strong>H</strong>ow <strong>T</strong>o <strong>M</strong>eet <strong>L</strong>adies... <em>What?</em> That aint what HTML stands for? Man...');
     $('img.image1').data('ad-title', 'Title through $.data');
     /*$('img.image4').data('ad-desc', 'This image is wider than the wrapper, so it has been scaled down');
@@ -93,4 +79,21 @@ $(document).ready(function () {*/
         return false;
       }
     );
-  });
+};
+
+$(document).ready(function () {
+    initMenu();
+    setCurrentLavaLamp();
+    initializeParallax();
+    initializeAdGallery();
+});
+
+$(function () {
+    $("#lavalamp").lavaLamp({
+        fx: "easeOutBack",
+        speed: 600,
+        click: function (event, menuItem) {
+            return true;
+        }
+    });
+});
