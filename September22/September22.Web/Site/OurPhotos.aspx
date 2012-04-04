@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Our Photos" Language="C#" MasterPageFile="~/Master/Site_2Col.master" AutoEventWireup="true" CodeBehind="OurPhotos.aspx.cs" Inherits="September22.OurPhotos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 <style type="text/css">
-  * {
+  <%--* {
     font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Arial, sans-serif;
     color: #333;
     line-height: 140%;
@@ -24,7 +24,7 @@
     margin-top: 1.2em;
     margin-bottom: 0;
     padding: 0;
-  }
+  }--%>
   .example {
     border: 1px solid #CCC;
     background: #f2f2f2;
@@ -67,9 +67,9 @@
   </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftColumnContent" runat="server">
-<%--    <div id="wrapper">
+    <div id="wrapper">
         <div id="steps">
-            <div class="step">--%>
+            <div class="step">
                 <h2><span>Through the Years</span></h2>
                 <p>
                     <%--<div class="ad-gallery">
@@ -192,7 +192,7 @@
     <a href="#" id="toggle-description">Toggle having description outside of image</a>
     </p>
                 </p>
-            <%--</div>
+            </div>
             <div class="step">
                 <h2><span>Ireland</span></h2>
                 <p>
@@ -206,7 +206,7 @@
                 </p>
             </div>
         </div>
-    </div>--%>
+    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="RightColumnContent" runat="server">
     <div id="navigation">
