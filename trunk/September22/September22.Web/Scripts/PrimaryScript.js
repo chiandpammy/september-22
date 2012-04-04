@@ -44,7 +44,7 @@ $(document).ready(initMenu);
 
 $(function () {
     $("#lavalamp").lavaLamp({
-        fx: "backout",
+        fx: "easeOutBack",
         speed: 600,
         click: function (event, menuItem) {
             return true;

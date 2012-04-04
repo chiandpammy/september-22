@@ -13,7 +13,7 @@
         <Scripts>
             <asp:ScriptReference Path="~/Scripts/jquery-1.4.1.js" />
             <asp:ScriptReference Path="~/Scripts/jquery-1.4.1-vsdoc.js" />
-            <asp:ScriptReference Path="~/Scripts/jquery-easing-min.js" />
+            <asp:ScriptReference Path="~/Scripts/jquery.easing.1.3.js" />
             <asp:ScriptReference Path="~/Scripts/jquery-lavalamp-min.js" />
             <asp:ScriptReference Path="~/Scripts/jquery-sliding.form.js" />
             <asp:ScriptReference Path="~/Scripts/jquery-plax.js" />
