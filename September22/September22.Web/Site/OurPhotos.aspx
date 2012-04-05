@@ -103,94 +103,39 @@
         <div class="ad-thumbs">
           <ul class="ad-thumb-list">
             <li>
-                              <a href="../Photos/Anniversaries/2003 - 1st Anniversary - 1 of 2.jpg">
-                                <img src="../Photos/Anniversaries/Thumbs/2003 - 1st Anniversary - 1 of 2 - thumb.jpg" title="2003 - 1st Anniversary - 1 of 2" alt="2003 - 1st Anniversary - 1 of 2" class="image1" />
-                              </a>
-                            </li>
-                            <li>
-                              <a href="../Photos/Anniversaries/2003 - 1st Anniversary - 2 of 2.jpg">
-                                <img src="../Photos/Anniversaries/Thumbs/2003 - 1st Anniversary - 2 of 2 - thumb.jpg" title="2003 - 1st Anniversary - 2 of 2" alt="2003 - 1st Anniversary - 2 of 2" class="image2" />
-                              </a>
-                            </li>
-            <%--<li>
-              <a href="images/11.jpg">
-                <img src="images/thumbs/t11.jpg" title="A title for 11.jpg" longdesc="http://coffeescripter.com" alt="This is a nice, and incredibly descriptive, description of the image 11.jpg" class="image2">
-              </a>
+                <a href="../Photos/Anniversaries/2003 - 1st Anniversary - 1 of 2.jpg">
+                <img src="../Photos/Anniversaries/Thumbs/2003 - 1st Anniversary - 1 of 2 - thumb.jpg" class="image1" />
+                </a>
             </li>
             <li>
-              <a href="images/12.jpg">
-                <img src="images/thumbs/t12.jpg" title="A title for 12.jpg" alt="This is a nice, and incredibly descriptive, description of the image 12.jpg" class="image3">
-              </a>
+                <a href="../Photos/Anniversaries/2003 - 1st Anniversary - 2 of 2.jpg">
+                <img src="../Photos/Anniversaries/Thumbs/2003 - 1st Anniversary - 2 of 2 - thumb.jpg" class="image2" />
+                </a>
             </li>
             <li>
-              <a href="images/13.jpg">
-                <img src="images/thumbs/t13.jpg" title="A title for 13.jpg" alt="This is a nice, and incredibly descriptive, description of the image 13.jpg" class="image4">
-              </a>
+                <a href="../Photos/Anniversaries/2004 - 2nd Anniversary - 1 of 2.jpg">
+                <img src="../Photos/Anniversaries/Thumbs/2004 - 2nd Anniversary - 1 of 2 - thumb.jpg" class="image1" />
+                </a>
             </li>
             <li>
-              <a href="images/14.jpg">
-                <img src="images/thumbs/t14.jpg" title="A title for 14.jpg" alt="This is a nice, and incredibly descriptive, description of the image 14.jpg" class="image5">
-              </a>
+                <a href="../Photos/Anniversaries/2004 - 2nd Anniversary - 2 of 2.jpg">
+                <img src="../Photos/Anniversaries/Thumbs/2004 - 2nd Anniversary - 2 of 2 - thumb.jpg" class="image2" />
+                </a>
             </li>
             <li>
-              <a href="images/2.jpg">
-                <img src="images/thumbs/t2.jpg" title="A title for 2.jpg" alt="This is a nice, and incredibly descriptive, description of the image 2.jpg" class="image6">
-              </a>
+                <a href="../Photos/Anniversaries/2005 - 3rd Anniversary - 1 of 4.jpg">
+                <img src="../Photos/Anniversaries/Thumbs/2005 - 3rd Anniversary - 1 of 4 - thumb.jpg" class="image1" />
+                </a>
             </li>
             <li>
-              <a href="images/3.jpg">
-                <img src="images/thumbs/t3.jpg" title="A title for 3.jpg" alt="This is a nice, and incredibly descriptive, description of the image 3.jpg" class="image7">
-              </a>
+                <a href="../Photos/Anniversaries/2005 - 3rd Anniversary - 2 of 4.jpg">
+                <img src="../Photos/Anniversaries/Thumbs/2005 - 3rd Anniversary - 2 of 4 - thumb.jpg" class="image2" />
+                </a>
             </li>
-            <li>
-              <a href="images/4.jpg">
-                <img src="images/thumbs/t4.jpg" title="A title for 4.jpg" alt="This is a nice, and incredibly descriptive, description of the image 4.jpg" class="image8">
-              </a>
-            </li>
-            <li>
-              <a href="images/5.jpg">
-                <img src="images/thumbs/t5.jpg" title="A title for 5.jpg" alt="This is a nice, and incredibly descriptive, description of the image 5.jpg" class="image9">
-              </a>
-            </li>
-            <li>
-              <a href="images/6.jpg">
-                <img src="images/thumbs/t6.jpg" title="A title for 6.jpg" alt="This is a nice, and incredibly descriptive, description of the image 6.jpg" class="image10">
-              </a>
-            </li>
-            <li>
-              <a href="images/7.jpg">
-                <img src="images/thumbs/t7.jpg" title="A title for 7.jpg" alt="This is a nice, and incredibly descriptive, description of the image 7.jpg" class="image11">
-              </a>
-            </li>
-            <li>
-              <a href="images/8.jpg">
-                <img src="images/thumbs/t8.jpg" title="A title for 8.jpg" alt="This is a nice, and incredibly descriptive, description of the image 8.jpg" class="image12">
-              </a>
-            </li>
-            <li>
-              <a href="images/9.jpg">
-                <img src="images/thumbs/t9.jpg" title="A title for 9.jpg" alt="This is a nice, and incredibly descriptive, description of the image 9.jpg" class="image13">
-              </a>
-            </li>--%>
           </ul>
         </div>
       </div>
     </div>
-<%--
-    <div id="descriptions">
-
-    </div>
-    <p>Examples of how you can alter the behaviour on the fly;
-    Effect: <select id="switch-effect">
-      <option value="slide-hori">Slide horizontal</option>
-      <option value="slide-vert">Slide vertical</option>
-      <option value="resize">Shrink/grow</option>
-      <option value="fade">Fade</option>
-      <option value="">None</option>
-    </select><br>
-    <a href="#" id="toggle-slideshow">Toggle slideshow</a> |
-    <a href="#" id="toggle-description">Toggle having description outside of image</a>
-    </p>--%>
                 </p>
             </div>
             <div class="step">
@@ -217,8 +162,8 @@
         </h3>
         <ul>
             <li><asp:HyperLink ID="hlAnniversaries" runat="server" Text="Through the Years" NavigateUrl="#" /></li>
-            <li><asp:HyperLink ID="HyperLink3" runat="server" Text="Ireland" NavigateUrl="#" /></li>
-            <li><asp:HyperLink ID="HyperLink2" runat="server" Text="Our Proposal" NavigateUrl="#" /></li>
+            <li><asp:HyperLink ID="hlIreland" runat="server" Text="Ireland" NavigateUrl="#" /></li>
+            <li><asp:HyperLink ID="hlIndia" runat="server" Text="India" NavigateUrl="#" /></li>
         </ul>
     </div>
 </asp:Content>
