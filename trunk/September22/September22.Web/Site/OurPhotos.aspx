@@ -176,7 +176,7 @@
         </div>
       </div>
     </div>
-
+<%--
     <div id="descriptions">
 
     </div>
@@ -190,7 +190,7 @@
     </select><br>
     <a href="#" id="toggle-slideshow">Toggle slideshow</a> |
     <a href="#" id="toggle-description">Toggle having description outside of image</a>
-    </p>
+    </p>--%>
                 </p>
             </div>
             <div class="step">
