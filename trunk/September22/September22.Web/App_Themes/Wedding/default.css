@@ -12,7 +12,7 @@
 */
 
 * {min-height:1px;}
-body {border:0; margin:0; padding:0; background-image: url(./Images/bg.png); background-repeat: repeat-y repeat-x; font:70%/160% "verdana",sans-serif; color:#192666; _text-align:center;}
+body {border:0; margin:0; padding:0; background-image: url(./Images/bg.png); background-repeat: repeat-x; font:70%/160% "verdana",sans-serif; color:#192666; _text-align:center;}
 
 a {color:#192666;}
 a:hover {color:#4F6AD7;}
@@ -119,11 +119,11 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     #tabs ul li#active a span.tab-r {position:absolute; top:0; right:0; width:8px; height:8px; background:url("./Images/tab_active_r.gif") 100% 0 no-repeat;}
 
 /* Page (2 columns) */
-#page {width:770px; min-height:1px; background:transparent url("./Images/bg_page.gif") 0 0 repeat-y; _height:1px;}
+#page {width:770px; min-height:1px; background:transparent url("./Images/bg_page.png") 0 0 repeat-y; _height:1px;}
 #page-in {min-height:1px; padding:10px 0px 0px 0px; background:url("./Images/bg_page_in.gif") 0 0 no-repeat; _height:1px;}
 
     /* Page - Overrides  */
-    .override #page {width:770px; background:transparent url("./Images/bg_page_1col.gif") 0 0 repeat-y;}
+    .override #page {width:770px; background:transparent url("./Images/bg_page_1col.png") 0 0 repeat-y;}
     
 /* Strip */
 #strip {position:relative; clear:both; padding:3px 20px 10px 20px; color:#6182D1;}
@@ -188,7 +188,7 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     #col ul li ul li a {display:inline; padding:0px 0px 0px 22px; background: transparent; text-decoration:none;}
 
 /* Footer */
-#footer {position:relative; clear:both; width:770px; height:60px; margin-bottom:40px; color:#6685CC; background:url("./Images/footer.gif") 0 0 no-repeat;}
+#footer {position:relative; clear:both; width:770px; height:60px; margin-bottom:40px; color:#6685CC; background:url("./Images/footer.png") 0 0 no-repeat;}
 #footer a {color:#6685CC;}
 #footer a:hover {color:#192666;}
 
@@ -206,7 +206,7 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     #createdby a {color:#8CA3D8;}
     
     /* Footer - Overrides */
-    .override #footer {background:url("./Images/footer_1col.gif") 0 0 no-repeat;}
+    .override #footer {background:url("./Images/footer_1col.png") 0 0 no-repeat;}
     
 /* Menu */
 #lavalamp {position: relative; overflow: hidden; margin:0 5px; padding:10px 0 10px 18px; background: #00447e;}

@@ -101,8 +101,8 @@
     <Content Include="App_Themes\Blue\Images\tmp_photo.gif" />
     <Content Include="App_Themes\Wedding\default.css" />
     <Content Include="App_Themes\Wedding\Images\bg.png" />
-    <Content Include="App_Themes\Wedding\Images\bg_page.gif" />
-    <Content Include="App_Themes\Wedding\Images\bg_page_1col.gif" />
+    <Content Include="App_Themes\Wedding\Images\bg_page.png" />
+    <Content Include="App_Themes\Wedding\Images\bg_page_1col.png" />
     <Content Include="App_Themes\Wedding\Images\bg_page_in.gif" />
     <Content Include="App_Themes\Wedding\Images\btn_more.gif" />
     <Content Include="App_Themes\Wedding\Images\col_bg.gif" />
@@ -113,8 +113,8 @@
     <Content Include="App_Themes\Wedding\Images\content_comments_bg.jpg" />
     <Content Include="App_Themes\Wedding\Images\content_title_bg.gif" />
     <Content Include="App_Themes\Wedding\Images\content_title_bg_1col.gif" />
-    <Content Include="App_Themes\Wedding\Images\footer.gif" />
-    <Content Include="App_Themes\Wedding\Images\footer_1col.gif" />
+    <Content Include="App_Themes\Wedding\Images\footer.png" />
+    <Content Include="App_Themes\Wedding\Images\footer_1col.png" />
     <Content Include="App_Themes\Wedding\Images\header.gif" />
     <Content Include="App_Themes\Wedding\Images\header.png" />
     <Content Include="App_Themes\Wedding\Images\ico_archive.gif" />
