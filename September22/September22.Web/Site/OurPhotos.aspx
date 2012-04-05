@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Our Photos" Language="C#" MasterPageFile="~/Master/Site_2Col.master" AutoEventWireup="true" CodeBehind="OurPhotos.aspx.cs" Inherits="September22.OurPhotos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 <style type="text/css">
-  <%--* {
+  /** {
     font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Arial, sans-serif;
     color: #333;
     line-height: 140%;
@@ -24,12 +24,12 @@
     margin-top: 1.2em;
     margin-bottom: 0;
     padding: 0;
-  }--%>
+  }
   .example {
     border: 1px solid #CCC;
     background: #f2f2f2;
     padding: 10px;
-  }
+  }*/
   ul {
     list-style-image:url(list-style.gif);
   }
@@ -47,7 +47,8 @@
 
   #gallery {
     padding: 30px;
-    background: #e1eef5;
+    /*PM added*/
+    /*background: #e1eef5;*/
   }
   #descriptions {
     position: relative;
@@ -72,70 +73,133 @@
             <div class="step">
                 <h2><span>Through the Years</span></h2>
                 <p>
-                    <%--<div class="ad-gallery">
-                      <div class="ad-image-wrapper">
-                      </div>
-                      <div class="ad-controls">
-                      </div>
-                      <div class="ad-nav">
-                        <div class="ad-thumbs">
-                          <ul class="ad-thumb-list">
-                            <li>
-                              <a href="../Photos/Anniversaries/2003 - 1st Anniversary - 1 of 2.jpg">
-                                <img src="../Photos/Anniversaries/Thumbs/2003 - 1st Anniversary - 1 of 2 - thumb.jpg" title="2003 - 1st Anniversary - 1 of 2" alt="2003 - 1st Anniversary - 1 of 2" />
-                              </a>
-                            </li>
-                            <li>
-                              <a href="../Photos/Anniversaries/2003 - 1st Anniversary - 2 of 2.jpg">
-                                <img src="../Photos/Anniversaries/Thumbs/2003 - 1st Anniversary - 2 of 2 - thumb.jpg" title="2003 - 1st Anniversary - 2 of 2" alt="2003 - 1st Anniversary - 2 of 2" />
-                              </a>
-                            </li>
-                          </ul>
+                    <div id="gallery" class="ad-gallery">
+                        <div class="ad-image-wrapper">
                         </div>
-                      </div>
-                    </div>--%>
-                        <div id="gallery" class="ad-gallery">
-      <div class="ad-image-wrapper">
-      </div>
-      <div class="ad-controls">
-      </div>
-      <div class="ad-nav">
-        <div class="ad-thumbs">
-          <ul class="ad-thumb-list">
-            <li>
-                <a href="../Photos/Anniversaries/2003 - 1st Anniversary - 1 of 2.jpg">
-                <img src="../Photos/Anniversaries/Thumbs/2003 - 1st Anniversary - 1 of 2 - thumb.jpg" class="image1" />
-                </a>
-            </li>
-            <li>
-                <a href="../Photos/Anniversaries/2003 - 1st Anniversary - 2 of 2.jpg">
-                <img src="../Photos/Anniversaries/Thumbs/2003 - 1st Anniversary - 2 of 2 - thumb.jpg" class="image2" />
-                </a>
-            </li>
-            <li>
-                <a href="../Photos/Anniversaries/2004 - 2nd Anniversary - 1 of 2.jpg">
-                <img src="../Photos/Anniversaries/Thumbs/2004 - 2nd Anniversary - 1 of 2 - thumb.jpg" class="image1" />
-                </a>
-            </li>
-            <li>
-                <a href="../Photos/Anniversaries/2004 - 2nd Anniversary - 2 of 2.jpg">
-                <img src="../Photos/Anniversaries/Thumbs/2004 - 2nd Anniversary - 2 of 2 - thumb.jpg" class="image2" />
-                </a>
-            </li>
-            <li>
-                <a href="../Photos/Anniversaries/2005 - 3rd Anniversary - 1 of 4.jpg">
-                <img src="../Photos/Anniversaries/Thumbs/2005 - 3rd Anniversary - 1 of 4 - thumb.jpg" class="image1" />
-                </a>
-            </li>
-            <li>
-                <a href="../Photos/Anniversaries/2005 - 3rd Anniversary - 2 of 4.jpg">
-                <img src="../Photos/Anniversaries/Thumbs/2005 - 3rd Anniversary - 2 of 4 - thumb.jpg" class="image2" />
-                </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+                        <div class="ad-controls">
+                        </div>
+                        <div class="ad-nav">
+                            <div class="ad-thumbs">
+                                <ul class="ad-thumb-list">
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2003 - 1st Anniversary - 1 of 2.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2003 - 1st Anniversary - 1 of 2 - thumb.jpg" class="image1" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2003 - 1st Anniversary - 2 of 2.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2003 - 1st Anniversary - 2 of 2 - thumb.jpg" class="image2" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2004 - 2nd Anniversary - 1 of 2.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2004 - 2nd Anniversary - 1 of 2 - thumb.jpg" class="image1" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2004 - 2nd Anniversary - 2 of 2.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2004 - 2nd Anniversary - 2 of 2 - thumb.jpg" class="image2" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2005 - 3rd Anniversary - 1 of 4.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2005 - 3rd Anniversary - 1 of 4 - thumb.jpg" class="image1" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2005 - 3rd Anniversary - 2 of 4.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2005 - 3rd Anniversary - 2 of 4 - thumb.jpg" class="image2" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2005 - 3rd Anniversary - 3 of 4.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2005 - 3rd Anniversary - 3 of 4 - thumb.jpg" class="image1" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2005 - 3rd Anniversary - 4 of 4.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2005 - 3rd Anniversary - 4 of 4 - thumb.jpg" class="image2" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2006 - 4th Anniversary - 1 of 1.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2006 - 4th Anniversary - 1 of 1 - thumb.jpg" class="image2" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2007 - 5th Anniversary - 1 of 2.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2007 - 5th Anniversary - 1 of 2 - thumb.jpg" class="image1" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2007 - 5th Anniversary - 2 of 2.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2007 - 5th Anniversary - 2 of 2 - thumb.jpg" class="image2" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2008 - 6th Anniversary - 1 of 2.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2008 - 6th Anniversary - 1 of 2 - thumb.jpg" class="image1" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2008 - 6th Anniversary - 2 of 2.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2008 - 6th Anniversary - 2 of 2 - thumb.jpg" class="image2" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2009 - 7th Anniversary - 1 of 6.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2009 - 7th Anniversary - 1 of 6 - thumb.jpg" class="image1" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2009 - 7th Anniversary - 2 of 6.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2009 - 7th Anniversary - 2 of 6 - thumb.jpg" class="image2" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2009 - 7th Anniversary - 3 of 6.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2009 - 7th Anniversary - 3 of 6 - thumb.jpg" class="image1" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2009 - 7th Anniversary - 4 of 6.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2009 - 7th Anniversary - 4 of 6 - thumb.jpg" class="image2" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2009 - 7th Anniversary - 5 of 6.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2009 - 7th Anniversary - 5 of 6 - thumb.jpg" class="image2" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2009 - 7th Anniversary - 6 of 6.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2009 - 7th Anniversary - 6 of 6 - thumb.jpg" class="image1" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2010 - 8th Anniversary - 1 of 2.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2010 - 8th Anniversary - 1 of 2 - thumb.jpg" class="image1" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2010 - 8th Anniversary - 2 of 2.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2010 - 8th Anniversary - 2 of 2 - thumb.jpg" class="image2" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2011 - 9th Anniversary - 1 of 2.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2011 - 9th Anniversary - 1 of 2 - thumb.jpg" class="image1" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Photos/Anniversaries/2011 - 9th Anniversary - 2 of 2.jpg">
+                                            <img src="../Photos/Anniversaries/Thumbs/2011 - 9th Anniversary - 2 of 2 - thumb.jpg" class="image2" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </p>
             </div>
             <div class="step">
