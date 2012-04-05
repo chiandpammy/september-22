@@ -180,7 +180,6 @@
     <Content Include="Site\OurPhotos.aspx" />
     <Content Include="Site\OurStory.aspx" />
     <Content Include="Site\Rsvp.aspx" />
-    <Content Include="Scripts\body_bg.png" />
     <Content Include="Scripts\jquery-lavalamp-min.js" />
     <Content Include="Scripts\jquery-plax.js" />
     <Content Include="Scripts\initialization.js" />
