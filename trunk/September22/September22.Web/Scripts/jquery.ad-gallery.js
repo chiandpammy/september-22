@@ -9,7 +9,7 @@
  */
 (function($) {
   $.fn.adGallery = function(options) {
-    var defaults = { loader_image: 'loader.gif',
+    var defaults = { loader_image: '../App_Themes/Wedding/Images/loader.gif',
                      start_at_index: 0,
                      description_wrapper: false,
                      thumb_opacity: 0.7,
