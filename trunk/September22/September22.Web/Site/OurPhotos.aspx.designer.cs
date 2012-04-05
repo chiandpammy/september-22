@@ -31,21 +31,21 @@ namespace September22 {
         protected global::System.Web.UI.WebControls.HyperLink hlAnniversaries;
         
         /// <summary>
-        /// HyperLink3 control.
+        /// hlIreland control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
+        protected global::System.Web.UI.WebControls.HyperLink hlIreland;
         
         /// <summary>
-        /// HyperLink2 control.
+        /// hlIndia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
+        protected global::System.Web.UI.WebControls.HyperLink hlIndia;
     }
 }
