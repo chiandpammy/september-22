@@ -22,11 +22,11 @@ namespace September22.Common
             {
                 Utilities.SetTheme(Request.QueryString[Utilities.THEME]);
 
-                Page.Theme = Request.QueryString[Utilities.THEME];
+                Page.Theme = "Wedding";// Request.QueryString[Utilities.THEME];
             }
             else
             {
-                Page.Theme = Utilities.GetTheme();
+                Page.Theme = "Wedding";// Utilities.GetTheme();
             }
 
             base.OnPreInit(e);
