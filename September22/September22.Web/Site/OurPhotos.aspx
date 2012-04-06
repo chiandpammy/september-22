@@ -208,12 +208,6 @@
                     Coming soon...
                 </p>
             </div>
-            <div class="step">
-                <h2><span>Through the Years</span></h2>
-                <p>
-                    Coming soon...
-                </p>
-            </div>
         </div>
     </div>
 </asp:Content>
@@ -227,7 +221,6 @@
         <ul>
             <li><asp:HyperLink ID="hlAnniversaries" runat="server" Text="Through the Years" NavigateUrl="#" /></li>
             <li><asp:HyperLink ID="hlIreland" runat="server" Text="Ireland" NavigateUrl="#" /></li>
-            <li><asp:HyperLink ID="hlIndia" runat="server" Text="India" NavigateUrl="#" /></li>
         </ul>
     </div>
 </asp:Content>
