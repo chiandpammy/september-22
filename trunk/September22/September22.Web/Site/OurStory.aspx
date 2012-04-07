@@ -87,7 +87,7 @@
                     in front of my family and friends.
                 </p>
                 
-                <div style="display: block; margin-left: auto; margin-right: auto">
+                <div>
                     <img alt="Just Engaged!" title="Just Engaged!" src="../App_Themes/Wedding/Images/just_engaged.png" />
                 </div>
             </div>
