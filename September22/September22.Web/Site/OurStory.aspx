@@ -54,9 +54,9 @@
                 <p>
                     When the class ended, I followed her.  She walked fast, but stopped short of going outside.  It was raining hard 
                     outside and she did not have an umbrella.  She just stood by the door.  I pulled out my umbrella, and asked her
-                    if I could walk her over to where my next class was, which was at the Everitte Lab.  
-                    She agreed, and I couldn't believe my luck.  I can't remember what we said on our way to Everitte that day.  
-                    I guess it really doesn't matter.  At the end of our walk, by the east side door of the Everitte Lab, we stood there in the rain.  
+                    if I could walk her over to where my next class was, which was at the Everitt Lab.  
+                    She agreed, and I couldn't believe my luck.  I can't remember what we said on our way to Everitt that day.  
+                    I guess it really doesn't matter.  At the end of our walk, by the east side door of the Everitt Lab, we stood there in the rain.  
                     I asked her for her number so we may study together. She said sure, and wrote her number on the back of my book.
                 </p>
                 <p>
