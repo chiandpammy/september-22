@@ -7,13 +7,18 @@
     <div id="wrapper">
         <div id="steps">
             <div class="step">
-                <h2><span>Location</span></h2>
-                <p>
-                </p>
-            </div>
-            <div class="step">
                 <h2><span>Day of Info</span></h2>
                 <p>
+                    The ceremony and reception are being held on the second floor of the University Club of Chicago.<br /><br />
+                    It will be held in <b>September 22, 2012</b>.
+                    <br />
+                    <br />
+                    <img src="../Photos/Site/ucco_michigan.jpg" />
+                </p>
+                <p>
+                    <b><a href="http://www.ucco.com/" target="_blank">University Club of Chicago</a></b><br />
+                    76 East Monroe Street<br />
+                    Chicago, IL 60603<br />
                 </p>
             </div>
             <div class="step">
@@ -38,8 +43,7 @@
                 </ol>
                 <p>
                     * Your GPS may tell you to exit on Monroe St instead of Washington Blvd from I-90.
-                    There is construction along Wacker St and you will not be able to take Monroe St all the way to the University Club.
-                    
+                    There is construction along Wacker St, and you will not be able to take Monroe St all the way to the University Club.
                 </p>
             </div>
             <div class="step">
@@ -63,7 +67,7 @@
             <div class="step">
                 <h2><span>Places to Stay</span></h2>
                 <p>
-                    We will soon have a block of rooms reserved at a hotel in the downtown area. And if you ask very nicely we may give you that information.
+                    We will soon have a block of rooms reserved at a hotel in the downtown area. And if you ask very nicely we may give you that information. =)
                 </p>
             </div>
             <div class="step">
@@ -78,12 +82,11 @@
     <div id="navigation">
         <h3><span>Wedding Details</span></h3>
         <ul>
-            <li><asp:HyperLink ID="HyperLink1" runat="server" Text="Location" NavigateUrl="#"></asp:HyperLink></li>
             <li><asp:HyperLink ID="HyperLink2" runat="server" Text="Day of Info" NavigateUrl="#"></asp:HyperLink></li>
             <li><asp:HyperLink ID="HyperLink3" runat="server" Text="Directions" NavigateUrl="#"></asp:HyperLink></li>
             <li><asp:HyperLink ID="HyperLink4" runat="server" Text="Parking" NavigateUrl="#"></asp:HyperLink></li>
             <li><asp:HyperLink ID="HyperLink5" runat="server" Text="Places to Stay" NavigateUrl="#"></asp:HyperLink></li>
-            <li><asp:HyperLink ID="HyperLink6" runat="server" Text="Things to Do" NavigateUrl="#"></asp:HyperLink></li>
+            <%--<li><asp:HyperLink ID="HyperLink6" runat="server" Text="Things to Do" NavigateUrl="#"></asp:HyperLink></li>--%>
         </ul>
     </div>
 </asp:Content>

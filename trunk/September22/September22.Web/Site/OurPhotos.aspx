@@ -220,7 +220,6 @@
         </h3>
         <ul>
             <li><asp:HyperLink ID="hlAnniversaries" runat="server" Text="Through the Years" NavigateUrl="#" /></li>
-            <li><asp:HyperLink ID="hlIreland" runat="server" Text="Ireland" NavigateUrl="#" /></li>
         </ul>
     </div>
 </asp:Content>
