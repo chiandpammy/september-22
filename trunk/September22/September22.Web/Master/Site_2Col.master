@@ -47,31 +47,3 @@
     </div>
     <!-- /page -->
 </asp:Content>
-
-<asp:Content ID="Content3" ContentPlaceHolderID="FooterContent" runat="Server">
-    <!-- Footer -->
-    <div id="footer">
-        <div id="top">
-            <p><span class="noscreen">Back on top</span> <a href="#header" title="Back on top ^">^<span></span></a></p>
-        </div>
-        
-        <p id="createdby">
-            <asp:HyperLink ID="hlTheme" runat="server" />
-        </p>
-        <p id="copyright">
-            © 2012 
-            <asp:HyperLink ID="HyperLink6" runat="server" Text="Pammy" NavigateUrl="~/Site/Error.aspx" />
-            |
-            <asp:HyperLink ID="HyperLink2" runat="server" Text="Contact" NavigateUrl="" />
-            |
-            <asp:HyperLink ID="HyperLink3" runat="server" Text="SiteMap" NavigateUrl="" />
-            |
-            <asp:HyperLink ID="HyperLink1" runat="server" Text="FAQ" NavigateUrl="" />
-            |
-            <asp:HyperLink ID="HyperLink5" runat="server" Text="Login" NavigateUrl="" />
-            |
-            <asp:HyperLink ID="HyperLink4" runat="server" Text="About" NavigateUrl="" />
-        </p>
-    </div>
-    <!-- /footer -->
-</asp:Content>

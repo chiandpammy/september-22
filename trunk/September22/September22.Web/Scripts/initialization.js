@@ -24,6 +24,9 @@ function setCurrentLavaLamp() {
     else if (url.indexOf("/Photo/") > 0) {
         $("#liOurPhotos").addClass('current');
     }
+    else if (url.indexOf("/Wedding/") > 0) {
+        $("#liOurWedding").addClass('current');
+    }
     else if (url.indexOf("/Party/") > 0) {
         $("#liWeddingParty").addClass('current');
     }
