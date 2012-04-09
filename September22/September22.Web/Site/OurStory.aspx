@@ -40,7 +40,27 @@
             <div class="step">
                 <h2><span>Chi Says</span></h2>
                 <p>
-                    He's taking the 5th!
+                    In the summer of 2002, my friends and I shared an apartment and took summer classes together.  It was the first day of 
+                    classes, and I woke up early to get ready.  In the livingroom, I saw my friend Prakas getting ready for his class.  
+                    I joked with him that morning maybe we'll both meet some girl this summer.  He reminded me that it was going to rain 
+                    later that day.  So I packed an umbrella and headed for my computer science class.
+                </p>
+                <p>
+                    When I arrived at my class, there were already 50 or so kids sitting down sparsely in a large classroom. 
+                    I sat in the back corner as I usually do.  I looked around the classroom to see who the hottest girl was in the class.  
+                    Then I caught a glimpse of a pretty girl perhaps 10 rows in front of me.  
+                    She was wearing a black skirt and looked hispanic.  I decided when the class ended, I needed to go and talk to her.
+                </p>
+                <p>
+                    When the class ended, I followed her.  She walked fast, but stopped short of going outside.  It was raining hard 
+                    outside and she did not have an umbrella.  She just stood by the door.  I pulled out my umbrella, and asked her
+                    if I could walk her over to where my next class was, which was at the Everitte Lab.  
+                    She agreed, and I couldn't believe my luck.  I can't remember what we said on our way to Everitte that day.  
+                    I guess it really doesn't matter.  At the end of our walk, by the east side door of the Everitte Lab, we stood there in the rain.  
+                    I asked her for her number so we may study together. She said sure, and wrote her number on the back of my book.
+                </p>
+                <p>
+                    Later that day, I told my friend Prakas I met a cute Mexican girl named Pamela.  And that I had her number in my book.
                 </p>
             </div>
             <div class="step">
