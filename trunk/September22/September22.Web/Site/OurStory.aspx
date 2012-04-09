@@ -41,7 +41,7 @@
                 <h2><span>Chi Says</span></h2>
                 <p>
                     In the summer of 2002, my friends and I shared an apartment and took summer classes together.  It was the first day of 
-                    classes, and I woke up early to get ready.  In the livingroom, I saw my friend Prakas getting ready for his class.  
+                    classes, and I woke up early to get ready.  In the living room, I saw my friend Prakas getting ready for his class.  
                     I joked with him that morning maybe we'll both meet some girl this summer.  He reminded me that it was going to rain 
                     later that day.  So I packed an umbrella and headed for my computer science class.
                 </p>
