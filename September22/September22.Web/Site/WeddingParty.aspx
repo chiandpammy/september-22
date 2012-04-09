@@ -7,6 +7,13 @@
             <div class="step">
             <h2><span>Women of Distinction</span></h2>
             <p>
+                <%--<div class="weddingParty">
+                    <img alt="" src="http://graph.facebook.com/guamacario/picture?type=large" />
+                    <div>
+                        <b>Luella May </b>- Maid of Honor<br /><br />
+                        Luella is Pamela&rsquo;s favorite sister, okay only sister, but still her favorite!&nbsp;She is Pamela&rsquo;s confidante and co-conspirator and will be the best maid of honor!
+                    </div>
+                </div>--%>
                 <table border="0" cellpadding="2" cellspacing="0" width="470px">
                 <tbody>
                     <tr>
@@ -14,9 +21,9 @@
                             <img align="left" alt="" src="http://graph.facebook.com/guamacario/picture?type=large" width="150" /></td>
                         <td valign="top">
                             <b>Luella May </b>- Maid of Honor<br /><br />
-                            <hr />
                             Luella is Pamela&rsquo;s favorite sister, okay only sister, but still her favorite!&nbsp;She is Pamela&rsquo;s confidante and co-conspirator and will be the best maid of honor!</td>
                     </tr>
+                    <tr><td colspan="2"><hr /></td></tr>
                     <tr>
                         <td style="padding: 5px;" width="150">
                             <img align="left" alt="" src="http://graph.facebook.com/778027537/picture?type=large" width="150" /></td>
@@ -28,6 +35,7 @@
                             April and Pamela grew up together on a rock in the middle of the Pacific all the way until April took off for the Big Apple. When April moved to Chicago a few years ago, they started catching up again and have been introducing each other to the best food and drink the city has to offer ever since.<br /><br />April has also been Pamela's self-appointed wedding planner throughout the exciting wedding planning process.
                             </td>
                     </tr>
+                    <tr><td colspan="2"><hr /></td></tr>
                     <tr>
                         <td width="150">
                             <img align="left" alt="" src="http://graph.facebook.com/nyvellee/picture?type=large" width="150" /></td>
@@ -37,17 +45,18 @@
                             <%--Janice is one of those friends who's impossible not to like.  Whether it's been 5 years or 5 minutes since the last time you've seen her, all the time instantly melts away, and it's as if she'd never left your side.--%>
                             </td>
                     </tr>
+                    <tr><td colspan="2"><hr /></td></tr>
                     <tr>
                         <td style="padding: 5px;" width="150">
                             <img align="left" alt="" src="http://graph.facebook.com/754333847/picture?type=large" width="150" /></td>
 
                         <td valign="top">
 
-                            <b>Mina</b><br />
-                            <br />
-                            <!--Meg and Sara were college roommates. They were partners in crime and probably would not have made it through college without each other!-->
+                            <b>Mina</b><br /><br />
+                            Mina is Chi's youngest sister, and she is the floral designer responsible for all the beautiful floral      arrangements at the wedding!
                             </td>
                     </tr>
+                    <tr><td colspan="2"><hr /></td></tr>
                     <tr>
                         <td style="padding: 5px;" width="150">
                             <img align="left" alt="" src="http://graph.facebook.com/32811574/picture?type=large" width="150" /></td>
