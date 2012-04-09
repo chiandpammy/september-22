@@ -28,9 +28,9 @@ h3 {font-size:120%; line-height:100%; font-weight:bold;}
 h4 {font-size:120%;}
 h5 {font-size:100%;}
 
-table {display:table; border-collapse:collapse; margin:15px 0; padding:0; border:1px solid #B7CAF6; font-size:100%;}
+table {display:table; border-collapse:collapse; margin:15px 0; padding:0; border:0px; font-size:100%;}
 tr {display:table-row;}
-th, td {display: table-cell; border:1px solid #B7CAF6; margin:0; padding:5px; vertical-align:top; text-align:left;}
+th, td {display: table-cell; border:0px; margin:0; padding:5px; vertical-align:top; text-align:left;}
 th {background:#E7ECFD; text-align:center; color:#192666; font-weight:bold;}
 
 ul, ol {display:block; border:0; margin:15px 0 15px 40px; padding:0;}
@@ -46,7 +46,7 @@ form {border:0; margin:0; padding:0;}
 fieldset {border:1px solid #ccc; margin:15px 0; padding:10px;}
 legend {margin-left:10px; font-size:100%; font-weight:bold; color:#008;}
 
-hr {display:block; height:1px; margin:10px 0; padding:0; background:#CCC; border:0 solid #CCC; color:#CCC;}
+/*hr {display:block; height:1px; margin:10px 0; padding:0; background:#CCC; border:0 solid #CCC; color:#CCC;}*/
 
 a, img, span {border:0; margin:0; padding:0;}
 abbr, acronym {border-bottom:1px dotted #CCC; cursor:help;}
@@ -216,3 +216,29 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     #lavalamp  li.back .left {height: 30px; margin-right: 9px; background: url("./Images/lava.gif") no-repeat top left;}
     #lavalamp  li a {display: block; position: relative; float: left; overflow: hidden; height: 30px; margin: auto 10px; font-weight: bold; text-decoration: none; color: #fff; outline: none; text-align: center; top: 7px; letter-spacing: 0; z-index: 10;}
     #lavalamp  li a:hover, #lavalamp  li a:active, #lavalamp  li a:visited {border: none;}
+
+/* Wedding Party */
+div .weddingParty 
+{
+    float: left;
+    width: 470px;
+}
+
+div .weddingParty > img
+{
+    width: 150px;
+    padding-right: 5px;
+}
+
+div .weddingParty > div
+{
+    /*padding-left: 150px;*/
+}
+
+/* Single-direction drop shadow */
+		
+hr {
+    height: 22px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px #4DD0F5; /*rgba(0,0,0,0.5);*/
+}
