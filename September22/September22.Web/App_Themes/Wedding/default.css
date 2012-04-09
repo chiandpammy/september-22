@@ -47,6 +47,12 @@ fieldset {border:1px solid #ccc; margin:15px 0; padding:10px;}
 legend {margin-left:10px; font-size:100%; font-weight:bold; color:#008;}
 
 /*hr {display:block; height:1px; margin:10px 0; padding:0; background:#CCC; border:0 solid #CCC; color:#CCC;}*/
+/* Single-direction drop shadow */
+hr {
+    height: 22px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px #4DD0F5; /*rgba(0,0,0,0.5);*/
+}
 
 a, img, span {border:0; margin:0; padding:0;}
 abbr, acronym {border-bottom:1px dotted #CCC; cursor:help;}
@@ -235,9 +241,25 @@ div .weddingParty > div
     /*padding-left: 150px;*/
 }
 
-/* Single-direction drop shadow */
-hr {
-    height: 22px;
-    border: 0;
-    box-shadow: inset 0 12px 12px -12px #4DD0F5; /*rgba(0,0,0,0.5);*/
+/* AD gallery */
+#gallery {
+    padding: 30px;
+}
+
+#descriptions {
+    position: relative;
+    height: 50px;
+    background: #EEE;
+    margin-top: 10px;
+    width: 640px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+#descriptions .ad-image-description {
+    position: absolute;
+}
+
+#descriptions .ad-image-description .ad-description-title {
+    display: block;
 }
