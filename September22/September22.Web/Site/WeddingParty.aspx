@@ -14,6 +14,7 @@
                             <img align="left" alt="" src="http://graph.facebook.com/guamacario/picture?type=large" width="150" /></td>
                         <td valign="top">
                             <b>Luella May </b>- Maid of Honor<br /><br />
+                            <hr />
                             Luella is Pamela&rsquo;s favorite sister, okay only sister, but still her favorite!&nbsp;She is Pamela&rsquo;s confidante and co-conspirator and will be the best maid of honor!</td>
                     </tr>
                     <tr>
@@ -63,8 +64,8 @@
             </p>
         </div>
         <div class="step">
-            <h2><span>Men who are not afraid to walk</span></h2>
-            <p>We haven't found any!</p>
+            <h2><span>Men of no musical skills</span></h2>
+            <p>We will find them soon.</p>
         </div>
     </div>
 </div>
@@ -74,7 +75,7 @@
         <h3><span>The Wedding Party!</span></h3>
         <ul>
             <li><asp:HyperLink ID="hlBridesmaids" runat="server" Text="Women of Distinction" NavigateUrl="#"></asp:HyperLink></li>
-            <li><asp:HyperLink ID="hlGroomsmen" runat="server" Text="Men not afraid" NavigateUrl="#"></asp:HyperLink></li>
+            <li><asp:HyperLink ID="hlGroomsmen" runat="server" Text="Men of no musical skills" NavigateUrl="#"></asp:HyperLink></li>
         </ul>
     </div>
 </asp:Content>
