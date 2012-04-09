@@ -209,10 +209,11 @@
     <Content Include="App_Themes\Wedding\Images\loader.gif" />
     <Content Include="App_Themes\Wedding\Images\opa75.png" />
     <Content Include="September22.Web.Publish.xml" />
-    <Content Include="Site\CeremonyAndReception.aspx" />
+    <Content Include="Site\Contact.aspx" />
     <Content Include="Site\Map.aspx" />
     <Content Include="Site\OurPhotos.aspx" />
     <Content Include="Site\OurStory.aspx" />
+    <Content Include="Site\OurWedding.aspx" />
     <Content Include="Site\Rsvp.aspx" />
     <Content Include="Scripts\jquery-lavalamp-min.js" />
     <Content Include="Scripts\jquery-plax.js" />
@@ -234,17 +235,17 @@
     <Content Include="Site\WeddingParty.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Site\CeremonyAndReception.aspx.cs">
-      <DependentUpon>CeremonyAndReception.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site\CeremonyAndReception.aspx.designer.cs">
-      <DependentUpon>CeremonyAndReception.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Common\Navigation.cs" />
     <Compile Include="Common\Enums.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Site\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site\Map.aspx.cs">
       <DependentUpon>Map.aspx</DependentUpon>
@@ -292,6 +293,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site\OurWedding.aspx.cs">
+      <DependentUpon>OurWedding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\OurWedding.aspx.designer.cs">
+      <DependentUpon>OurWedding.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site\Rsvp.aspx.cs">
       <DependentUpon>Rsvp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

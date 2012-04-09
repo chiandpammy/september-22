@@ -8,7 +8,7 @@ using September22.Common;
 
 namespace September22
 {
-    public partial class CeremonyAndReception : PageBase
+    public partial class Contact : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

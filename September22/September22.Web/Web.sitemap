@@ -3,9 +3,10 @@
   <siteMapNode url="/Home/" title="Home">
     <siteMapNode url="/Story/" title="Our Story" />
     <siteMapNode url="/Photo/" title="Our Photos" />
-    <siteMapNode url="~/Site/CeremonyAndReception.aspx" title="Ceremony and Reception" />
+    <siteMapNode url="/Wedding/" title="Our Wedding" />
     <siteMapNode url="/Party/" title="Wedding Party" />
     <siteMapNode url="/Map/" title="Map of Events" />
     <siteMapNode url="/RSVP/" title="RSVP" />
+    <siteMapNode url="/Contact/" title="Contact Us" />
   </siteMapNode>
 </siteMap>
