@@ -72,6 +72,8 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 
 .va-middle {vertical-align:middle;}
 
+.watermark { color:rgba(0, 0, 0, 0.2); }
+
 .clear {clear:both;}
 .box {min-height:1px; _height:1px;}
 .box:after {content:"."; display:block; line-height:0px; font-size:0px; visibility:hidden; clear:both;}
