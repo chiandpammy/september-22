@@ -2,7 +2,7 @@
     CodeBehind="Contact.aspx.cs" Inherits="September22.Contact" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <script language="javascript">
+    <script language="javascript" type="text/javascript">
         function ValidateEmail(oSrc, args) {
             //assume validation fail
             args.IsValid = false;
@@ -15,26 +15,26 @@
             }
 
             if (args.IsValid) {
-                $("#txtEmail").removeClass('redborder');
-                $("#txtEmail").addClass('blueborder');
+                $("#txtEmail").removeClass('red');
+                $("#txtEmail").addClass('blue');
             }
             else {
                 $("#txtEmail").effect("shake", { times: 4, distance: 4 }, 50);
-                $("#txtEmail").removeClass('blueborder');
-                $("#txtEmail").addClass('redborder');
+                $("#txtEmail").removeClass('blue');
+                $("#txtEmail").addClass('red');
             }
         };
 
         function ValidateName(oSrc, args) {
             if ($("#txtName").val().trim() == "") {
                 $("#txtName").effect("shake", { times: 4, distance: 4 }, 50);
-                $("#txtName").removeClass('blueborder');
-                $("#txtName").addClass('redborder');
+                $("#txtName").removeClass('blue');
+                $("#txtName").addClass('red');
                 args.IsValid = false;
             }
             else {
-                $("#txtName").removeClass('redborder');
-                $("#txtName").addClass('blueborder');
+                $("#txtName").removeClass('red');
+                $("#txtName").addClass('blue');
                 args.IsValid = true;
             }
         };
@@ -42,67 +42,79 @@
         function ValidateMessage(oSrc, args) {
             if ($("#txtMessage").val().trim() == "") {
                 $("#txtMessage").effect("shake", { times: 4, distance: 4 }, 50);
-                $("#txtMessage").removeClass('blueborder');
-                $("#txtMessage").addClass('redborder');
+                $("#txtMessage").removeClass('blue');
+                $("#txtMessage").addClass('red');
                 args.IsValid = false;
             }
             else {
-                $("#txtMessage").removeClass('redborder');
-                $("#txtMessage").addClass('blueborder');
+                $("#txtMessage").removeClass('red');
+                $("#txtMessage").addClass('blue');
                 args.IsValid = true;
             }
         };
     </script>
     <style type="text/css">
-        .vibrate
+        input, textarea
         {
+            width: 400px;
+            resize: none;
+        }
+        .border
+        {
+            border-width: 5px;
+            border-style: solid;
             margin-bottom: 15px;
         }
-        .blueborder
+        .blue
         {
             border-color: #4dd0f5;
-            border-width: 5px;
-            border-style: solid;
-            width: 400px;
         }
-        .redborder
+        .red
         {
             border-color: #ff0000;
-            border-width: 5px;
-            border-style: solid;
-            width: 400px;
+        }
+        .view 
+        {
+            min-height:440px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MiddleColumnContent" runat="server">
     <h2><span>Contact Us</span></h2>
-    <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
-        <asp:View ID="View1" runat="server">
-            <br />
-            Name:<br />
-            <div class="vibrate">
-                <asp:TextBox ID="txtName" runat="server" ClientIDMode="Static" Width="400px" class="blueborder"></asp:TextBox>
-                <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="txtName" EnableClientScript="true" ClientValidationFunction="ValidateName" ValidateEmptyText="true">
-                </asp:CustomValidator>
-            </div>
-            Email:<br />
-            <div class="vibrate">
-                <asp:TextBox ID="txtEmail" runat="server" ClientIDMode="Static" Width="400px" class="blueborder"></asp:TextBox>
-                <asp:CustomValidator ID="CustomValidator2" runat="server" ControlToValidate="txtEmail" EnableClientScript="true" ClientValidationFunction="ValidateEmail" ValidateEmptyText="true">
-                </asp:CustomValidator>
-            </div>
-            Message:<br />
-            <div class="vibrate">
-                <asp:TextBox ID="txtMessage" runat="server" ClientIDMode="Static" TextMode="MultiLine" Width="400px" Height="200px" class="blueborder"></asp:TextBox>
-                <asp:CustomValidator ID="CustomValidator3" runat="server" ControlToValidate="txtMessage" EnableClientScript="true" ClientValidationFunction="ValidateMessage" ValidateEmptyText="true">
-                </asp:CustomValidator> 
-            </div>
-            <br />
-            <asp:Button ID="btnSubmit" runat="server" Text="Button"  />
-        </asp:View>
-        <asp:View ID="View2" runat="server">
-
-        </asp:View>
-    </asp:MultiView>
-               
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server"  UpdateMode="Conditional">
+        <ContentTemplate>
+        <asp:MultiView ID="mviewContactUs" runat="server" ActiveViewIndex="0">
+            <asp:View ID="viewContactForm" runat="server">
+                <div class="view">
+                    <br />
+                    Name:<br />
+                    <div>
+                        <asp:TextBox ID="txtName" runat="server" ClientIDMode="Static" class="border blue"></asp:TextBox>
+                        <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="txtName" EnableClientScript="true" ClientValidationFunction="ValidateName" ValidateEmptyText="true">
+                        </asp:CustomValidator>
+                    </div>
+                    Email:<br />
+                    <div>
+                        <asp:TextBox ID="txtEmail" runat="server" ClientIDMode="Static" class="border blue"></asp:TextBox>
+                        <asp:CustomValidator ID="CustomValidator2" runat="server" ControlToValidate="txtEmail" EnableClientScript="true" ClientValidationFunction="ValidateEmail" ValidateEmptyText="true">
+                        </asp:CustomValidator>
+                    </div>
+                    Message:<br />
+                    <div>
+                        <asp:TextBox ID="txtMessage" runat="server" ClientIDMode="Static" TextMode="MultiLine" Height="200px"  MaxLength="400" class="border blue"></asp:TextBox>
+                        <asp:CustomValidator ID="CustomValidator3" runat="server" ControlToValidate="txtMessage" EnableClientScript="true" ClientValidationFunction="ValidateMessage" ValidateEmptyText="true">
+                        </asp:CustomValidator>
+                    </div>
+                    <br />
+                    <asp:Button ID="btnSend" runat="server" Text="Send" onclick="btnSend_Click" />
+                </div>
+            </asp:View>
+            <asp:View ID="viewFinished"  runat="server">
+                <div class="view">
+                    <br />Email has been sent.  Thank you.
+                </div>
+            </asp:View>
+        </asp:MultiView>
+        </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>
