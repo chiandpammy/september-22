@@ -95,7 +95,7 @@
             <div class="vibrate">
                 <asp:TextBox ID="txtMessage" runat="server" ClientIDMode="Static" TextMode="MultiLine" Width="400px" Height="200px" class="blueborder"></asp:TextBox>
                 <asp:CustomValidator ID="CustomValidator3" runat="server" ControlToValidate="txtMessage" EnableClientScript="true" ClientValidationFunction="ValidateMessage" ValidateEmptyText="true">
-                </asp:CustomValidator>
+                </asp:CustomValidator> 
             </div>
             <br />
             <asp:Button ID="btnSubmit" runat="server" Text="Button"  />
