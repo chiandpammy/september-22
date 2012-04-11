@@ -67,7 +67,15 @@
         </div>
         <div class="step">
             <h2><span>Men of no musical skills</span></h2>
-            <p>We will find them soon.</p>
+            <table border="0" cellpadding="2" cellspacing="0" width="470px">
+                <tbody>
+                    <tr><td colspan="2"><br /><hr /></td></tr>
+                    <tr>
+                        <td colspan="2">We will find them soon.</td></tr>
+                    </tr>
+                    <tr><td colspan="2"><br /><hr /></td></tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
