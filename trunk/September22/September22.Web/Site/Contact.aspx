@@ -54,13 +54,9 @@
         };
     </script>
     <style type="text/css">
-        input, textarea
-        {
-            width: 400px;
-            resize: none;
-        }
         .border
         {
+            width: 400px;
             border-width: 5px;
             border-style: solid;
             margin-bottom: 15px;
@@ -101,12 +97,12 @@
                     </div>
                     Message:<br />
                     <div>
-                        <asp:TextBox ID="txtMessage" runat="server" ClientIDMode="Static" TextMode="MultiLine" Height="200px"  MaxLength="400" class="border blue"></asp:TextBox>
+                        <asp:TextBox ID="txtMessage" runat="server" ClientIDMode="Static" TextMode="MultiLine" Height="200px" MaxLength="400" class="border blue"></asp:TextBox>
                         <asp:CustomValidator ID="CustomValidator3" runat="server" ControlToValidate="txtMessage" EnableClientScript="true" ClientValidationFunction="ValidateMessage" ValidateEmptyText="true">
                         </asp:CustomValidator>
                     </div>
                     <br />
-                    <asp:Button ID="btnSend" runat="server" Text="Send" onclick="btnSend_Click" />
+                    <asp:Button ID="btnSend" runat="server" Text="Send" CssClass="button" onclick="btnSend_Click" />
                 </div>
             </asp:View>
             <asp:View ID="viewFinished"  runat="server">
