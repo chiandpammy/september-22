@@ -72,7 +72,6 @@
                     <tr><td colspan="2"><br /><hr /></td></tr>
                     <tr>
                         <td colspan="2">We will find them soon.</td></tr>
-                    </tr>
                     <tr><td colspan="2"><br /><hr /></td></tr>
                 </tbody>
             </table>
