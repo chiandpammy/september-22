@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -157,6 +158,7 @@
     <Content Include="App_Themes\Wedding\Images\tmp_photo.gif" />
     <Content Include="App_Themes\Wedding\jquery-sliding.form.css" />
     <Content Include="App_Themes\Wedding\jquery.ad-gallery.css" />
+    <Content Include="Library\AjaxControlToolkit.dll" />
     <Content Include="Photos\Anniversaries\2003 - 1st Anniversary - 1 of 2.jpg" />
     <Content Include="Photos\Anniversaries\2003 - 1st Anniversary - 2 of 2.jpg" />
     <Content Include="Photos\Anniversaries\2004 - 2nd Anniversary - 1 of 2.jpg" />
