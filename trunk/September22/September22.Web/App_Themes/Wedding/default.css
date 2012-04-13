@@ -273,9 +273,15 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 }
 .listview
 {
-    margin: 10px;
-    padding: 10px;
-    min-height: 20px;
-    background-color: Gray;
+    background-color: #b8e5fb;
+    padding: 8px;
     vertical-align: middle;
 }
+/*.listview
+{
+    margin: 10px 10px 10px 0px;
+    padding: 8px;
+    
+    background-color: #b8e5fb;
+    vertical-align: middle;
+}*/

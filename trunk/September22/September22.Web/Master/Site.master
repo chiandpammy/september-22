@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="September22.Master.Master_Site" EnableViewState="false" CodeBehind="Site.Master.cs" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="September22.Master.Master_Site" CodeBehind="Site.Master.cs" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,7 +8,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    
     <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
         <Scripts>
             <%--<asp:ScriptReference Path="~/Scripts/jquery-1.4.1.js" />--%>
@@ -65,7 +64,7 @@
 
         <!-- /tabs -->
         
-        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" EnableViewState="true">
         </asp:ContentPlaceHolder>
         
         <asp:ContentPlaceHolder ID="FooterTopContent" runat="server">
