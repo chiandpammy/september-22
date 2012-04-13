@@ -6,8 +6,8 @@
     <siteMapNode url="/Wedding/" title="Our Wedding" />
     <siteMapNode url="/Party/" title="Wedding Party" />
     <siteMapNode url="/Map/" title="Map of Events" />
-    <siteMapNode url="/RSVP/" title="RSVP" />
     <siteMapNode url="/Contact/" title="Contact Us" />
     <siteMapNode url="/Guestbook/" title="Guestbook" />
+    <siteMapNode url="/RSVP/" title="RSVP" />
   </siteMapNode>
 </siteMap>

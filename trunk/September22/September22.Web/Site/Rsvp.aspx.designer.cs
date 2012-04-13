@@ -31,6 +31,24 @@ namespace September22 {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
+        /// txtName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtName;
+        
+        /// <summary>
+        /// rbAccept control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rbAccept;
+        
+        /// <summary>
         /// btnNewGuest control.
         /// </summary>
         /// <remarks>
@@ -40,6 +58,24 @@ namespace September22 {
         protected global::System.Web.UI.WebControls.Button btnNewGuest;
         
         /// <summary>
+        /// mvRSVP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.MultiView mvRSVP;
+        
+        /// <summary>
+        /// viewAccepted control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View viewAccepted;
+        
+        /// <summary>
         /// lvGuests control.
         /// </summary>
         /// <remarks>
@@ -47,6 +83,15 @@ namespace September22 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView lvGuests;
+        
+        /// <summary>
+        /// viewDeclined control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View viewDeclined;
         
         /// <summary>
         /// btnConfirm control.

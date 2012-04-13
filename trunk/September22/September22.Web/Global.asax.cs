@@ -24,10 +24,10 @@ namespace September22
             routeCollection.MapPageRoute(string.Empty, "Photo/", "~/Site/OurPhotos.aspx");
             routeCollection.MapPageRoute(string.Empty, "Wedding/", "~/Site/OurWedding.aspx");
             routeCollection.MapPageRoute(string.Empty, "Story/", "~/Site/OurStory.aspx");
-            routeCollection.MapPageRoute(string.Empty, "RSVP/", "~/Site/Rsvp.aspx");
             routeCollection.MapPageRoute(string.Empty, "Party/", "~/Site/WeddingParty.aspx");
             routeCollection.MapPageRoute(string.Empty, "Contact/", "~/Site/Contact.aspx");
             routeCollection.MapPageRoute(string.Empty, "Guestbook/", "~/Site/Guestbook.aspx");
+            routeCollection.MapPageRoute(string.Empty, "RSVP/", "~/Site/Rsvp.aspx");
         }
 
         void Application_End(object sender, EventArgs e)

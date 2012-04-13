@@ -18,10 +18,15 @@ namespace September22
             ScriptManager.RegisterStartupScript(this, this.GetType(), string.Empty, "bounce();", true);
         }
 
-        protected void btnNew_Click(object sender, EventArgs e)
+        protected void btnNewGuest_Click(object sender, EventArgs e)
         {
             //check viewstate
             List<Person> persons = GetPersons();
+
+            if (persons.Count >= 5)
+            {
+                return;
+            }
 
             //add new person
             Person newPerson = new Person();
@@ -41,13 +46,28 @@ namespace September22
             ListView lv = sender as ListView;
             if (lv != null)
             {
+                //find last item in the list
                 ListViewDataItem lastItem = lv.Items.LastOrDefault();
                 if (lastItem != null)
                 {
+                    //add css class bounce
                     WebControl control = lastItem.FindControl("itemPlaceHolder") as WebControl;
                     if (control != null)
                     {
                         control.CssClass = "bounce";
+                    }
+                }
+
+                if (lv.Items.Count >= 2)
+                {
+                    //find second to last item in the list
+                    ListViewDataItem secondLastItem = lv.Items[lv.Items.Count - 2];
+
+                    //add css class bounce-little
+                    WebControl control = secondLastItem.FindControl("itemPlaceHolder") as WebControl;
+                    if (control != null)
+                    {
+                        control.CssClass = "bounce-little";
                     }
                 }
             }
@@ -110,6 +130,22 @@ namespace September22
         private void SavePersons(List<Person> persons)
         {
             ViewState["persons"] = persons;
+        }
+
+        const string ACCEPTED = "Yes";
+        const string DECLINED = "No";
+        protected void rbAccept_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (rbAccept.SelectedValue == ACCEPTED)
+            {
+                mvRSVP.SetActiveView(viewAccepted);
+                btnNewGuest.Visible = true;
+            }
+            else if (rbAccept.SelectedValue == DECLINED)
+            {
+                mvRSVP.SetActiveView(viewDeclined);
+                btnNewGuest.Visible = false;
+            }
         }
     }
     
