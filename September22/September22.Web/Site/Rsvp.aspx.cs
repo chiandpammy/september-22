@@ -13,34 +13,21 @@ namespace September22
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //WeddingEntities entities = new WeddingEntities();
+            timeLabel.Text = DateTime.Now.ToLongTimeString();
 
-            //DropDownList1.DataSource = entities.DinnerPreferences;
-            //DropDownList1.DataTextField = "Name";
-            //DropDownList1.DataValueField = "ID";
-            //DropDownList1.DataBind();
-
-            ScriptManager.RegisterStartupScript(UpdatePanel1, UpdatePanel1.GetType(), string.Empty, "bounce();", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), string.Empty, "bounce();", true);
         }
 
-        protected void btnNewGuest_Click(object sender, EventArgs e)
+        protected void btnNew_Click(object sender, EventArgs e)
         {
             //check viewstate
-            List<Person> persons;
-            if (ViewState["persons"] != null)
-            {
-                persons = ViewState["persons"] as List<Person>;
-            }
-            else
-            {
-                persons = new List<Person>();
-            }
+            List<Person> persons = GetPersons();
 
             //add new person
-            Person newPerson = new Person() { Name = txtName.Text };
+            Person newPerson = new Person();
             persons.Add(newPerson);
-            
-            ViewState["persons"] = persons;
+
+            SavePersons(persons);
 
             //update listview
             lvGuests.DataSource = persons;
@@ -57,13 +44,72 @@ namespace September22
                 ListViewDataItem lastItem = lv.Items.LastOrDefault();
                 if (lastItem != null)
                 {
-                    WebControl control = lastItem.FindControl("bounceControl") as WebControl;
+                    WebControl control = lastItem.FindControl("itemPlaceHolder") as WebControl;
                     if (control != null)
                     {
                         control.CssClass = "bounce";
                     }
                 }
             }
+        }
+
+        protected void lvGuests_ItemDeleting(object sender, ListViewDeleteEventArgs e)
+        {
+            //check viewstate
+            List<Person> persons = GetPersons();
+
+            //delete this person
+            persons.RemoveAt(e.ItemIndex);
+
+            SavePersons(persons);
+
+            //update listview
+            lvGuests.DataSource = persons;
+            lvGuests.DataBind();
+
+            UpdatePanel1.Update();
+        }
+
+        protected void btnConfirm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private List<Person> GetPersons()
+        {
+            List<Person> persons = new List<Person>();
+
+            if (lvGuests.Items.Count == 0)
+            {
+                //this is first time load
+                if (ViewState["persons"] != null)
+                {
+                    persons = ViewState["persons"] as List<Person>;
+                }
+            }
+            else
+            {
+                //persons is loaded onto listview
+                foreach (ListViewDataItem item in lvGuests.Items)
+                {
+                    TextBox txtBox = item.FindControl("txtName") as TextBox ;
+                    if (txtBox != null && txtBox.Text != null)
+                    {
+                        persons.Add(new Person() { Name = txtBox.Text });
+                    }
+                    else
+                    {
+                        persons.Add(new Person());
+                    }
+                }
+            }
+
+            return persons;
+        }
+
+        private void SavePersons(List<Person> persons)
+        {
+            ViewState["persons"] = persons;
         }
     }
     

@@ -121,6 +121,7 @@
     <Content Include="App_Themes\Wedding\Images\content_comments_bg.jpg" />
     <Content Include="App_Themes\Wedding\Images\content_title_bg.gif" />
     <Content Include="App_Themes\Wedding\Images\content_title_bg_1col.gif" />
+    <Content Include="App_Themes\Wedding\Images\delete.gif" />
     <Content Include="App_Themes\Wedding\Images\footer.png" />
     <Content Include="App_Themes\Wedding\Images\footer_1col.png" />
     <Content Include="App_Themes\Wedding\Images\header.gif" />
