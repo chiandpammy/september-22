@@ -8,6 +8,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{4AA5
 		Library\AjaxControlToolkit.dll = Library\AjaxControlToolkit.dll
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoodleApp", "DoodleApp\DoodleApp.csproj", "{3B770A16-000E-4C37-B0E9-E0DC07CA86CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +20,10 @@ Global
 		{AFA05A2C-E38A-471A-A71D-FD9D738D0250}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFA05A2C-E38A-471A-A71D-FD9D738D0250}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFA05A2C-E38A-471A-A71D-FD9D738D0250}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B770A16-000E-4C37-B0E9-E0DC07CA86CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B770A16-000E-4C37-B0E9-E0DC07CA86CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B770A16-000E-4C37-B0E9-E0DC07CA86CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B770A16-000E-4C37-B0E9-E0DC07CA86CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

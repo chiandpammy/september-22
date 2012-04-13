@@ -8,5 +8,6 @@
     <siteMapNode url="/Map/" title="Map of Events" />
     <siteMapNode url="/RSVP/" title="RSVP" />
     <siteMapNode url="/Contact/" title="Contact Us" />
+    <siteMapNode url="/Guestbook/" title="Guestbook" />
   </siteMapNode>
 </siteMap>

@@ -225,47 +225,6 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     #lavalamp  li a {display: block; position: relative; float: left; overflow: hidden; height: 30px; margin: auto 10px; font-weight: bold; text-decoration: none; color: #fff; outline: none; text-align: center; top: 7px; letter-spacing: 0; z-index: 10;}
     #lavalamp  li a:hover, #lavalamp  li a:active, #lavalamp  li a:visited {border: none;}
 
-/* Wedding Party */
-div .weddingParty 
-{
-    float: left;
-    width: 470px;
-}
-
-div .weddingParty > img
-{
-    width: 150px;
-    padding-right: 5px;
-}
-
-div .weddingParty > div
-{
-    /*padding-left: 150px;*/
-}
-
-/* AD gallery */
-#gallery {
-    padding: 30px;
-}
-
-#descriptions {
-    position: relative;
-    height: 50px;
-    background: #EEE;
-    margin-top: 10px;
-    width: 640px;
-    padding: 10px;
-    overflow: hidden;
-}
-
-#descriptions .ad-image-description {
-    position: absolute;
-}
-
-#descriptions .ad-image-description .ad-description-title {
-    display: block;
-}
-
 /* Skin files use these 
     
     Colors:
