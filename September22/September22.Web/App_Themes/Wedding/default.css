@@ -305,3 +305,18 @@ div .weddingParty > div
     font: 100%/160% "verdana",sans-serif;
     resize: none;
 }
+.rounded-corner
+{
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+}
+.listview
+{
+    margin: 10px;
+    padding: 10px;
+    min-height: 20px;
+    background-color: Gray;
+    vertical-align: middle;
+}
