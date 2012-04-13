@@ -59,7 +59,7 @@
                 <li id="liMap"><a href="/Map/">Map of Events</a></li>
                 <li id="liWeddingParty"><a href="/Party/">Wedding Party</a></li>
                 <li id="liOurPhotos"><a href="/Photo/">Our Photos</a></li>
-
+                <li id="liGuestbook"><a href="/Guestbook/">Guestbook</a></li>
             </ul>
         </div>
 

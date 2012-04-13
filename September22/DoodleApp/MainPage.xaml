@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="DoodleApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Canvas>
+            <Border BorderThickness="1" Margin="50 10 0 0" BorderBrush="CadetBlue" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <InkPresenter x:Name="iPresenter" Height="500" Width="500" MouseLeftButtonDown="iPresenter_MouseLeftButtonDown" LostMouseCapture="iPresenter_LostMouseCapture" MouseMove="iPresenter_MouseMove" Background="Transparent" Opacity="1">
+                    <!--<TextBox Width="138" Canvas.Left="58" Canvas.Top="105">
+                    </TextBox>-->
+                </InkPresenter>
+            </Border>
+            
+            <Button Canvas.Left="560" Canvas.Top="11" Content="Save Graffiti as Image" Height="23" Name="button1" Width="104" Click="button1_Click" />
+            
+            <Image Name="showIP" Width="400" Height="400" Canvas.Left="560" Canvas.Top="60">
+            </Image>
+        </Canvas>
+    </Grid>
+</UserControl>
