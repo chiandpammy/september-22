@@ -102,7 +102,9 @@
                         </asp:CustomValidator>
                     </div>
                     <br />
-                    <asp:Button ID="btnSend" runat="server" Text="Send" CssClass="button" onclick="btnSend_Click" />
+                    <!--[if (IE 9)]><!--> <div class="gradient-wrapper"> <!--<![endif]-->
+                        <asp:Button ID="btnSend" runat="server" Text="Send" CssClass="button" onclick="btnSend_Click" />
+                    </div>
                 </div>
             </asp:View>
             <asp:View ID="viewFinished"  runat="server">

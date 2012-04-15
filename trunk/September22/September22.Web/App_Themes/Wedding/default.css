@@ -238,27 +238,40 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     border: 0px;
     background: -webkit-gradient(linear, left top, left bottom, from(#6b92b4), to(#00447e));
     background: -webkit-linear-gradient(top, #6b92b4, #00447e);
-    background: -moz-linear-gradient(top, #6b92b4, #00447e);
-    background: -ms-linear-gradient(top, #6b92b4, #00447e);
-    background: -o-linear-gradient(top, #6b92b4, #00447e);
+    background:    -moz-linear-gradient(top, #6b92b4, #00447e);
+    background:     -ms-linear-gradient(top, #6b92b4, #00447e);
+    background:      -o-linear-gradient(top, #6b92b4, #00447e);
+    background:         linear-gradient(to bottom, #6b92b4, #00447e);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#6b92b4', endColorstr='#00447e'); /*For IE7-8-9*/ 
+
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
     color: White;
     font-weight: bold;
-    width: auto;
     padding: 8px 8px;
+    min-height: 25px;
 }
 .button:hover
 {
     background: -webkit-gradient(linear, left top, left bottom, from(#9ddcf9), to(#4f7ea6));
     background: -webkit-linear-gradient(top, #9ddcf9, #4f7ea6);
-    background: -moz-linear-gradient(top, #9ddcf9, #4f7ea6);
-    background: -ms-linear-gradient(top, #9ddcf9, #4f7ea6);
-    background: -o-linear-gradient(top, #9ddcf9, #4f7ea6);
+    background:    -moz-linear-gradient(top, #9ddcf9, #4f7ea6);
+    background:     -ms-linear-gradient(top, #9ddcf9, #4f7ea6); /*For IE10*/
+    background:      -o-linear-gradient(top, #9ddcf9, #4f7ea6);
+    background:         linear-gradient(to bottom, #9ddcf9, #4f7ea6);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9ddcf9', endColorstr='#4f7ea6'); /*For IE7-8-9*/ 
     
     cursor:pointer;
 }
+
+.gradient-wrapper {
+    margin: 0 auto;
+    display:inline-block;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
 .textbox
 {
     font: 100%/160% "verdana",sans-serif;
@@ -266,10 +279,10 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 }
 .rounded-corner
 {
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border-radius: 10px;
+    -webkit-border-radius: 10px; /* chrome and safari */
+     -khtml-border-radius: 10px;
+       -moz-border-radius: 10px; /* firefox */
+            border-radius: 10px;
 }
 .listview
 {
@@ -277,11 +290,3 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     padding: 8px;
     vertical-align: middle;
 }
-/*.listview
-{
-    margin: 10px 10px 10px 0px;
-    padding: 8px;
-    
-    background-color: #b8e5fb;
-    vertical-align: middle;
-}*/
