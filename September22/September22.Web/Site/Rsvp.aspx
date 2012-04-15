@@ -4,8 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <script language="javascript" type="text/javascript">
         function bounce() {
-            $(".bounce").effect("bounce", { times: 4, distance: 16 }, 200);
-            $(".bounce-little").effect("bounce", { times: 3, distance: 8 }, 200);
+            $(".bounce").effect("bounce", { times: 4, distance: 8 }, 200);
         };
     </script>
 </asp:Content>
@@ -15,7 +14,7 @@
     <asp:Label ID="timeLabel" runat="server" />
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
-            <div class="listview rounded-corner">
+            <div id="divRsvpTop" runat="server" class="listview rounded-corner">
                 <div>
                     Name
                 </div>
@@ -26,8 +25,10 @@
                         <asp:ListItem Value="Yes">Accept with Pleasure</asp:ListItem>
                         <asp:ListItem Value="No">Decline with regret</asp:ListItem>
                     </asp:RadioButtonList>
+                    <!--[if (IE 9)]><!--> <div class="gradient-wrapper"> <!--<![endif]-->
                     <asp:Button runat="server" ID="btnNewGuest" Text="Add another Guest" UseSubmitBehavior="False"
-                        OnClick="btnNewGuest_Click" Visible="False" />
+                        OnClick="btnNewGuest_Click" Visible="false" />
+                    </div>
                 </div>
             </div>
             <div style="height: 4px;"></div>
@@ -60,8 +61,10 @@
                     </p>
                 </asp:View>
             </asp:MultiView>
+            <!--[if (IE 9)]><!--> <div class="gradient-wrapper"> <!--<![endif]-->
             <asp:Button runat="server" ID="btnConfirm" Text="Confirm" UseSubmitBehavior="False"
-                OnClick="btnConfirm_Click" style="margin-top: 20px;" />
+                OnClick="btnConfirm_Click" />
+            </div>
         </ContentTemplate>
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="btnConfirm" EventName="Click" />

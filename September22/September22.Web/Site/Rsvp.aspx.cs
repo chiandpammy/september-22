@@ -14,12 +14,13 @@ namespace September22
         protected void Page_Load(object sender, EventArgs e)
         {
             timeLabel.Text = DateTime.Now.ToLongTimeString();
-
-            ScriptManager.RegisterStartupScript(this, this.GetType(), string.Empty, "bounce();", true);
         }
 
         protected void btnNewGuest_Click(object sender, EventArgs e)
         {
+            //bounce script
+            ScriptManager.RegisterStartupScript(this, this.GetType(), string.Empty, "bounce();", true);
+
             //check viewstate
             List<Person> persons = GetPersons();
 
@@ -57,24 +58,14 @@ namespace September22
                         control.CssClass = "bounce";
                     }
                 }
-
-                if (lv.Items.Count >= 2)
-                {
-                    //find second to last item in the list
-                    ListViewDataItem secondLastItem = lv.Items[lv.Items.Count - 2];
-
-                    //add css class bounce-little
-                    WebControl control = secondLastItem.FindControl("itemPlaceHolder") as WebControl;
-                    if (control != null)
-                    {
-                        control.CssClass = "bounce-little";
-                    }
-                }
             }
         }
 
         protected void lvGuests_ItemDeleting(object sender, ListViewDeleteEventArgs e)
         {
+            //bounce script
+            ScriptManager.RegisterStartupScript(this, this.GetType(), string.Empty, "bounce();", true);
+
             //check viewstate
             List<Person> persons = GetPersons();
 
@@ -112,7 +103,7 @@ namespace September22
                 //persons is loaded onto listview
                 foreach (ListViewDataItem item in lvGuests.Items)
                 {
-                    TextBox txtBox = item.FindControl("txtName") as TextBox ;
+                    TextBox txtBox = item.FindControl("txtGuest") as TextBox;
                     if (txtBox != null && txtBox.Text != null)
                     {
                         persons.Add(new Person() { Name = txtBox.Text });
@@ -153,5 +144,10 @@ namespace September22
     public class Person
     {
         public string Name { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
