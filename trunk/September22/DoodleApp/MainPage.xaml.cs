@@ -17,13 +17,19 @@ namespace DoodleApp
 {
     public partial class MainPage : UserControl
     {
+        private Button[] Brushes = new Button[4];
+        private int _brushSize = 0;
+        private Color _brushColor;
+        
+        Stroke myStroke;
+        
         public MainPage()
         {
             InitializeComponent();
             SetPresenterClip();
-        }
 
-        Stroke myStroke;
+            Brushes = new Button[] { SmallBrush, MediumBrush, LargeBrush, XLargeBrush };
+        }
 
         private void iPresenter_MouseLeftButtonDown(object sender, MouseEventArgs e)
         {
@@ -39,10 +45,10 @@ namespace DoodleApp
             myStroke = new Stroke(stylusPointCollection);
 
             // Set Drawing Effect of Stork as Color, Size and so on
-            myStroke.DrawingAttributes.Color = Colors.Gray;
+            myStroke.DrawingAttributes.Color = this._brushColor;
+            myStroke.DrawingAttributes.Width = this._brushSize;
+            myStroke.DrawingAttributes.Height = this._brushSize;
 
-            myStroke.DrawingAttributes.Width = 1;
-            myStroke.DrawingAttributes.Height = 1;
             iPresenter.Strokes.Add(myStroke);
         }
 
@@ -73,57 +79,85 @@ namespace DoodleApp
             iPresenter.Clip = MyRectangleGeometry;
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+
+        private void BrushButton_Click(object sender, RoutedEventArgs e)
         {
-            // Save Image which is Drawing in InkPresenter Doodle Pad
-            WriteableBitmap _bitmap = new WriteableBitmap(iPresenter, null);
-
-            this.showIP.Source = _bitmap;
-
-            SaveFileDialog sfd = new SaveFileDialog();
-
-            sfd.Filter = "PNG Files (*.png)|*.png|All Files (*.*)|*.*";
-
-            sfd.DefaultExt = ".png";
-
-            sfd.FilterIndex = 1;
-
-            if ((bool)sfd.ShowDialog())
+            for (int i = 0; i < Brushes.Length; i++)
             {
-                using (Stream fs = sfd.OpenFile())
-                {
-                    int width = _bitmap.PixelWidth;
-                    int height = _bitmap.PixelHeight;
+                Brushes[i].Style = (Style)BrushPanel.Resources["InactiveButton"];
+            }
 
-                    EditableImage ei = new EditableImage(width, height);
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                btn.Style = (Style) BrushPanel.Resources["ActiveButton"];
 
-                    for (int i = 0; i < height; i++)
-                    {
-                        for (int j = 0; j < width; j++)
-                        {
-                            int pixel = _bitmap.Pixels[(i * width) + j];
-                            ei.SetPixel(j, i,
-                                        (byte) ((pixel >> 16) & 0xFF),
-                                        (byte) ((pixel >> 8) & 0xFF),
-                                        (byte) (pixel & 0xFF),
-                                        (byte) ((pixel >> 24) & 0xFF));
-                        }
-                    }
-
-                    // Get Stream
-                    Stream png = ei.GetStream();
-
-                    int len = (int)png.Length;
-
-                    byte[] bytes = new byte[len];
-
-                    png.Read(bytes, 0, len);
-
-                    fs.Write(bytes, 0, len);
-
-                    MessageBox.Show("Succeed to Save Image");
-                }
+                //set brush size
+                this._brushSize = Int32.Parse(btn.Tag.ToString());
             }
         }
+
+        private void ColorButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                //set brush size
+                this._brushColor = ((System.Windows.Media.SolidColorBrush)(btn.Background)).Color;
+            }
+        }
+
+        //private void button1_Click(object sender, RoutedEventArgs e)
+        //{
+        //    // Save Image which is Drawing in InkPresenter Doodle Pad
+        //    WriteableBitmap _bitmap = new WriteableBitmap(iPresenter, null);
+
+        //    this.showIP.Source = _bitmap;
+
+        //    SaveFileDialog sfd = new SaveFileDialog();
+
+        //    sfd.Filter = "PNG Files (*.png)|*.png|All Files (*.*)|*.*";
+
+        //    sfd.DefaultExt = ".png";
+
+        //    sfd.FilterIndex = 1;
+
+        //    if ((bool)sfd.ShowDialog())
+        //    {
+        //        using (Stream fs = sfd.OpenFile())
+        //        {
+        //            int width = _bitmap.PixelWidth;
+        //            int height = _bitmap.PixelHeight;
+
+        //            EditableImage ei = new EditableImage(width, height);
+
+        //            for (int i = 0; i < height; i++)
+        //            {
+        //                for (int j = 0; j < width; j++)
+        //                {
+        //                    int pixel = _bitmap.Pixels[(i * width) + j];
+        //                    ei.SetPixel(j, i,
+        //                                (byte) ((pixel >> 16) & 0xFF),
+        //                                (byte) ((pixel >> 8) & 0xFF),
+        //                                (byte) (pixel & 0xFF),
+        //                                (byte) ((pixel >> 24) & 0xFF));
+        //                }
+        //            }
+
+        //            // Get Stream
+        //            Stream png = ei.GetStream();
+
+        //            int len = (int)png.Length;
+
+        //            byte[] bytes = new byte[len];
+
+        //            png.Read(bytes, 0, len);
+
+        //            fs.Write(bytes, 0, len);
+
+        //            MessageBox.Show("Succeed to Save Image");
+        //        }
+        //    }
+        //}
     }
 }
