@@ -48,7 +48,7 @@ namespace DoodleApp
             myStroke.DrawingAttributes.Color = this._brushColor;
             myStroke.DrawingAttributes.Width = this._brushSize;
             myStroke.DrawingAttributes.Height = this._brushSize;
-
+            
             iPresenter.Strokes.Add(myStroke);
         }
 

@@ -42,7 +42,7 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate>
-                                <Grid>
+                                <Grid Cursor="Hand">
                                     <Rectangle Width="16" Height="16" Margin="1" Stroke="Black" Fill="{TemplateBinding Background}" />
                                 </Grid>
                             </ControlTemplate>
@@ -73,7 +73,7 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate>
-                                <Grid>
+                                <Grid Cursor="Hand">
                                     <Ellipse>
                                         <Ellipse.Fill>
                                             <RadialGradientBrush>
@@ -92,7 +92,7 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate>
-                                <Grid>
+                                <Grid Cursor="Hand">
                                     <Ellipse>
                                         <Ellipse.Fill>
                                             <RadialGradientBrush>
