@@ -104,7 +104,23 @@ namespace DoodleApp
             {
                 //set brush size
                 this._brushColor = ((System.Windows.Media.SolidColorBrush)(btn.Background)).Color;
+                this._brushColor.A = Convert.ToByte((double)(sldOpacity.Value / 100.00));
             }
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Slider slider = sender as Slider;
+            if (slider != null)
+            {
+                //set brush size
+                this._brushColor.A = Convert.ToByte((double) (e.NewValue/100.00));
+            }
+        }
+
+        private void Slider_Loaded(object sender, RoutedEventArgs e)
+        {
+            sldOpacity.ValueChanged += Slider_ValueChanged;
         }
 
         //private void button1_Click(object sender, RoutedEventArgs e)

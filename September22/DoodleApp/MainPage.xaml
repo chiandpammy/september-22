@@ -27,7 +27,7 @@
                               LostMouseCapture="iPresenter_LostMouseCapture" 
                               MouseMove="iPresenter_MouseMove" 
                               Background="Transparent"
-                              Opacity="1"
+                              Opacity="1" Cursor="SizeWE"
                               >
                 </InkPresenter>
             </Border>
@@ -115,7 +115,7 @@
             <Button Name="XLargeBrush" Tag="22" Height="22" Width="22" Style="{StaticResource InactiveButton}" Click="BrushButton_Click" />
             
             <TextBlock Text="Opacity" Margin="16 4 4 0"  />
-            <Slider Height="20" Width="64" Maximum="100" Margin="0 0 0 2" Value="100"/>
+            <Slider  Height="20" Width="64" Maximum="100" Margin="0 0 0 2" Value="100" Loaded="Slider_Loaded" Name="sldOpacity" />
         </StackPanel>
     </Grid>
 </UserControl>
