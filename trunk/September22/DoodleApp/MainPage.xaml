@@ -66,15 +66,15 @@
             <Button Background="White" Style="{StaticResource ColorButton}" Click="ColorButton_Click" />
         </StackPanel>
 
-        <StackPanel Name="BrushPanel" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="32 4 0 0">
+        <StackPanel Name="BrushPanel" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="32 4 0 0" HorizontalAlignment="Left">
             <StackPanel.Resources>
                 <Style x:Key="InactiveButton" TargetType="Button">
                     <Setter Property="Margin" Value="0 0 4 0" />
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate>
-                                <Grid Cursor="Hand">
-                                    <Ellipse>
+                                <Grid Cursor="Hand" Background="Transparent">
+                                    <Ellipse Height="{TemplateBinding Width}" Width="{TemplateBinding Width}">
                                         <Ellipse.Fill>
                                             <RadialGradientBrush>
                                                 <GradientStop Offset="0.2" Color="LightGray" />
@@ -92,8 +92,8 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate>
-                                <Grid Cursor="Hand">
-                                    <Ellipse>
+                                <Grid Cursor="Hand" Background="Transparent">
+                                    <Ellipse Height="{TemplateBinding Width}" Width="{TemplateBinding Width}">
                                         <Ellipse.Fill>
                                             <RadialGradientBrush>
                                                 <GradientStop Offset="0.2" Color="Black" />
@@ -108,14 +108,14 @@
                 </Style>
             </StackPanel.Resources>
 
-            <TextBlock Text="Brush" Margin="0 4 4 0" />
-            <Button Name="SmallBrush" Tag="7" Height="07" Width="07" Style="{StaticResource InactiveButton}" Click="BrushButton_Click" />
-            <Button Name="MediumBrush" Tag="11" Height="11" Width="11" Style="{StaticResource InactiveButton}" Click="BrushButton_Click" />
-            <Button Name="LargeBrush" Tag="16" Height="16" Width="16" Style="{StaticResource InactiveButton}" Click="BrushButton_Click" />
-            <Button Name="XLargeBrush" Tag="22" Height="22" Width="22" Style="{StaticResource InactiveButton}" Click="BrushButton_Click" />
+            <TextBlock Text="Brush" Margin="0 8 4 0" />
+            <Button Name="SmallBrush" Tag="7" Height="32" Width="07" Style="{StaticResource InactiveButton}" Click="BrushButton_Click" />
+            <Button Name="MediumBrush" Tag="11" Height="32" Width="11" Style="{StaticResource InactiveButton}" Click="BrushButton_Click" />
+            <Button Name="LargeBrush" Tag="16" Height="32" Width="16" Style="{StaticResource InactiveButton}" Click="BrushButton_Click" />
+            <Button Name="XLargeBrush" Tag="22" Height="32" Width="22" Style="{StaticResource InactiveButton}" Click="BrushButton_Click" />
             
-            <TextBlock Text="Opacity" Margin="16 4 4 0"  />
-            <Slider  Height="20" Width="64" Maximum="255" Margin="0 0 0 2" Value="255" Loaded="Slider_Loaded" Name="sldOpacity" SmallChange="1" />
+            <TextBlock Text="Opacity" Margin="16 8 4 0"  />
+            <Slider  Height="20" Width="64" Maximum="255" Margin="0 2 0 2" Value="255" Loaded="Slider_Loaded" Name="sldOpacity" SmallChange="1" />
         </StackPanel>
     </Grid>
 </UserControl>
