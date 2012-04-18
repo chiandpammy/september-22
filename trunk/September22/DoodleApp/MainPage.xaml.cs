@@ -22,6 +22,7 @@ namespace DoodleApp
         private Color _brushColor;
         
         Stroke myStroke;
+        CustomCursor customCursor = new CustomCursor();
         
         public MainPage()
         {
@@ -29,6 +30,17 @@ namespace DoodleApp
             SetPresenterClip();
 
             Brushes = new Button[] { SmallBrush, MediumBrush, LargeBrush, XLargeBrush };
+
+            customCursor.SetCursor("spray-can-in-hand.jpg");
+
+            iPresenter.Children.Add(customCursor);
+
+            this.MouseMove += new MouseEventHandler(MainPage_MouseMove);
+        }
+
+        void MainPage_MouseMove(object sender, MouseEventArgs e)
+        {
+            customCursor.MoveTo(e.GetPosition(null));
         }
 
         private void iPresenter_MouseLeftButtonDown(object sender, MouseEventArgs e)
@@ -103,7 +115,7 @@ namespace DoodleApp
             if (btn != null)
             {
                 //set brush size
-                this._brushColor = ((System.Windows.Media.SolidColorBrush)(btn.Background)).Color;
+                this._brushColor = ((SolidColorBrush)(btn.Background)).Color;
                 this._brushColor.A = Convert.ToByte(sldOpacity.Value);
             }
         }
@@ -114,7 +126,7 @@ namespace DoodleApp
             if (slider != null)
             {
                 //set brush size
-                this._brushColor.A = Convert.ToByte(e.NewValue); //this._brushColor.A = Convert.ToByte((double)(e.NewValue / 100.00));
+                this._brushColor.A = Convert.ToByte(e.NewValue);
             }
         }
 
