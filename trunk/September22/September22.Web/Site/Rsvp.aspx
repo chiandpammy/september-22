@@ -7,11 +7,33 @@
             $(".bounce").effect("bounce", { times: 4, distance: 8 }, 200);
         };
     </script>
+    <style type="text/css">
+        .completionList {
+            border:solid 1px #444444;
+            margin:0px;
+            padding:2px;
+            height: 100px;
+            overflow:auto;
+        }
+        .autocomplete_CompletionListElement
+        {
+            margin: 0px;
+            background-color: White;
+            cursor: default;
+            overflow-y: auto;
+            overflow-x: hidden;
+            height:300px;
+            text-align: left;
+            border: 1px solid #777;
+            z-index:10000;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MiddleColumnContent" runat="server">
     <h2>
         <span>RSVP</span></h2>
     <asp:Label ID="timeLabel" runat="server" />
+                
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div id="divRsvpTop" runat="server" class="listview rounded-corner">
@@ -19,7 +41,10 @@
                     Name
                 </div>
                 <div>
-                    <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtName" runat="server" AutoPostBack="true"></asp:TextBox>
+                    <ajaxToolkit:AutoCompleteExtender ID="acextName" runat="server" TargetControlID="txtName"
+                        ServiceMethod="GetCompletionList" MinimumPrefixLength="2" CompletionListCssClass="autocomplete_CompletionListElement">
+                    </ajaxToolkit:AutoCompleteExtender>
                     <asp:RadioButtonList ID="rbAccept" runat="server" RepeatDirection="Horizontal" 
                         AutoPostBack="True" onselectedindexchanged="rbAccept_SelectedIndexChanged">
                         <asp:ListItem Value="Yes">Accept with Pleasure</asp:ListItem>

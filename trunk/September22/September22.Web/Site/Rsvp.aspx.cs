@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using September22.Common;
-using September22.DataAccess;
+using September22.DAL;
 
 namespace September22
 {
@@ -138,6 +138,22 @@ namespace September22
                 btnNewGuest.Visible = false;
             }
         }
+
+        [System.Web.Services.WebMethodAttribute(), System.Web.Script.Services.ScriptMethodAttribute()]
+        public static string[] GetCompletionList(string prefixText, int count)
+        {
+            string[] invitationNames =
+                DataAccess.GetInvitations().Select(
+                    a => new {FullName = a.FirstName + " " + a.LastName}).
+                    Select(b => b.FullName).ToArray();
+            // Create array of movies
+            //string[] movies = { "Star Wars", "Star Trek", "Superman", "Memento", "Shrek", "Shrek II" };
+
+            // Return matching movies
+            string[] searchResults = (from m in invitationNames where m.ToUpperInvariant().Contains(prefixText.ToUpperInvariant()) select m).Take(count).ToArray();
+            return searchResults;
+        }
+
     }
     
     [Serializable]

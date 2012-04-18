@@ -163,7 +163,9 @@
     <Content Include="App_Themes\Wedding\Images\tmp_photo.gif" />
     <Content Include="App_Themes\Wedding\jquery-sliding.form.css" />
     <Content Include="App_Themes\Wedding\jquery.ad-gallery.css" />
-    <Content Include="ClientBin\DoodleApp.xap" />
+    <Content Include="ClientBin\DoodleApp.xap">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Photos\Anniversaries\2003 - 1st Anniversary - 1 of 2.jpg" />
     <Content Include="Photos\Anniversaries\2003 - 1st Anniversary - 2 of 2.jpg" />
     <Content Include="Photos\Anniversaries\2004 - 2nd Anniversary - 1 of 2.jpg" />
@@ -238,7 +240,9 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -250,7 +254,8 @@
   <ItemGroup>
     <Compile Include="Common\Navigation.cs" />
     <Compile Include="Common\Enums.cs" />
-    <Compile Include="DataAccess\Wedding.Designer.cs">
+    <Compile Include="DAL\DataAccess.cs" />
+    <Compile Include="DAL\Wedding.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Wedding.edmx</DependentUpon>
@@ -377,7 +382,7 @@
     <Folder Include="Admin\" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="DataAccess\Wedding.edmx">
+    <EntityDeploy Include="DAL\Wedding.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Wedding.Designer.cs</LastGenOutput>
     </EntityDeploy>
