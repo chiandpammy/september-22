@@ -27,8 +27,7 @@
                               LostMouseCapture="iPresenter_LostMouseCapture" 
                               MouseMove="iPresenter_MouseMove" 
                               Background="Transparent"
-                              Opacity="1" Cursor="SizeWE"
-                              >
+                              Opacity="1" Cursor="None">
                 </InkPresenter>
             </Border>
             <!--<Button Canvas.Left="300" Canvas.Top="10" Content="Save Graffiti as Image" Height="23" Name="button1" Click="button1_Click" />-->
