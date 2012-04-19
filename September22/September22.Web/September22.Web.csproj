@@ -150,6 +150,7 @@
     <Content Include="App_Themes\Wedding\Images\parallax_octocatshadow.png" />
     <Content Include="App_Themes\Wedding\Images\parallax_speeder.png" />
     <Content Include="App_Themes\Wedding\Images\parallax_speedershadow.png" />
+    <Content Include="App_Themes\Wedding\Images\postcard.gif" />
     <Content Include="App_Themes\Wedding\Images\search_input.gif" />
     <Content Include="App_Themes\Wedding\Images\search_submit.gif" />
     <Content Include="App_Themes\Wedding\Images\tab_active_l.gif" />

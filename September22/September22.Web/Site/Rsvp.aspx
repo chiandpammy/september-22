@@ -8,6 +8,12 @@
         };
     </script>
     <style type="text/css">
+        .list 
+        {
+            margin: 0px;
+            overflow:hidden;
+            padding:2px;
+        }
         .completionList {
             border:solid 1px #444444;
             margin:0px;
@@ -41,18 +47,27 @@
                     Name
                 </div>
                 <div>
-                <asp:TextBox ID="txtName" runat="server" AutoPostBack="true"></asp:TextBox>
-                    <ajaxToolkit:AutoCompleteExtender ID="acextName" runat="server" TargetControlID="txtName"
-                        ServiceMethod="GetCompletionList" MinimumPrefixLength="2" CompletionListCssClass="autocomplete_CompletionListElement">
+                    <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                    <ajaxToolkit:AutoCompleteExtender
+                        ID="acextName" 
+                        runat="server" 
+                        TargetControlID="txtName"
+                        ServicePath="Rsvp.aspx"
+                        ServiceMethod="GetCompletionList" 
+                        MinimumPrefixLength="2" 
+                        CompletionListCssClass="completionList">
                     </ajaxToolkit:AutoCompleteExtender>
+
                     <asp:RadioButtonList ID="rbAccept" runat="server" RepeatDirection="Horizontal" 
                         AutoPostBack="True" onselectedindexchanged="rbAccept_SelectedIndexChanged">
                         <asp:ListItem Value="Yes">Accept with Pleasure</asp:ListItem>
                         <asp:ListItem Value="No">Decline with regret</asp:ListItem>
                     </asp:RadioButtonList>
                     <!--[if (IE 9)]><!--> <div class="gradient-wrapper"> <!--<![endif]-->
-                    <asp:Button runat="server" ID="btnNewGuest" Text="Add another Guest" UseSubmitBehavior="False"
-                        OnClick="btnNewGuest_Click" Visible="false" />
+                    <asp:Button runat="server" ID="btnNewGuest" Text="Add another Guest" 
+                        UseSubmitBehavior="False"
+                        OnClick="btnNewGuest_Click" 
+                        Visible="false" />
                     </div>
                 </div>
             </div>
