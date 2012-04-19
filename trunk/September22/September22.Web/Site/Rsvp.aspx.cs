@@ -11,6 +11,9 @@ namespace September22
 {
     public partial class Rsvp : PageBase
     {
+        private const string ACCEPTED = "Yes";
+        private const string DECLINED = "No";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             timeLabel.Text = DateTime.Now.ToLongTimeString();
@@ -123,8 +126,6 @@ namespace September22
             ViewState["persons"] = persons;
         }
 
-        const string ACCEPTED = "Yes";
-        const string DECLINED = "No";
         protected void rbAccept_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (rbAccept.SelectedValue == ACCEPTED)
@@ -139,18 +140,24 @@ namespace September22
             }
         }
 
-        [System.Web.Services.WebMethodAttribute(), System.Web.Script.Services.ScriptMethodAttribute()]
+        [System.Web.Services.WebMethod]
+        [System.Web.Script.Services.ScriptMethod]
         public static string[] GetCompletionList(string prefixText, int count)
         {
             string[] invitationNames =
-                DataAccess.GetInvitations().Select(
-                    a => new {FullName = a.FirstName + " " + a.LastName}).
-                    Select(b => b.FullName).ToArray();
-            // Create array of movies
-            //string[] movies = { "Star Wars", "Star Trek", "Superman", "Memento", "Shrek", "Shrek II" };
+                DataAccess.GetInvitations()
+                    .Select(a => new {FullName = a.FirstName + " " + a.LastName})
+                    .Select(b => b.FullName)
+                    .ToArray();
+            
+            string[] searchResults = 
+                (from m in invitationNames 
+                 where m.ToUpperInvariant()
+                 .Contains(prefixText.ToUpperInvariant()) 
+                 select m)
+                 .Take(count)
+                 .ToArray();
 
-            // Return matching movies
-            string[] searchResults = (from m in invitationNames where m.ToUpperInvariant().Contains(prefixText.ToUpperInvariant()) select m).Take(count).ToArray();
             return searchResults;
         }
 

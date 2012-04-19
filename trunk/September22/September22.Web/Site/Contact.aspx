@@ -56,7 +56,7 @@
     <style type="text/css">
         .border
         {
-            width: 400px;
+            width: 320px;
             border-width: 5px;
             border-style: solid;
             margin-bottom: 15px;
@@ -71,7 +71,11 @@
         }
         .view 
         {
-            min-height:440px;
+            padding: 50px 40px 20px 80px;
+            background-image: url(../App_Themes/Wedding/Images/postcard.gif);
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: 400px;
         }
     </style>
 </asp:Content>
@@ -97,7 +101,7 @@
                     </div>
                     Message:<br />
                     <div>
-                        <asp:TextBox ID="txtMessage" runat="server" ClientIDMode="Static" TextMode="MultiLine" Height="200px" MaxLength="400" class="border blue"></asp:TextBox>
+                        <asp:TextBox ID="txtMessage" runat="server" ClientIDMode="Static" TextMode="MultiLine" Height="100px" MaxLength="400" class="border blue"></asp:TextBox>
                         <asp:CustomValidator ID="CustomValidator3" runat="server" ControlToValidate="txtMessage" EnableClientScript="true" ClientValidationFunction="ValidateMessage" ValidateEmptyText="true">
                         </asp:CustomValidator>
                     </div>

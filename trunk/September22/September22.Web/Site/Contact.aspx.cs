@@ -17,7 +17,6 @@ namespace September22
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void btnSend_Click(object sender, EventArgs e)
