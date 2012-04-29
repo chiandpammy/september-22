@@ -108,6 +108,7 @@
     <Content Include="App_Themes\Blue\Images\tab_link_r.gif" />
     <Content Include="App_Themes\Blue\Images\tmp_photo.gif" />
     <Content Include="App_Themes\Wedding\default.css" />
+    <Content Include="App_Themes\Wedding\Images\completion_pointer.gif" />
     <Content Include="App_Themes\Wedding\Images\bg.png" />
     <Content Include="App_Themes\Wedding\Images\bg_page.png" />
     <Content Include="App_Themes\Wedding\Images\bg_page_1col.png" />
