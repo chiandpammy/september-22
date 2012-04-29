@@ -8,30 +8,53 @@
         };
     </script>
     <style type="text/css">
-        .list 
-        {
-            margin: 0px;
-            overflow:hidden;
-            padding:2px;
-        }
-        .completionList {
-            border:solid 1px #444444;
+        .completion_list {
             margin:0px;
-            padding:2px;
-            height: 100px;
-            overflow:auto;
+            overflow:hidden;
+            
+            background: transparent url("../App_Themes/Wedding/Images/completion_pointer.gif") no-repeat 32px 0px;
+            padding-top:10px;
+            cursor:pointer;
         }
-        .autocomplete_CompletionListElement
+        
+        ul>:first-child
         {
-            margin: 0px;
-            background-color: White;
-            cursor: default;
-            overflow-y: auto;
-            overflow-x: hidden;
-            height:300px;
-            text-align: left;
-            border: 1px solid #777;
-            z-index:10000;
+            -webkit-border-top-left-radius: 10px; /* chrome and safari */
+             -khtml-border-top-left-radius: 10px;
+               -moz-border-top-left-radius: 10px; /* firefox */
+                    border-top-left-radius: 10px;
+            
+           -webkit-border-top-right-radius: 10px; /* chrome and safari */
+            -khtml-border-top-right-radius: 10px;
+              -moz-border-top-right-radius: 10px; /* firefox */
+                   border-top-right-radius: 10px;
+        }
+        
+        ul>:last-child
+        {
+            -webkit-border-bottom-left-radius: 10px; /* chrome and safari */
+             -khtml-border-bottom-left-radius: 10px;
+               -moz-border-bottom-left-radius: 10px; /* firefox */
+                    border-bottom-left-radius: 10px;
+            
+           -webkit-border-bottom-right-radius: 10px; /* chrome and safari */
+            -khtml-border-bottom-right-radius: 10px;
+              -moz-border-bottom-right-radius: 10px; /* firefox */
+                   border-bottom-right-radius: 10px;
+        }
+        
+        .completion_list_item 
+        {
+            padding:4px 8px;
+            background-color: #00447e;
+            color: #c7d6e3;
+        }
+        
+        .completion_list_item_highlighted 
+        {
+            padding:4px 8px;
+            background-color: #0fc0f3;
+            color:white;
         }
     </style>
 </asp:Content>
@@ -55,7 +78,10 @@
                         ServicePath="Rsvp.aspx"
                         ServiceMethod="GetCompletionList" 
                         MinimumPrefixLength="2" 
-                        CompletionListCssClass="completionList">
+                        CompletionListCssClass="completion_list"
+                        CompletionListItemCssClass="completion_list_item"
+                        CompletionListHighlightedItemCssClass="completion_list_item_highlighted"
+                        CompletionInterval="1">
                     </ajaxToolkit:AutoCompleteExtender>
 
                     <asp:RadioButtonList ID="rbAccept" runat="server" RepeatDirection="Horizontal" 
@@ -63,6 +89,7 @@
                         <asp:ListItem Value="Yes">Accept with Pleasure</asp:ListItem>
                         <asp:ListItem Value="No">Decline with regret</asp:ListItem>
                     </asp:RadioButtonList>
+
                     <!--[if (IE 9)]><!--> <div class="gradient-wrapper"> <!--<![endif]-->
                     <asp:Button runat="server" ID="btnNewGuest" Text="Add another Guest" 
                         UseSubmitBehavior="False"

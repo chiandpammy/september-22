@@ -10,19 +10,7 @@ namespace September22.DAL
 {
     public static class DataAccess
     {
-        private static WeddingEntities _entities;
-
-        private static WeddingEntities Entities
-        {
-            get
-            {
-                if (_entities == null)
-                {
-                    _entities = new WeddingEntities();
-                }
-                return _entities;
-            }
-        }
+        private static WeddingEntities Entities = new WeddingEntities();
 
         public static IQueryable<DinnerPreference> GetDinnerPreferences(bool excludeOther = true)
         {
