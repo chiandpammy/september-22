@@ -60,14 +60,14 @@
                     Entrance is on Columbus Street, just east of Michigan Avenue and just south of East Randolph Street.<br /><br />
                     <b>Grant Park North Garage</b><br />
                     Entrance is on North Michigan Avenue between Monroe Street (from the south, heading north) and Washington Street (from the north, heading south)<br /><br />
-                    <b>Grandt Park South Garage</b><br />
+                    <b>Grant Park South Garage</b><br />
                     Entrance is on North Michigan Avennue between Congress Parkway (from the south, heading north), and Adams Street (from the north heading south).
                 </p>
             </div>
             <div class="step">
                 <h2><span>Places to Stay</span></h2>
                 <p>
-                    We will soon have a block of rooms reserved at a hotel in the downtown area. And if you ask very nicely we may give you that information. =)
+                    We will soon have a block of rooms reserved at a hotel in the downtown area, and if you ask very nicely, we may give you that information. =)
                 </p>
             </div>
             <div class="step">
