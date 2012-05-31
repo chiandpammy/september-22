@@ -60,7 +60,7 @@
                     I asked her for her number so we may study together. She said sure, and wrote her number on the back of my book.
                 </p>
                 <p>
-                    Later that day, I told my friend Prakas I met a cute Mexican girl named Pamela.  And that I had her number in my book.
+                    Later that day, I told my friend Prakas I met a cute Mexican girl named Pamela.  And that I had her number in my book.  <i>(P.S. Don't worry. Chi now knows that I'm not Mexican. -- Pammy)</i>
                 </p>
             </div>
             <div class="step">
