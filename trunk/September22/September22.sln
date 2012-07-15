@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{4AA5
 		Library\AjaxControlToolkit.dll = Library\AjaxControlToolkit.dll
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoodleApp", "DoodleApp\DoodleApp.csproj", "{3B770A16-000E-4C37-B0E9-E0DC07CA86CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "September22.Doodle", "September22.Doodle\September22.Doodle.csproj", "{3B770A16-000E-4C37-B0E9-E0DC07CA86CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
