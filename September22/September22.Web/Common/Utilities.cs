@@ -110,6 +110,7 @@ namespace September22.Common
 
             //send message
             SmtpClient smtpClient = new SmtpClient();
+            smtpClient.Credentials = new NetworkCredential("admin@september22.us", "09222002");
             smtpClient.Send(message);
         }
         
