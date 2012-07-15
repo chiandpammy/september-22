@@ -32,7 +32,6 @@
           <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="InvitationID" Type="int" Nullable="false" />
           <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="Note" Type="nvarchar" MaxLength="400" />
           <Property Name="DinnerPreferenceID" Type="int" />
         </EntityType>
         <EntityType Name="Invitation">
@@ -44,6 +43,7 @@
           <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="100" />
           <Property Name="MaxNumberOfGuests" Type="tinyint" Nullable="false" />
           <Property Name="Attending" Type="bit" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <Association Name="FK_Guest_DinnerPreference">
           <End Role="DinnerPreference" Type="WeddingModel.Store.DinnerPreference" Multiplicity="0..1" />
@@ -95,7 +95,6 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="InvitationID" Type="Int32" Nullable="false" />
           <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="Note" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Invitation" Relationship="WeddingModel.FK_Guest_Invitation" FromRole="Guest" ToRole="Invitation" />
           <Property Type="Int32" Name="DinnerPreferenceID" />
           <NavigationProperty Name="DinnerPreference" Relationship="WeddingModel.FK_Guest_DinnerPreference" FromRole="Guest" ToRole="DinnerPreference" />
@@ -110,6 +109,7 @@
           <Property Name="MaxNumberOfGuests" Type="Byte" Nullable="false" />
           <Property Name="Attending" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Guests" Relationship="WeddingModel.FK_Guest_Invitation" FromRole="Invitation" ToRole="Guest" />
+          <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_Guest_Invitation">
           <End Role="Invitation" Type="WeddingModel.Invitation" Multiplicity="1">
@@ -156,10 +156,10 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
             <ScalarProperty Name="InvitationID" ColumnName="InvitationID" />
             <ScalarProperty Name="FullName" ColumnName="FullName" />
-            <ScalarProperty Name="Note" ColumnName="Note" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Invitations"><EntityTypeMapping TypeName="WeddingModel.Invitation"><MappingFragment StoreEntitySet="Invitation">
-            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
             <ScalarProperty Name="FirstName" ColumnName="FirstName" />
             <ScalarProperty Name="LastName" ColumnName="LastName" />
             <ScalarProperty Name="MaxNumberOfGuests" ColumnName="MaxNumberOfGuests" />
@@ -194,7 +194,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="Wedding">
-        <EntityTypeShape EntityType="WeddingModel.Guest" Width="1.5" PointX="3" PointY="0.875" Height="2.3648893229166661" IsExpanded="true" />
+        <EntityTypeShape EntityType="WeddingModel.Guest" Width="1.5" PointX="3" PointY="0.875" Height="2.172587890625" IsExpanded="true" />
         <EntityTypeShape EntityType="WeddingModel.Invitation" Width="1.5" PointX="0.75" PointY="0.875" Height="2.1725878906249996" IsExpanded="true" />
         <AssociationConnector Association="WeddingModel.FK_Guest_Invitation" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="1.9612939453124998" />
@@ -203,7 +203,7 @@
         <EntityTypeShape EntityType="WeddingModel.DinnerPreference" Width="1.5" PointX="3" PointY="4.125" Height="1.5956835937499996" />
         <AssociationConnector Association="WeddingModel.FK_Guest_DinnerPreference" >
           <ConnectorPoint PointX="3.75" PointY="4.125" />
-          <ConnectorPoint PointX="3.75" PointY="3.2398893229166661" />
+          <ConnectorPoint PointX="3.75" PointY="3.047587890625" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>
