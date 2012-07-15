@@ -66,10 +66,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MiddleColumnContent" runat="server">
     <h2>
         <span>RSVP</span></h2>
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
-
-            <div style="height: 8px;"></div>
+            <div style="height: 8px;">
+            </div>
             <div class="listview rounded-corner">
                 <div>
                     Step 1: Look for your invitation.
@@ -84,23 +84,20 @@
                     <asp:HiddenField ID="hfInvitationName" runat="server" />
                 </div>
             </div>
-
-            <div style="height: 8px;"></div>
+            <div style="height: 8px;">
+            </div>
             <asp:Panel runat="server" ID="pnlDecision" CssClass="listview rounded-corner" Visible="false">
                 <div>
                     Step 2: Tell us if you're coming.
                 </div>
-                <asp:RadioButtonList ID="rbAccept" 
-                    runat="server" 
-                    RepeatDirection="Horizontal"
-                    AutoPostBack="True"
+                <asp:RadioButtonList ID="rbAccept" runat="server" RepeatDirection="Horizontal" AutoPostBack="True"
                     OnSelectedIndexChanged="rbAccept_SelectedIndexChanged">
                     <asp:ListItem Value="Yes">Accept with Pleasure</asp:ListItem>
                     <asp:ListItem Value="No">Decline with regret</asp:ListItem>
                 </asp:RadioButtonList>
             </asp:Panel>
-
-            <div style="height: 8px;"></div>
+            <div style="height: 8px;">
+            </div>
             <asp:MultiView ID="mvRSVP" runat="server">
                 <asp:View ID="viewAccepted" runat="server">
                     <asp:Panel runat="server" ID="pnlAccepted" CssClass="listview rounded-corner">
@@ -110,7 +107,8 @@
                         <!--[if (IE 9)]><!-->
                         <div class="gradient-wrapper">
                             <!--<![endif]-->
-                            <asp:Button runat="server" ID="btnNewGuest" Text="Add another Guest" UseSubmitBehavior="False" OnClick="btnNewGuest_Click" Visible="false" />
+                            <asp:Button runat="server" ID="btnNewGuest" Text="Add another Guest" UseSubmitBehavior="False"
+                                OnClick="btnNewGuest_Click" Visible="false" />
                         </div>
                         <asp:ListView runat="server" ID="lvGuests" OnDataBound="lvGuests_DataBound" OnItemDeleting="lvGuests_ItemDeleting">
                             <ItemTemplate>
@@ -118,15 +116,24 @@
                                     <div style="height: 4px;">
                                     </div>
                                     <div>
-                                        Name: <asp:TextBox ID="txtGuest" runat="server" Text='<%# Eval("Name") %>'></asp:TextBox>
-                                        Dinner Options: <asp:DropDownList ID="ddlDinnerPreferences" runat="server" DataSourceID="odsDinnerPreferences" DataTextField="Name" DataValueField="ID" SelectedValue='<%# Eval("DinnerPreference") %>'></asp:DropDownList>
-                                        <asp:ImageButton ID="ibtnDelete" runat="server" ImageUrl="~/App_Themes/Wedding/Images/delete.gif" CommandName="Delete" ImageAlign="AbsMiddle" />
+                                        Name:
+                                        <asp:TextBox ID="txtGuest" runat="server" Text='<%# Eval("Name") %>'></asp:TextBox>
+                                        Dinner Options:
+                                        <asp:DropDownList ID="ddlDinnerPreferences" runat="server" DataSourceID="odsDinnerPreferences"
+                                            DataTextField="Name" DataValueField="ID" SelectedValue='<%# Eval("DinnerPreference") %>'>
+                                        </asp:DropDownList>
+                                        <asp:ImageButton ID="ibtnDelete" runat="server" ImageUrl="~/App_Themes/Wedding/Images/delete.gif"
+                                            CommandName="Delete" ImageAlign="AbsMiddle" />
                                     </div>
                                     <div style="height: 4px;">
                                     </div>
                                 </asp:Panel>
                             </ItemTemplate>
                         </asp:ListView>
+                        <div style="vertical-align:top">
+                            Message:
+                            <asp:TextBox ID="txtMessage" runat="server" ClientIDMode="Static" TextMode="MultiLine" Height="100px" MaxLength="400" class="border blue"></asp:TextBox>
+                        </div>
                     </asp:Panel>
                 </asp:View>
                 <asp:View ID="viewDeclined" runat="server">
@@ -143,23 +150,22 @@
                     </asp:Panel>
                 </asp:View>
             </asp:MultiView>
-
-            <div style="height: 32px;"></div>
+            <div style="height: 32px;">
+            </div>
             <!--[if (IE 9)]><!-->
             <div class="gradient-wrapper">
                 <!--<![endif]-->
                 <asp:Button runat="server" ID="btnConfirm" Text="Confirm" Visible="false" UseSubmitBehavior="False"
                     OnClick="btnConfirm_Click" />
             </div>
-
         </ContentTemplate>
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="btnConfirm" EventName="Click" />
             <asp:AsyncPostBackTrigger ControlID="btnNewGuest" EventName="Click" />
         </Triggers>
     </asp:UpdatePanel>
-    <asp:ObjectDataSource ID="odsDinnerPreferences" runat="server" 
-        SelectMethod="GetDinnerPreferences" TypeName="September22.DAL.DataAccess">
+    <asp:ObjectDataSource ID="odsDinnerPreferences" runat="server" SelectMethod="GetDinnerPreferences"
+        TypeName="September22.DAL.DataAccess">
         <SelectParameters>
             <asp:Parameter Name="addBlank" Type="Boolean" DefaultValue="true" />
             <asp:Parameter Name="excludeOther" Type="Boolean" DefaultValue="true" />
