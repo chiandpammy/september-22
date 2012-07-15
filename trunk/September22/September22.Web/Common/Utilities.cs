@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Net.Mail;
+using System.Net;
 
 namespace September22.Common
 {
@@ -11,10 +13,6 @@ namespace September22.Common
     public class Utilities
     {
         public const string THEME = "Theme";
-
-        public Utilities()
-        {
-        }
 
         /// <summary>
         /// Saves theme into a browser cookie.
@@ -88,6 +86,46 @@ namespace September22.Common
             }
 
             return nextTheme.ToString();
+        }
+
+        /// <summary>
+        /// Sends email.
+        /// </summary>
+        public static void SendEmail(string from, string[] to, string subject, string body)
+        {
+            //create message
+            MailMessage message = new MailMessage();
+
+            //set sender
+            message.From = new MailAddress(from);
+
+            //set recipients
+            for (int i = 0; i < to.Length; i++)
+                message.To.Add(new MailAddress(to[i]));
+
+            //set message
+            message.Subject = subject;
+            message.Body = body;
+            message.IsBodyHtml = false;
+
+            //send message
+            SmtpClient smtpClient = new SmtpClient();
+            smtpClient.Timeout = 1;
+            smtpClient.Send(message);
+        }
+        
+        /// <summary>
+        /// Writes exception information to error.log.  Source is most likely the page error came from or the file causing the error.
+        /// </summary>
+        public static void LogException(string source, Exception ex)
+        {
+            //grab logger
+            log4net.ILog logger = log4net.LogManager.GetLogger
+                (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            
+            //log error
+            if (logger.IsErrorEnabled)
+                logger.Error(source, ex);
         }
     }
 }
