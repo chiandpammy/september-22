@@ -285,6 +285,7 @@ namespace September22
             //save to database
             try
             {
+                //SaveGuests
             }
             catch (Exception ex)
             {
@@ -294,7 +295,7 @@ namespace September22
             //log any error that occurred
             foreach (var error in errors)
             {
-                Utilities.LogException("RSVP " + hfInvitationName.Value, error);
+                Utilities.LogException("RSVP btnConfirm_Click " + hfInvitationName.Value, error);
             }
         }
 
@@ -363,21 +364,28 @@ namespace September22
         [System.Web.Script.Services.ScriptMethod]
         public static string[] GetCompletionList(string prefixText, int count)
         {
-            string[] invitationNames =
-                DataAccess.GetInvitations()
-                    .Select(a => new {FullName = a.FirstName + " " + a.LastName})
-                    .Select(b => b.FullName)
-                    .ToArray();
-            
-            string[] searchResults = 
-                (from m in invitationNames 
-                 where m.ToUpperInvariant()
-                 .Contains(prefixText.ToUpperInvariant())
-                 select m)
-                 .Take(count)
-                 .ToArray();
+            try
+            {
+                string[] invitationNames =
+                    DataAccess.GetInvitations()
+                        .Select(a => new { FullName = a.FirstName + " " + a.LastName })
+                        .Select(b => b.FullName)
+                        .ToArray();
 
-            return searchResults;
+                return
+                    (from m in invitationNames
+                     where m.ToUpperInvariant()
+                     .Contains(prefixText.ToUpperInvariant())
+                     select m)
+                     .Take(count)
+                     .ToArray();
+            }
+            catch (Exception ex)
+            {
+                Utilities.LogException("RSVP GetCompletionList", ex);
+            }
+
+            return null;
         }
     }
     
