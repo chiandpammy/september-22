@@ -44,5 +44,14 @@ namespace September22.DAL
 
             return _Invitations.AsQueryable();
         }
+
+        public static void SaveGuests(List<Guest> Guests)
+        {
+            foreach (var guest in Guests)
+            {
+                Entities.Guests.AddObject(guest);
+            }
+            Entities.SaveChanges();
+        }
     }
 }

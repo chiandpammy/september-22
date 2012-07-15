@@ -110,12 +110,11 @@ namespace September22.Common
 
             //send message
             SmtpClient smtpClient = new SmtpClient();
-            smtpClient.Timeout = 1;
             smtpClient.Send(message);
         }
         
         /// <summary>
-        /// Writes exception information to error.log.  Source is most likely the page error came from or the file causing the error.
+        /// Writes exception information to errors.log.  Source is most likely the page error came from or the file causing the error.
         /// </summary>
         public static void LogException(string source, Exception ex)
         {
@@ -127,6 +126,9 @@ namespace September22.Common
                 logger.Error(source, ex);
         }
 
+        /// <summary>
+        /// Writes a message to messages.log.
+        /// </summary>
         public static void LogMessage(string message)
         {
             //grab logger
