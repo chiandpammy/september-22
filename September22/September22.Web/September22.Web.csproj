@@ -45,6 +45,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Library\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Library\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
