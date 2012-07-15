@@ -67,8 +67,120 @@
             <div class="step">
                 <h2><span>Places to Stay</span></h2>
                 <p>
-                    We will soon have a block of rooms reserved at a hotel in the downtown area, and if you ask very nicely, we may give you that information. =)
+                    For your convenience we have negotiated group rates at the following nearby hotels for Friday night and Saturday night.  Rooms can be reserved by contacting the hotels directly listed before the deadline.  Make sure to mention you are staying with the Macario/Lee wedding block to receive the discounted rate.
                 </p>
+                <br />
+                <h3><b><a href="http://www3.hilton.com/en/hotels/illinois/palmer-house-a-hilton-hotel-CHIPHHH/index.html" target="_blank">Palmer House Hilton Hotel</a></b>&nbsp;&nbsp;<img src="../App_Themes/Wedding/Images/4_stars.gif" width="84" height="15" border="0" alt="4 Stars"></h3>
+                <p>
+                    17 East Monroe Street<br />Chicago, IL 60603<br />
+                    Phone: 312.726.7500<br />
+                    <a href="http://www3.hilton.com/en/hotels/illinois/palmer-house-a-hilton-hotel-CHIPHHH/index.html" target="_blank">View Website</a><br />
+                    Deadline: Thursday August 30, 2012<br />
+                    Confirmation Number: 3474090819<br />
+                    * Children stay free.
+                </p>
+                <table>
+				        <tr>
+					        <td><i>Price</i></td>
+					        <td><i>Room Type</i></td>
+                            <td><i>Tax</i></td>
+				        </tr>
+				        <tr>
+					        <td><span class="SearchPriceMedium"><b>$236.55</b></span> USD&nbsp;</td>
+					        <td><b>King w/ 2 Baths (Double Occupancy)</b></td>
+                            <td>+ 16.40%</td>
+				        </tr>
+				        <tr>
+					        <td><span class="SearchPriceMedium"><b>$238.00</b></span> USD&nbsp;</td>
+					        <td><b>2 Double Beds w/ 2 Baths (Double Occupancy)</b></td>
+                            <td>+ 16.40%</td>
+				        </tr>
+                </table>
+                <br />
+                <h3><b><a href="https://resweb.passkey.com/go/macariolee" target="_blank">Swissôtel Chicago</a></b>&nbsp;&nbsp;<img src="../App_Themes/Wedding/Images/4_stars.gif" width="84" height="15" border="0" alt="4 Stars"></h3>
+                <p>
+                    323 East Wacker Drive<br />Chicago, IL 60601<br />
+                    Phone: 888.737.9477 or 312.565.0565<br />
+                    <a href="https://resweb.passkey.com/go/macariolee" target="_blank">View Website</a><br />
+                    Deadline: Tuesday August 21, 2012<br />
+                </p>
+                <table>
+				        <tr>
+					        <td><i>Price</i></td>
+					        <td><i>Rate Type</i></td>
+                            <td><i>Tax</i></td>
+				        </tr>
+				        <tr>
+					        <td><span class="SearchPriceMedium"><b>$199.00</b></span> USD&nbsp;</td>
+					        <td><b>Single Rate</b></td>
+                            <td>+ 16.40%</td>
+				        </tr>
+				        <tr>
+					        <td><span class="SearchPriceMedium"><b>$199.00</b></span> USD&nbsp;</td>
+					        <td><b>Double Rate</b></td>
+                            <td>+ 16.40%</td>
+				        </tr><tr>
+					        <td><span class="SearchPriceMedium"><b>$229.00</b></span> USD&nbsp;</td>
+					        <td><b>Triple Rate</b></td>
+                            <td>+ 16.40%</td>
+				        </tr>
+				        <tr>
+					        <td><span class="SearchPriceMedium"><b>$259.00</b></span> USD&nbsp;</td>
+					        <td><b>Quadruple Rate</b></td>
+                            <td>+ 16.40%</td>
+				        </tr>
+                </table>
+                <br />
+                <h3><b><a href="https://gc.synxis.com/rez.aspx?Hotel=26951&Chain=13165&group=MACA092112&arrive=9/21/2012&depart=9/23/2012" target="_blank">Hard Rock Hotel Chicago</a></b>&nbsp;&nbsp;<img src="../App_Themes/Wedding/Images/4_stars.gif" width="84" height="15" border="0" alt="4 Stars"></h3>
+                <p>
+                    230 North Michigan Avenue<br />Chicago, IL 60601<br />
+                    Phone: 866.966.5166<br />
+                    <a href="https://gc.synxis.com/rez.aspx?Hotel=26951&Chain=13165&group=MACA092112&arrive=9/21/2012&depart=9/23/2012" target="_blank">View Website</a><br />
+                    Deadline: Tuesday August 7, 2012<br />
+                </p>
+                <table>
+				        <tr>
+					        <td><i>Price</i></td>
+					        <td><i>Room Type</i></td>
+                            <td><i>Tax</i></td>
+				        </tr>
+				        <tr>
+					        <td><span class="SearchPriceMedium"><b>$219.00</b></span> USD&nbsp;</td>
+					        <td><b>King (Single or Double Occupancy)</b></td>
+                            <td>+ 16.40%</td>
+				        </tr>
+				        <tr>
+					        <td><span class="SearchPriceMedium"><b>$239.00</b></span> USD&nbsp;</td>
+					        <td><b>Queen (Single or Double Occupancy)</b></td>
+                            <td>+ 16.40%</td>
+				        </tr>
+                </table>
+                <br />
+                <h3><b><a href="http://hamptoninn.hilton.com/en/hp/groups/personalized/C/CHIHSHX-MLW-20120921/index.jhtml?WT.mc_id=POG" target="_blank">Hampton Inn & Suites Chicago Downtown</a></b>&nbsp;&nbsp;<img src="../App_Themes/Wedding/Images/3_stars.gif" width="84" height="15" border="0" alt="3 Stars"></h3>
+                <p>
+                    33 West Illinois Street<br />Chicago, IL 60654<br />
+                    Phone: 312.832.0330<br />
+                    <a href="http://hamptoninn.hilton.com/en/hp/groups/personalized/C/CHIHSHX-MLW-20120921/index.jhtml?WT.mc_id=POG" target="_blank">View Website</a><br />
+                    Deadline: Wednesday August 22, 2012<br />
+                    * Rate includes complimentary hot breakfast buffet.
+                </p>
+                <table>
+				        <tr>
+					        <td><i>Price</i></td>
+					        <td><i>Room Type</i></td>
+                            <td><i>Tax</i></td>
+				        </tr>
+				        <tr>
+					        <td><span class="SearchPriceMedium"><b>$197.10</b></span> USD&nbsp;</td>
+					        <td><b>King</b></td>
+                            <td>+ 16.40%</td>
+				        </tr>
+				        <tr>
+					        <td><span class="SearchPriceMedium"><b>$197.10</b></span> USD&nbsp;</td>
+					        <td><b>2 Double Beds</b></td>
+                            <td>+ 16.40%</td>
+				        </tr>
+                </table>
             </div>
             <div class="step">
                 <h2><span>Things to Do</span></h2>
