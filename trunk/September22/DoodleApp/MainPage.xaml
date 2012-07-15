@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="DoodleApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="160" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Margin="32 50 0 4" HorizontalAlignment="Left">
+            <StackPanel.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="Gray" />
+                    <Setter Property="BorderThickness" Value="1" />
+                    <Setter Property="CornerRadius" Value="4" />
+                    <Setter Property="Margin" Value="1" />
+                </Style>
+            </StackPanel.Resources>
+            <Canvas x:Name="canvasIPresenter">
+                <Border>
+                    <InkPresenter x:Name="iPresenter" 
+                                  Height="160" Width="240" 
+                                  MouseLeftButtonDown="iPresenter_MouseLeftButtonDown" 
+                                  LostMouseCapture="iPresenter_LostMouseCapture" 
+                                  MouseMove="iPresenter_MouseMove" 
+                                  Background="Transparent"
+                                  Opacity="1" Cursor="None">
+                    </InkPresenter>
+                </Border>
+            <!--<Button Canvas.Left="300" Canvas.Top="10" Content="Save Graffiti as Image" Height="23" Name="button1" Click="button1_Click" />-->
+            <!--<Image  Canvas.Left="300" Canvas.Top="50" Name="showIP" Width="400" Height="400"></Image>-->
+            </Canvas>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="32 0 0 0">
+            <StackPanel.Resources>
+                <Style x:Key="ColorButton" TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Grid Cursor="Hand">
+                                    <Rectangle Width="16" Height="16" Margin="1" Stroke="Black" Fill="{TemplateBinding Background}" />
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </StackPanel.Resources>
+
+            <Button Background="Red" Style="{StaticResource ColorButton}" Click="ColorButton_Click" />
+            <Button Background="Orange" Style="{StaticResource ColorButton}" Click="ColorButton_Click" />
+            <Button Background="Yellow" Style="{StaticResource ColorButton}" Click="ColorButton_Click" />
+            <Button Background="LightGreen" Style="{StaticResource ColorButton}" Click="ColorButton_Click" />
+            <Button Background="Green" Style="{StaticResource ColorButton}" Click="ColorButton_Click" />
+            <Button Background="Aqua" Style="{StaticResource ColorButton}" Click="ColorButton_Click" />
+            <Button Background="Blue" Style="{StaticResource ColorButton}" Click="ColorButton_Click" />
+            <Button Background="Navy" Style="{StaticResource ColorButton}" Click="ColorButton_Click" />
+            <Button Background="Purple" Style="{StaticResource ColorButton}" Click="ColorButton_Click" />
+            <Button Background="Pink" Style="{StaticResource ColorButton}" Click="ColorButton_Click" />
+            <Button Background="Black" Style="{StaticResource ColorButton}" Click="ColorButton_Click" />
+            <Button Background="Gray" Style="{StaticResource ColorButton}" Click="ColorButton_Click" />
+            <Button Background="White" Style="{StaticResource ColorButton}" Click="ColorButton_Click" />
+        </StackPanel>
+
+        <StackPanel Name="BrushPanel" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="32 4 0 0" HorizontalAlignment="Left">
+            <StackPanel.Resources>
+                <Style x:Key="InactiveButton" TargetType="Button">
+                    <Setter Property="Margin" Value="0 0 4 0" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Grid Cursor="Hand" Background="Transparent">
+                                    <Ellipse Height="{TemplateBinding Width}" Width="{TemplateBinding Width}">
+                                        <Ellipse.Fill>
+                                            <RadialGradientBrush>
+                                                <GradientStop Offset="0.2" Color="LightGray" />
+                                                <GradientStop Offset="1.0" Color="DarkGray" />
+                                            </RadialGradientBrush>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                <Style x:Key="ActiveButton" TargetType="Button">
+                    <Setter Property="Margin" Value="0 0 4 0" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Grid Cursor="Hand" Background="Transparent">
+                                    <Ellipse Height="{TemplateBinding Width}" Width="{TemplateBinding Width}">
+                                        <Ellipse.Fill>
+                                            <RadialGradientBrush>
+                                                <GradientStop Offset="0.2" Color="Black" />
+                                                <GradientStop Offset="1.0" Color="DarkGray" />
+                                            </RadialGradientBrush>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </StackPanel.Resources>
+
+            <TextBlock Text="Brush" Margin="0 8 4 0" />
+            <Button Name="SmallBrush" Tag="7" Height="32" Width="07" Style="{StaticResource InactiveButton}" Click="BrushButton_Click" />
+            <Button Name="MediumBrush" Tag="11" Height="32" Width="11" Style="{StaticResource InactiveButton}" Click="BrushButton_Click" />
+            <Button Name="LargeBrush" Tag="16" Height="32" Width="16" Style="{StaticResource InactiveButton}" Click="BrushButton_Click" />
+            <Button Name="XLargeBrush" Tag="22" Height="32" Width="22" Style="{StaticResource InactiveButton}" Click="BrushButton_Click" />
+            
+            <TextBlock Text="Opacity" Margin="16 8 4 0"  />
+            <Slider  Height="20" Width="64" Maximum="255" Margin="0 2 0 2" Value="255" Loaded="Slider_Loaded" Name="sldOpacity" SmallChange="1" />
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -37,7 +37,14 @@ namespace September22
 
         void Application_Error(object sender, EventArgs e)
         {
-            // Code that runs when an unhandled error occurs
+            //// Code that runs when an unhandled error occurs
+            Exception ex = Server.GetLastError();
+
+            //if (ex.Message == "File does not exist." && HttpContext.Current.Request.Url.ToString().Contains("favicon.ico"))
+            //{
+            //    //throw new Exception(string.Format("{0} {1}", ex.Message, HttpContext.Current.Request.Url.ToString()), ex);
+            //    //SWALLOW
+            //}
         }
 
         void Session_Start(object sender, EventArgs e)

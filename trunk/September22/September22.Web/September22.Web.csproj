@@ -172,6 +172,7 @@
     <Content Include="App_Themes\Wedding\Images\tmp_photo.gif" />
     <Content Include="App_Themes\Wedding\jquery-sliding.form.css" />
     <Content Include="App_Themes\Wedding\jquery.ad-gallery.css" />
+    <Content Include="favicon.ico" />
     <Content Include="Photos\Anniversaries\2003 - 1st Anniversary - 1 of 2.jpg" />
     <Content Include="Photos\Anniversaries\2003 - 1st Anniversary - 2 of 2.jpg" />
     <Content Include="Photos\Anniversaries\2004 - 2nd Anniversary - 1 of 2.jpg" />
