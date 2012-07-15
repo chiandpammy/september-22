@@ -46,7 +46,7 @@
                         <td valign="top">
 
                             <b>Mina</b><br /><br />
-                            Mina is Chi's youngest sister, and she is the floral designer responsible for all the beautiful floral      arrangements at the wedding!
+                            Mina is Chi's younger sister, and she is the floral designer responsible for all the beautiful floral      arrangements at the wedding!
                             </td>
                     </tr>
                     <tr><td colspan="2"><br /><hr /></td></tr>
@@ -58,7 +58,7 @@
 
                             <b>Nana</b><br />
                             <br />
-                            Nana is actually the blue creature in the middle.
+                            Nana is Chi's younger sister.  She's a pharmacist out in Boston and a huge animal lover.
                             </td>
                     </tr>
                     <tr><td colspan="2"><br /><hr /></td></tr>

@@ -13,10 +13,9 @@
         often, as we will be adding new details regularly.
     </p>
     <p>
-        It's hard to believe that we've been engaged for over 6 months now. We have
-        been so busy planning the wedding that the time has just flown by. It's been
-        a lot of fun so far, and there's much more to get done before the big day
-        arrives.
+        Wow! Time has flown by!  There's only 3 months left until the wedding.  If
+        you need a hotel, please visit the "Places to Stay" link on the "Our Wedding"
+        page.
     </p>
     <p>
         If you want to learn a bit about how we met and came to be the fabulous
