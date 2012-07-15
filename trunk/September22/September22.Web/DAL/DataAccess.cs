@@ -12,20 +12,37 @@ namespace September22.DAL
     {
         private static WeddingEntities Entities = new WeddingEntities();
 
-        public static IQueryable<DinnerPreference> GetDinnerPreferences(bool excludeOther = true)
+        private static List<DinnerPreference> _DinnerPreferences;
+        public static IQueryable<DinnerPreference> GetDinnerPreferences(bool addBlank = true, bool excludeOther = true)
         {
-            IQueryable<DinnerPreference> dinnerPreferences = Entities.DinnerPreferences;
-            if(excludeOther)
+            if (_DinnerPreferences == null)
             {
-                dinnerPreferences = dinnerPreferences.Where(pref => pref.Name != "Other");
+                _DinnerPreferences = Entities.DinnerPreferences.ToList();
             }
 
-            return dinnerPreferences;
+            //result
+            var dinnerPreferences = new List<DinnerPreference>(_DinnerPreferences);
+            
+            //check exclude other condition
+            if (excludeOther)
+                dinnerPreferences.RemoveAll(pref => pref.Name == "Other");
+
+            //check add blank condition
+            if (addBlank)
+                dinnerPreferences.Insert(0, new DinnerPreference() { Name = string.Empty, ID = 0 });
+
+            return dinnerPreferences.AsQueryable();
         }
 
+        private static List<Invitation> _Invitations;
         public static IQueryable<Invitation> GetInvitations()
         {
-            return Entities.Invitations;
+            if (_Invitations == null)
+            {
+                _Invitations = Entities.Invitations.ToList();
+            }
+
+            return _Invitations.AsQueryable();
         }
     }
 }

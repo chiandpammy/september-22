@@ -119,7 +119,7 @@
                                     </div>
                                     <div>
                                         Name: <asp:TextBox ID="txtGuest" runat="server" Text='<%# Eval("Name") %>'></asp:TextBox>
-                                        Dinner Options: <asp:DropDownList ID="ddlDinnerPreference" runat="server"></asp:DropDownList>
+                                        Dinner Options: <asp:DropDownList ID="ddlDinnerPreferences" runat="server" DataSourceID="odsDinnerPreferences" DataTextField="Name" DataValueField="ID" SelectedValue='<%# Eval("DinnerPreference") %>'></asp:DropDownList>
                                         <asp:ImageButton ID="ibtnDelete" runat="server" ImageUrl="~/App_Themes/Wedding/Images/delete.gif" CommandName="Delete" ImageAlign="AbsMiddle" />
                                     </div>
                                     <div style="height: 4px;">
@@ -158,4 +158,11 @@
             <asp:AsyncPostBackTrigger ControlID="btnNewGuest" EventName="Click" />
         </Triggers>
     </asp:UpdatePanel>
+    <asp:ObjectDataSource ID="odsDinnerPreferences" runat="server" 
+        SelectMethod="GetDinnerPreferences" TypeName="September22.DAL.DataAccess">
+        <SelectParameters>
+            <asp:Parameter Name="addBlank" Type="Boolean" DefaultValue="true" />
+            <asp:Parameter Name="excludeOther" Type="Boolean" DefaultValue="true" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 </asp:Content>

@@ -18,6 +18,16 @@ namespace September22
         private const string DECLINED = "No";
         private const string CSS_BOUNCE = "bounce";
 
+        /// <summary>
+        /// Step 2
+        ///     user chose an invitation.
+        ///     ViewState["decision"] is set to empty
+        ///     ViewState["guests"] is set to empty
+        /// Step 3
+        ///     user clicked on accepted/declined indicator
+        ///     ViewState["decision"] is no longer empty
+        /// </summary>
+        /// <returns></returns>
         private int CheckCurrentStep()
         {
             string prevInvitation = string.Empty;
@@ -246,6 +256,9 @@ namespace September22
             }
         }
 
+        /// <summary>
+        /// Get guests that are in memory after use changes, additions, deletions and so forth.  This list is what the user sees.
+        /// </summary>
         private List<Person> GetGuests()
         {
             List<Person> guests = new List<Person>();
@@ -271,14 +284,11 @@ namespace September22
                 foreach (ListViewDataItem item in lvGuests.Items)
                 {
                     TextBox txtBox = item.FindControl("txtGuest") as TextBox;
-                    if (txtBox != null && txtBox.Text != null)
-                    {
-                        guests.Add(new Person() { Name = txtBox.Text });
-                    }
-                    else
-                    {
-                        guests.Add(new Person());
-                    }
+                    DropDownList ddlDropDown = item.FindControl("ddlDinnerPreferences") as DropDownList;
+                    var guest = new Person();
+                    guest.Name = txtBox.Text;
+                    guest.DinnerPreference = Int32.Parse(ddlDropDown.SelectedValue);
+                    guests.Add(guest);
                 }
             }
 
@@ -290,6 +300,9 @@ namespace September22
             ViewState["guests"] = guests;
         }
 
+        /// <summary>
+        /// Get guests that are stored in database
+        /// </summary>
         private List<Person> RetrieveGuests()
         {
             List<Person> persons = new List<Person>();
@@ -338,6 +351,8 @@ namespace September22
     public class Person
     {
         public string Name { get; set; }
+        
+        public int DinnerPreference { get; set; }
 
         public override string ToString()
         {
