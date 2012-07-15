@@ -25,8 +25,8 @@ namespace September22
             //show thanks
             mviewContactUs.SetActiveView(viewFinished);
 
-            //send
-            Common.Utilities.SendEmail(
+            //send email
+            Utilities.SendEmail(
                 FROM_ADDR,
                 new string[] {TO_ADDR1, TO_ADDR2},
                 "Contact from " + txtName.Text + " (" + txtEmail.Text + ")",

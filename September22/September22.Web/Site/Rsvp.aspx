@@ -139,8 +139,8 @@
                             </ItemTemplate>
                         </asp:ListView>
                         <div class="accept" style="vertical-align:top">
-                            <label for="txtMessage">Message</label>
-                            <asp:TextBox ID="txtMessage" runat="server" ClientIDMode="Static" TextMode="MultiLine" Height="100px" MaxLength="500" class="border blue" Width="500px"></asp:TextBox>
+                            <label for="txtSpecialRequest">Special Request</label>
+                            <asp:TextBox ID="txtSpecialRequest" runat="server" ClientIDMode="Static" TextMode="MultiLine" Height="100px" MaxLength="500" class="border blue" Width="500px"></asp:TextBox>
                         </div>
                     </asp:Panel>
                 </asp:View>

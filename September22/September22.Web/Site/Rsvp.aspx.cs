@@ -18,67 +18,9 @@ namespace September22
         private const string DECLINED = "No";
         private const string CSS_BOUNCE = "bounce";
 
-        /// <summary>
-        /// Step 2
-        ///     user chose an invitation.
-        ///     ViewState["decision"] is set to empty
-        ///     ViewState["guests"] is set to empty
-        /// Step 3
-        ///     user clicked on accepted/declined indicator
-        ///     ViewState["decision"] is no longer empty
-        /// </summary>
-        /// <returns></returns>
-        private int CheckCurrentStep()
-        {
-            string prevInvitation = string.Empty;
-            if (ViewState["invitation"] != null)
-            {
-                prevInvitation = ViewState["invitation"] as string;
-            }
-            if (!string.IsNullOrEmpty(hfInvitationName.Value))
-            {
-                //set invitation
-                ViewState["invitation"] = hfInvitationName.Value;
-                
-                //previously chosen invitation does not match newly chosen invitation
-                //  user must've chosen an invitation name
-                if (prevInvitation != hfInvitationName.Value)
-                {
-                    //must reset other values
-                    ViewState["decision"] = null;
-                    ViewState["guests"] = null;
-
-                    return 2;
-                }
-
-                //check decision
-                string prevDecision = string.Empty;
-                if (ViewState["decision"] != null)
-                {
-                    prevDecision = ViewState["decision"] as string;
-                }
-                if (rbAccept.SelectedIndex >= 0)
-                {
-                    //set decision
-                    ViewState["decision"] = rbAccept.SelectedValue;
-
-                    //decision is changed
-                    //  user must've chosen to accept or decline rsvp
-                    if (prevDecision != rbAccept.SelectedValue)
-                    {
-                        return 3;
-                    }
-                }
-
-                //postback without changing step
-                //  we can get here via validtion.... add/delete guest.... and so forth
-                return 0;
-            }
-
-            //we get here if we don't have invitation selected
-            ViewState["guests"] = null;
-            return 1;
-        }
+        private const string TO_ADDR1 = @"bebbiwebbi@gmail.com";
+        private const string TO_ADDR2 = @"sta12quest@gmail.com";
+        private const string FROM_ADDR = @"admin@september22.us";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -178,6 +120,68 @@ namespace September22
             ScriptManager.RegisterStartupScript(this, this.GetType(), string.Empty, "bounce();", true);
         }
 
+        /// <summary>
+        /// Step 2
+        ///     user chose an invitation.
+        ///     ViewState["decision"] is set to empty
+        ///     ViewState["guests"] is set to empty
+        /// Step 3
+        ///     user clicked on accepted/declined indicator
+        ///     ViewState["decision"] is no longer empty
+        /// </summary>
+        /// <returns></returns>
+        private int CheckCurrentStep()
+        {
+            string prevInvitation = string.Empty;
+            if (ViewState["invitation"] != null)
+            {
+                prevInvitation = ViewState["invitation"] as string;
+            }
+            if (!string.IsNullOrEmpty(hfInvitationName.Value))
+            {
+                //set invitation
+                ViewState["invitation"] = hfInvitationName.Value;
+
+                //previously chosen invitation does not match newly chosen invitation
+                //  user must've chosen an invitation name
+                if (prevInvitation != hfInvitationName.Value)
+                {
+                    //must reset other values
+                    ViewState["decision"] = null;
+                    ViewState["guests"] = null;
+
+                    return 2;
+                }
+
+                //check decision
+                string prevDecision = string.Empty;
+                if (ViewState["decision"] != null)
+                {
+                    prevDecision = ViewState["decision"] as string;
+                }
+                if (rbAccept.SelectedIndex >= 0)
+                {
+                    //set decision
+                    ViewState["decision"] = rbAccept.SelectedValue;
+
+                    //decision is changed
+                    //  user must've chosen to accept or decline rsvp
+                    if (prevDecision != rbAccept.SelectedValue)
+                    {
+                        return 3;
+                    }
+                }
+
+                //postback without changing step
+                //  we can get here via validtion.... add/delete guest.... and so forth
+                return 0;
+            }
+
+            //we get here if we don't have invitation selected
+            ViewState["guests"] = null;
+            return 1;
+        }
+
         protected void btnNewGuest_Click(object sender, EventArgs e)
         {
             //check viewstate
@@ -239,7 +243,59 @@ namespace September22
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
+            var errors = new List<Exception>();
 
+            //file log
+            try
+            {
+                List<Person> guests = GetGuests();
+                //log guests
+                foreach (var guest in guests)
+                {
+                    Utilities.LogMessage(
+                        string.Format("RSVP from {0}. Guest: {1}. Dinner Preference: {2}. ", hfInvitationName.Value, guest.Name, guest.DinnerPreference));
+                }
+                //log special request
+                if (!string.IsNullOrEmpty(txtSpecialRequest.Text))
+                {
+                    Utilities.LogMessage(
+                        string.Format("Special Request from {0}. Request: {1}", hfInvitationName.Value, txtSpecialRequest.Text));
+                }
+            }
+            catch (Exception ex)
+            {
+                errors.Add(ex);
+            }
+
+            //send email
+            try
+            {
+                //Utilities.SendEmail(
+                //    FROM_ADDR,
+                //    new string[] { TO_ADDR1, TO_ADDR2 },
+                //    null, //"Contact from " + txtName.Text + " (" + txtEmail.Text + ")",
+                //    null  //txtMessage.Text
+                //    );
+            }
+            catch (Exception ex)
+            {
+                errors.Add(ex);
+            }
+
+            //save to database
+            try
+            {
+            }
+            catch (Exception ex)
+            {
+                errors.Add(ex);
+            }
+
+            //log any error that occurred
+            foreach (var error in errors)
+            {
+                Utilities.LogException("RSVP " + hfInvitationName.Value, error);
+            }
         }
 
         protected void rbAccept_SelectedIndexChanged(object sender, EventArgs e)
@@ -268,7 +324,10 @@ namespace September22
                 //this is first time load
                 if (ViewState["guests"] == null)
                 {
-                    guests = RetrieveGuests();
+                    //add invitation name to guest name
+                    var guest = new Person();
+                    guest.Name = hfInvitationName.Value;
+                    guests.Add(guest);
 
                     //save needed
                     SaveGuests(guests);
@@ -298,31 +357,6 @@ namespace September22
         private void SaveGuests(List<Person> guests)
         {
             ViewState["guests"] = guests;
-        }
-
-        /// <summary>
-        /// Get guests that are stored in database
-        /// </summary>
-        private List<Person> RetrieveGuests()
-        {
-            List<Person> persons = new List<Person>();
-
-            if (!string.IsNullOrEmpty(hfInvitationName.Value))
-            {
-                Invitation inv = DataAccess.GetInvitations().FirstOrDefault(i => (i.FirstName + " " + i.LastName) == hfInvitationName.Value);
-                if (inv != null)
-                {
-                    foreach (Guest guest in inv.Guests)
-                    {
-                        Person person = new Person();
-                        person.Name = guest.FullName;
-                        
-                        persons.Add(person);
-                    }
-                }
-            }
-            
-            return persons;
         }
 
         [System.Web.Services.WebMethod]

@@ -120,12 +120,21 @@ namespace September22.Common
         public static void LogException(string source, Exception ex)
         {
             //grab logger
-            log4net.ILog logger = log4net.LogManager.GetLogger
-                (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            log4net.ILog logger = log4net.LogManager.GetLogger("errorLogger");
             
             //log error
             if (logger.IsErrorEnabled)
                 logger.Error(source, ex);
+        }
+
+        public static void LogMessage(string message)
+        {
+            //grab logger
+            log4net.ILog logger = log4net.LogManager.GetLogger("messageLogger");
+
+            //log error
+            if (logger.IsInfoEnabled)
+                logger.Info(message);
         }
     }
 }
