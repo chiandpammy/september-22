@@ -2,6 +2,13 @@
     CodeBehind="Rsvp.aspx.cs" Inherits="September22.Rsvp" EnableViewState="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        div.accept label { position: absolute; text-align:right; width:90px; }
+        div.accept input[type="text"], textarea, select { margin-left: 100px; }
+        /*div.accept label.input, label.select { position:relative; text-align:left; }*/
+        div.accept label:after { content: ": " }
+    </style>
+
     <script language="javascript" type="text/javascript">
         function bounce() {
             $(".bounce").effect("bounce", { times: 4, distance: 8 }, 200);
@@ -50,7 +57,8 @@
         
         .completion_list_item
         {
-            padding: 4px 8px; /* background-color: #00447e;*/
+            /*padding: 4px 8px;*/ /* background-color: #00447e;*/
+            padding: 2px 8px 6px 8px;
             background-color: #444444;
             color: #c7d6e3;
         }
@@ -115,10 +123,10 @@
                                 <asp:Panel runat="server" ID="itemPlaceHolder">
                                     <div style="height: 4px;">
                                     </div>
-                                    <div>
-                                        Name:
+                                    <div class="accept">
+                                        <label for="txtGuest" style="vertical-align:top">Name</label>
                                         <asp:TextBox ID="txtGuest" runat="server" Text='<%# Eval("Name") %>'></asp:TextBox>
-                                        Dinner Options:
+                                        <label class="dinnerOptions" for="ddlDinnerPreferences">Dinner Options</label>
                                         <asp:DropDownList ID="ddlDinnerPreferences" runat="server" DataSourceID="odsDinnerPreferences"
                                             DataTextField="Name" DataValueField="ID" SelectedValue='<%# Eval("DinnerPreference") %>'>
                                         </asp:DropDownList>
@@ -130,9 +138,9 @@
                                 </asp:Panel>
                             </ItemTemplate>
                         </asp:ListView>
-                        <div style="vertical-align:top">
-                            Message:
-                            <asp:TextBox ID="txtMessage" runat="server" ClientIDMode="Static" TextMode="MultiLine" Height="100px" MaxLength="400" class="border blue"></asp:TextBox>
+                        <div class="accept" style="vertical-align:top">
+                            <label for="txtMessage">Message</label>
+                            <asp:TextBox ID="txtMessage" runat="server" ClientIDMode="Static" TextMode="MultiLine" Height="100px" MaxLength="500" class="border blue" Width="500px"></asp:TextBox>
                         </div>
                     </asp:Panel>
                 </asp:View>
