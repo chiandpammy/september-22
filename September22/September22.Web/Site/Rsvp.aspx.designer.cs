@@ -13,15 +13,6 @@ namespace September22 {
     public partial class Rsvp {
         
         /// <summary>
-        /// timeLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label timeLabel;
-        
-        /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
@@ -29,15 +20,6 @@ namespace September22 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
-        /// <summary>
-        /// divRsvpTop control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divRsvpTop;
         
         /// <summary>
         /// txtName control.
@@ -58,6 +40,24 @@ namespace September22 {
         protected global::AjaxControlToolkit.AutoCompleteExtender acextName;
         
         /// <summary>
+        /// hfInvitationName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfInvitationName;
+        
+        /// <summary>
+        /// pnlDecision control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlDecision;
+        
+        /// <summary>
         /// rbAccept control.
         /// </summary>
         /// <remarks>
@@ -65,15 +65,6 @@ namespace September22 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rbAccept;
-        
-        /// <summary>
-        /// btnNewGuest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNewGuest;
         
         /// <summary>
         /// mvRSVP control.
@@ -94,6 +85,24 @@ namespace September22 {
         protected global::System.Web.UI.WebControls.View viewAccepted;
         
         /// <summary>
+        /// pnlAccepted control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlAccepted;
+        
+        /// <summary>
+        /// btnNewGuest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNewGuest;
+        
+        /// <summary>
         /// lvGuests control.
         /// </summary>
         /// <remarks>
@@ -110,6 +119,15 @@ namespace September22 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View viewDeclined;
+        
+        /// <summary>
+        /// pnlDeclined control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlDeclined;
         
         /// <summary>
         /// btnConfirm control.

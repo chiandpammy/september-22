@@ -6,132 +6,152 @@
         function bounce() {
             $(".bounce").effect("bounce", { times: 4, distance: 8 }, 200);
         };
+
+        function selected(source, eventArgs) {
+            var hdnValueID = "<%= hfInvitationName.ClientID %>";
+            document.getElementById(hdnValueID).value = eventArgs.get_value();
+
+            __doPostBack(hdnValueID, "");
+        }
     </script>
     <style type="text/css">
-        .completion_list {
-            margin:0px;
-            overflow:hidden;
-            
+        .completion_list
+        {
+            margin: 0px;
+            overflow: hidden;
             background: transparent url("../App_Themes/Wedding/Images/completion_pointer.gif") no-repeat 32px 0px;
-            padding-top:10px;
-            cursor:pointer;
+            padding-top: 10px;
+            cursor: pointer;
         }
         
-        ul>:first-child
+        .completion_list > :first-child
         {
             -webkit-border-top-left-radius: 10px; /* chrome and safari */
-             -khtml-border-top-left-radius: 10px;
-               -moz-border-top-left-radius: 10px; /* firefox */
-                    border-top-left-radius: 10px;
-            
-           -webkit-border-top-right-radius: 10px; /* chrome and safari */
+            -khtml-border-top-left-radius: 10px;
+            -moz-border-top-left-radius: 10px; /* firefox */
+            border-top-left-radius: 10px;
+            -webkit-border-top-right-radius: 10px; /* chrome and safari */
             -khtml-border-top-right-radius: 10px;
-              -moz-border-top-right-radius: 10px; /* firefox */
-                   border-top-right-radius: 10px;
+            -moz-border-top-right-radius: 10px; /* firefox */
+            border-top-right-radius: 10px;
         }
         
-        ul>:last-child
+        .completion_list > :last-child
         {
             -webkit-border-bottom-left-radius: 10px; /* chrome and safari */
-             -khtml-border-bottom-left-radius: 10px;
-               -moz-border-bottom-left-radius: 10px; /* firefox */
-                    border-bottom-left-radius: 10px;
-            
-           -webkit-border-bottom-right-radius: 10px; /* chrome and safari */
+            -khtml-border-bottom-left-radius: 10px;
+            -moz-border-bottom-left-radius: 10px; /* firefox */
+            border-bottom-left-radius: 10px;
+            -webkit-border-bottom-right-radius: 10px; /* chrome and safari */
             -khtml-border-bottom-right-radius: 10px;
-              -moz-border-bottom-right-radius: 10px; /* firefox */
-                   border-bottom-right-radius: 10px;
+            -moz-border-bottom-right-radius: 10px; /* firefox */
+            border-bottom-right-radius: 10px;
         }
         
-        .completion_list_item 
+        .completion_list_item
         {
-            padding:4px 8px;
-            background-color: #00447e;
+            padding: 4px 8px; /* background-color: #00447e;*/
+            background-color: #444444;
             color: #c7d6e3;
         }
         
-        .completion_list_item_highlighted 
+        .completion_list_item_highlighted
         {
-            padding:4px 8px;
+            padding: 4px 8px;
             background-color: #0fc0f3;
-            color:white;
+            color: white;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MiddleColumnContent" runat="server">
     <h2>
         <span>RSVP</span></h2>
-    <asp:Label ID="timeLabel" runat="server" />
-                
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
-            <div id="divRsvpTop" runat="server" class="listview rounded-corner">
+
+            <div style="height: 8px;"></div>
+            <div class="listview rounded-corner">
                 <div>
-                    Name
+                    Step 1: Look for your invitation.
                 </div>
                 <div>
                     <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
-                    <ajaxToolkit:AutoCompleteExtender
-                        ID="acextName" 
-                        runat="server" 
-                        TargetControlID="txtName"
-                        ServicePath="Rsvp.aspx"
-                        ServiceMethod="GetCompletionList" 
-                        MinimumPrefixLength="2" 
-                        CompletionListCssClass="completion_list"
-                        CompletionListItemCssClass="completion_list_item"
-                        CompletionListHighlightedItemCssClass="completion_list_item_highlighted"
-                        CompletionInterval="1">
+                    <ajaxToolkit:AutoCompleteExtender ID="acextName" runat="server" TargetControlID="txtName"
+                        ServicePath="Rsvp.aspx" ServiceMethod="GetCompletionList" MinimumPrefixLength="2"
+                        OnClientItemSelected="selected" CompletionListCssClass="completion_list" CompletionListItemCssClass="completion_list_item"
+                        CompletionListHighlightedItemCssClass="completion_list_item_highlighted" CompletionInterval="1">
                     </ajaxToolkit:AutoCompleteExtender>
-
-                    <asp:RadioButtonList ID="rbAccept" runat="server" RepeatDirection="Horizontal" 
-                        AutoPostBack="True" onselectedindexchanged="rbAccept_SelectedIndexChanged">
-                        <asp:ListItem Value="Yes">Accept with Pleasure</asp:ListItem>
-                        <asp:ListItem Value="No">Decline with regret</asp:ListItem>
-                    </asp:RadioButtonList>
-
-                    <!--[if (IE 9)]><!--> <div class="gradient-wrapper"> <!--<![endif]-->
-                    <asp:Button runat="server" ID="btnNewGuest" Text="Add another Guest" 
-                        UseSubmitBehavior="False"
-                        OnClick="btnNewGuest_Click" 
-                        Visible="false" />
-                    </div>
+                    <asp:HiddenField ID="hfInvitationName" runat="server" />
                 </div>
             </div>
-            <div style="height: 4px;"></div>
+
+            <div style="height: 8px;"></div>
+            <asp:Panel runat="server" ID="pnlDecision" CssClass="listview rounded-corner" Visible="false">
+                <div>
+                    Step 2: Tell us if you're coming.
+                </div>
+                <asp:RadioButtonList ID="rbAccept" 
+                    runat="server" 
+                    RepeatDirection="Horizontal"
+                    AutoPostBack="True"
+                    OnSelectedIndexChanged="rbAccept_SelectedIndexChanged">
+                    <asp:ListItem Value="Yes">Accept with Pleasure</asp:ListItem>
+                    <asp:ListItem Value="No">Decline with regret</asp:ListItem>
+                </asp:RadioButtonList>
+            </asp:Panel>
+
+            <div style="height: 8px;"></div>
             <asp:MultiView ID="mvRSVP" runat="server">
                 <asp:View ID="viewAccepted" runat="server">
-                    <asp:ListView runat="server" ID="lvGuests" OnDataBound="lvGuests_DataBound" OnItemDeleting="lvGuests_ItemDeleting">
-                        <ItemTemplate>
-                            <asp:Panel runat="server" ID="itemPlaceHolder">
-                                <div style="height: 4px;">
-                                </div>
-                                <div class="listview rounded-corner">
-                                    <asp:TextBox ID="txtGuest" runat="server" Text='<%# Eval("Name") %>'></asp:TextBox>
-                                    <asp:DropDownList ID="ddlDinnerPreference" runat="server">
-                                    </asp:DropDownList>
-                                    <asp:ImageButton ID="ibtnDelete" runat="server" ImageUrl="~/App_Themes/Wedding/Images/delete.gif"
-                                        CommandName="Delete" ImageAlign="AbsMiddle" />
-                                </div>
-                                <div style="height: 4px;">
-                                </div>
-                            </asp:Panel>
-                        </ItemTemplate>
-                    </asp:ListView>
+                    <asp:Panel runat="server" ID="pnlAccepted" CssClass="listview rounded-corner">
+                        <div>
+                            Step 3: Tell us who's coming.
+                        </div>
+                        <!--[if (IE 9)]><!-->
+                        <div class="gradient-wrapper">
+                            <!--<![endif]-->
+                            <asp:Button runat="server" ID="btnNewGuest" Text="Add another Guest" UseSubmitBehavior="False" OnClick="btnNewGuest_Click" Visible="false" />
+                        </div>
+                        <asp:ListView runat="server" ID="lvGuests" OnDataBound="lvGuests_DataBound" OnItemDeleting="lvGuests_ItemDeleting">
+                            <ItemTemplate>
+                                <asp:Panel runat="server" ID="itemPlaceHolder">
+                                    <div style="height: 4px;">
+                                    </div>
+                                    <div>
+                                        Name: <asp:TextBox ID="txtGuest" runat="server" Text='<%# Eval("Name") %>'></asp:TextBox>
+                                        Dinner Options: <asp:DropDownList ID="ddlDinnerPreference" runat="server"></asp:DropDownList>
+                                        <asp:ImageButton ID="ibtnDelete" runat="server" ImageUrl="~/App_Themes/Wedding/Images/delete.gif" CommandName="Delete" ImageAlign="AbsMiddle" />
+                                    </div>
+                                    <div style="height: 4px;">
+                                    </div>
+                                </asp:Panel>
+                            </ItemTemplate>
+                        </asp:ListView>
+                    </asp:Panel>
                 </asp:View>
                 <asp:View ID="viewDeclined" runat="server">
-                    <p>
-                        Awww... That's a shame. We're sorry you can't make it.
-                    </p>
-                    <p>
-                        Press the confirm button to let us know. Hope to see you soon
-                    </p>
+                    <asp:Panel runat="server" ID="pnlDeclined" CssClass="listview rounded-corner">
+                        <div>
+                            Step 3: Tell us who's coming.
+                        </div>
+                        <p>
+                            Awww... That's a shame. We're sorry you can't make it.
+                        </p>
+                        <p>
+                            Press the confirm button to let us know. Hope to see you soon
+                        </p>
+                    </asp:Panel>
                 </asp:View>
             </asp:MultiView>
-            <!--[if (IE 9)]><!--> <div class="gradient-wrapper"> <!--<![endif]-->
-            <asp:Button runat="server" ID="btnConfirm" Text="Confirm" UseSubmitBehavior="False"
-                OnClick="btnConfirm_Click" />
+
+            <div style="height: 32px;"></div>
+            <!--[if (IE 9)]><!-->
+            <div class="gradient-wrapper">
+                <!--<![endif]-->
+                <asp:Button runat="server" ID="btnConfirm" Text="Confirm" Visible="false" UseSubmitBehavior="False"
+                    OnClick="btnConfirm_Click" />
             </div>
+
         </ContentTemplate>
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="btnConfirm" EventName="Click" />
