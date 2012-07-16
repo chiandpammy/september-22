@@ -72,7 +72,7 @@
                     <tr><td colspan="2"><br /><hr /></td></tr>
                     <tr>
                         <td width="150">
-                            <!--<img align="left" alt="" src="http://graph.facebook.com/guamacario/picture?type=large" width="150" />--></td>
+                            <img align="left" alt="" src="http://graph.facebook.com/sabaa.ibr.k/picture?type=large" width="150" /></td>
                         <td valign="top">
                             <b>Jehanzeb </b>- Best Man<br /><br />
                             </td>
