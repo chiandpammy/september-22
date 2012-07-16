@@ -80,7 +80,7 @@
             </div>
             <div class="listview rounded-corner">
                 <div>
-                    Step 1: Look for your invitation.
+                    Step 1: Look for your invitation.  Please enter the name on your invitation.
                 </div>
                 <div>
                     <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
@@ -110,7 +110,7 @@
                 <asp:View ID="viewAccepted" runat="server">
                     <asp:Panel runat="server" ID="pnlAccepted" CssClass="listview rounded-corner">
                         <div>
-                            Step 3: Tell us who's coming.
+                            Step 3: Tell us who's coming and what they'd like to eat.
                         </div>
                         <!--[if (IE 9)]><!-->
                         <div class="gradient-wrapper">
