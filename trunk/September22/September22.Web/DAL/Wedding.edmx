@@ -42,7 +42,7 @@
           <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="100" />
           <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="100" />
           <Property Name="MaxNumberOfGuests" Type="tinyint" Nullable="false" />
-          <Property Name="Attending" Type="bit" Nullable="false" />
+          <Property Name="Attending" Type="bit" />
           <Property Name="Notes" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <Association Name="FK_Guest_DinnerPreference">

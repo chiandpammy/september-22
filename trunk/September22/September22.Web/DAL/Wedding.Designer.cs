@@ -604,7 +604,7 @@ namespace September22.DAL
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Boolean Attending
+        public global::System.Boolean? Attending
         {
             get
             {
@@ -619,8 +619,8 @@ namespace September22.DAL
                 OnAttendingChanged();
             }
         }
-        private global::System.Boolean _Attending;
-        partial void OnAttendingChanging(global::System.Boolean value);
+        private global::System.Boolean? _Attending;
+        partial void OnAttendingChanging(global::System.Boolean? value);
         partial void OnAttendingChanged();
     
         /// <summary>
