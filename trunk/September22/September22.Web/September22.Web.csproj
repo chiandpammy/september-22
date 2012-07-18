@@ -119,6 +119,7 @@
     <Content Include="App_Themes\Wedding\default.css" />
     <Content Include="App_Themes\Wedding\Images\3_stars.gif" />
     <Content Include="App_Themes\Wedding\Images\4_stars.gif" />
+    <Content Include="App_Themes\Wedding\Images\coming-soon.gif" />
     <Content Include="App_Themes\Wedding\Images\completion_pointer.gif" />
     <Content Include="App_Themes\Wedding\Images\bg.png" />
     <Content Include="App_Themes\Wedding\Images\bg_page.png" />
@@ -287,6 +288,7 @@
     <Compile Include="Common\Navigation.cs" />
     <Compile Include="Common\Enums.cs" />
     <Compile Include="DAL\DataAccess.cs" />
+    <Compile Include="DAL\Entities\Invitation.cs" />
     <Compile Include="DAL\Wedding.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
