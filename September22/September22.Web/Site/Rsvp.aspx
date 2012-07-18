@@ -9,7 +9,7 @@
         div.accept label:after { content: ": " }
     </style>
 
-    <script language="javascript" type="text/javascript">
+    <%--<script language="javascript" type="text/javascript">
         function bounce() {
             $(".bounce").effect("bounce", { times: 4, distance: 8 }, 200);
         };
@@ -20,7 +20,7 @@
 
             __doPostBack(hdnValueID, "");
         }
-    </script>
+    </script>--%>
     <style type="text/css">
         .completion_list
         {
@@ -74,7 +74,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MiddleColumnContent" runat="server">
     <h2>
         <span>RSVP</span></h2>
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+        <img src="../App_Themes/Wedding/Images/coming-soon.gif" alt="Coming soon!" />
+        <h3>Sorry! We're not quite ready yet.</h3>
+        <h4>You'll be able to RSVP online starting Sunday 07/22/2012.</h4>
+    <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div style="height: 8px;">
             </div>
@@ -153,7 +156,7 @@
                             Awww... That's a shame. We're sorry you can't make it.
                         </p>
                         <p>
-                            Press the confirm button to let us know. Hope to see you soon
+                            Press the confirm button to let us know. Hope to see you soon.
                         </p>
                     </asp:Panel>
                 </asp:View>
@@ -171,7 +174,7 @@
             <asp:AsyncPostBackTrigger ControlID="btnConfirm" EventName="Click" />
             <asp:AsyncPostBackTrigger ControlID="btnNewGuest" EventName="Click" />
         </Triggers>
-    </asp:UpdatePanel>
+    </asp:UpdatePanel>--%>
     <asp:ObjectDataSource ID="odsDinnerPreferences" runat="server" SelectMethod="GetDinnerPreferences"
         TypeName="September22.DAL.DataAccess">
         <SelectParameters>

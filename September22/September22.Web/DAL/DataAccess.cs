@@ -34,6 +34,15 @@ namespace September22.DAL
             return dinnerPreferences.AsQueryable();
         }
 
+        public static void SaveGuests(List<Guest> Guests)
+        {
+            foreach (var guest in Guests)
+            {
+                Entities.Guests.AddObject(guest);
+            }
+            Entities.SaveChanges();
+        }
+
         private static List<Invitation> _Invitations;
         public static IQueryable<Invitation> GetInvitations()
         {
@@ -45,13 +54,10 @@ namespace September22.DAL
             return _Invitations.AsQueryable();
         }
 
-        public static void SaveGuests(List<Guest> Guests)
+        public static Invitation GetInvitationByFullName(string fullName)
         {
-            foreach (var guest in Guests)
-            {
-                Entities.Guests.AddObject(guest);
-            }
-            Entities.SaveChanges();
+            IQueryable<Invitation> invitations = GetInvitations();
+            return invitations.Where(inv => inv.FullName == fullName).FirstOrDefault();
         }
     }
 }
