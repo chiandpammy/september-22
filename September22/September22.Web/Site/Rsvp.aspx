@@ -92,9 +92,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MiddleColumnContent" runat="server">
     <h2>
         <span>RSVP</span></h2>
-    <%--<img src="../App_Themes/Wedding/Images/coming-soon.gif" alt="Coming soon!" />
-        <h3>Sorry! We're not quite ready yet.</h3>
-        <h4>You'll be able to RSVP online starting Sunday 07/22/2012.</h4>--%>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div style="height: 8px;">
@@ -145,7 +142,7 @@
                             </h5>
   
                         </div>
-                                                 <!--[if (IE 9)]><!-->
+                            <!--[if (IE 9)]><!-->
                             <div class="gradient-wrapper" style="margin:8px;">
                                 <!--<![endif]-->
                                 <asp:Button runat="server" ID="btnNewGuest" Text="Add another Guest" UseSubmitBehavior="False"
