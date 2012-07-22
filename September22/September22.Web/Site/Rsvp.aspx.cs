@@ -58,20 +58,20 @@ namespace September22
 
                 switch (currentStep)
                 {
-                    //new page and postback
-                    case 1:
-                        //hide decision panel and remove bounce
-                        pnlDecision.Visible = false;
+                    ////new page and postback
+                    //case 1:
+                    //    //hide decision panel and remove bounce
+                    //    pnlDecision.Visible = false;
 
-                        //clean decision panel
-                        rbAccept.SelectedIndex = -1;
+                    //    //clean decision panel
+                    //    rbAccept.SelectedIndex = -1;
 
-                        //clean accepted/declined panel
-                        mvRSVP.ActiveViewIndex = -1;
+                    //    //clean accepted/declined panel
+                    //    mvRSVP.ActiveViewIndex = -1;
 
-                        //hide confirmation box
-                        btnConfirm.Visible = false;
-                        break;
+                    //    //hide confirmation box
+                    //    btnConfirm.Visible = false;
+                    //    break;
 
                     //user chose invitation
                     //  it is time to show decision panel
@@ -109,7 +109,7 @@ namespace September22
                             }
 
                             //update listview
-                            lvGuests.DataSource = CurrentInvitation.Guests.ToList();
+                            lvGuests.DataSource = CurrentInvitation.Guests.OrderBy(GuestSorter);
                             lvGuests.DataBind();
 
                             UpdatePanel1.Update();
@@ -133,7 +133,6 @@ namespace September22
         /// <summary>
         /// Step 2
         ///     user chose an invitation.
-        ///     ViewState["guests"] is set to empty
         /// Step 3
         ///     user clicked on accepted/declined indicator
         /// </summary>
@@ -160,16 +159,18 @@ namespace September22
                 }
 
                 //check decision
-                string prevDecision = selectedInvitation.Decision;
+                string prevDecision = CurrentInvitation.Attending.HasValue ? CurrentInvitation.Attending.Value.ToString() : null;  //this is current invitation's last known decision
                 if (rbAccept.SelectedIndex >= 0)
                 {
                     //set decision
-                    selectedInvitation.Attending = bool.Parse(rbAccept.SelectedValue);
-                    CurrentInvitation = selectedInvitation;
+                    CurrentInvitation.Attending = bool.Parse(rbAccept.SelectedValue);
 
                     if (prevDecision != rbAccept.SelectedValue)
                         return 3;
 
+                    //we were already in step 3
+                    //  and this is postback
+                    //  ie new item click, delte row click and so forth
                     return 0;
                 }
             }
@@ -180,24 +181,22 @@ namespace September22
 
         protected void btnNewGuest_Click(object sender, EventArgs e)
         {
-            //get invitation
-            Invitation invitation = CurrentInvitation;
+            //update invitation from screen
+            UpdateGuests();
 
             //check viewstate
-            if (invitation.Guests.Count >= invitation.MaxNumberOfGuests)
+            if (CurrentInvitation.Guests.Count >= CurrentInvitation.MaxNumberOfGuests)
             {
                 return;
             }
 
             //add new person
             Guest newGuest = new Guest();
-            newGuest.InvitationID = invitation.ID;
-            invitation.Guests.Add(newGuest);
-
-            CurrentInvitation = invitation;
+            newGuest.InvitationID = CurrentInvitation.ID;
+            CurrentInvitation.Guests.Add(newGuest);
 
             //update listview
-            lvGuests.DataSource = invitation.Guests;
+            lvGuests.DataSource = CurrentInvitation.Guests.OrderBy(GuestSorter);
             lvGuests.DataBind();
 
             UpdatePanel1.Update();
@@ -224,21 +223,22 @@ namespace September22
 
         protected void lvGuests_ItemDeleting(object sender, ListViewDeleteEventArgs e)
         {
-            ////check viewstate
-            //UpdateGuests();
+            //delete this person
+            lvGuests.Items.RemoveAt(e.ItemIndex);
 
-            ////delete this person
-            //Invitation invitation = CurrentInvitation;
-            //List<Guest> guestList = invitation.Guests.ToList();
-            //guestList.RemoveAt(e.ItemIndex);
-            //invitation.Guests = guestList;
-            //CurrentInvitation = invitation;
+            //update invitation from screen
+            UpdateGuests();
 
-            ////update listview
-            //lvGuests.DataSource = guests;
-            //lvGuests.DataBind();
+            //update listview
+            lvGuests.DataSource = CurrentInvitation.Guests.OrderBy(GuestSorter);
+            lvGuests.DataBind();
 
-            //UpdatePanel1.Update();
+            UpdatePanel1.Update();
+        }
+
+        private DateTime GuestSorter(Guest guest)
+        {
+            return guest.DateCreated;
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
@@ -322,16 +322,16 @@ namespace September22
                 btnNewGuest.Visible = false;
             }
 
-            // Update viewmodel
+            //Update viewmodel
             Invitation invitation = CurrentInvitation;
             invitation.Attending = bool.Parse(rbAccept.SelectedValue);
             CurrentInvitation = invitation;
         }
 
         /// <summary>
-        /// Get guests that are in memory after use changes, additions, deletions and so forth.  This list is what the user sees.
+        /// Update guest list with what user sees on the screen.
         /// </summary>
-        private void UpdateGuests()
+        private Invitation UpdateGuests()
         {
             //get invitation
             Invitation invitation = CurrentInvitation;
@@ -353,7 +353,10 @@ namespace September22
                 invitation.Guests.Add(guest);
             }
 
-            CurrentInvitation = invitation;
+            //save invitation
+            //CurrentInvitation = invitation;
+
+            return invitation;
         }
 
         [System.Web.Services.WebMethod]
@@ -362,13 +365,16 @@ namespace September22
         {
             try
             {
-                string[] invitationNames =
-                    DataAccess.GetInvitations()
-                        .Select(a => a.FullName)
-                        .ToArray();
+                if (_invitationList == null)
+                {
+                    _invitationList = DataAccess.GetInvitations()
+                                        .ToList()
+                                        .Select(a => a.FullName)
+                                        .ToArray();
+                }
 
                 return
-                    (from m in invitationNames
+                    (from m in _invitationList
                      where m.ToUpperInvariant()
                      .Contains(prefixText.ToUpperInvariant())
                      select m)
@@ -382,18 +388,6 @@ namespace September22
 
             return null;
         }
+        static string[] _invitationList;
     }
-
-    //[Serializable]
-    //public class Person
-    //{
-    //    public string Name { get; set; }
-
-    //    public int DinnerPreference { get; set; }
-
-    //    public override string ToString()
-    //    {
-    //        return Name;
-    //    }
-    //}
 }

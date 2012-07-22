@@ -12,24 +12,14 @@ namespace September22.DAL
     {
         private static WeddingEntities Entities = new WeddingEntities();
 
-        private static List<DinnerPreference> _DinnerPreferences;
         public static IQueryable<DinnerPreference> GetDinnerPreferences(bool excludeOther = true)
         {
-            if (_DinnerPreferences == null)
-            {
-                _DinnerPreferences = Entities.DinnerPreferences.ToList();
-            }
-
             //result
-            var dinnerPreferences = new List<DinnerPreference>(_DinnerPreferences);
+            var dinnerPreferences = new List<DinnerPreference>(Entities.DinnerPreferences);
             
             //check exclude other condition
             if (excludeOther)
                 dinnerPreferences.RemoveAll(pref => pref.Name == "Other");
-
-            ////check add blank condition
-            //if (!excludeBlank)
-            //    dinnerPreferences.Insert(0, new DinnerPreference() { ID = -1 });
 
             return dinnerPreferences.AsQueryable();
         }
@@ -48,21 +38,15 @@ namespace September22.DAL
             Entities.SaveChanges();
         }
 
-        private static List<Invitation> _Invitations;
         public static IQueryable<Invitation> GetInvitations()
         {
-            if (_Invitations == null)
-            {
-                _Invitations = Entities.Invitations.ToList();
-            }
-
-            return _Invitations.AsQueryable();
+            return Entities.Invitations;
         }
 
         public static Invitation GetInvitationByFullName(string fullName)
         {
             IQueryable<Invitation> invitations = GetInvitations();
-            return invitations.Where(inv => inv.FullName == fullName).FirstOrDefault();
+            return invitations.ToList().Where(inv => inv.FullName == fullName).FirstOrDefault();
         }
     }
 }
