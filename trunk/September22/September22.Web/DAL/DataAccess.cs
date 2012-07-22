@@ -13,7 +13,7 @@ namespace September22.DAL
         private static WeddingEntities Entities = new WeddingEntities();
 
         private static List<DinnerPreference> _DinnerPreferences;
-        public static IQueryable<DinnerPreference> GetDinnerPreferences(bool addBlank = true, bool excludeOther = true)
+        public static IQueryable<DinnerPreference> GetDinnerPreferences(bool excludeOther = true)
         {
             if (_DinnerPreferences == null)
             {
@@ -27,9 +27,9 @@ namespace September22.DAL
             if (excludeOther)
                 dinnerPreferences.RemoveAll(pref => pref.Name == "Other");
 
-            //check add blank condition
-            if (addBlank)
-                dinnerPreferences.Insert(0, new DinnerPreference() { Name = string.Empty, ID = 0 });
+            ////check add blank condition
+            //if (!excludeBlank)
+            //    dinnerPreferences.Insert(0, new DinnerPreference() { ID = -1 });
 
             return dinnerPreferences.AsQueryable();
         }
@@ -40,6 +40,11 @@ namespace September22.DAL
             {
                 Entities.Guests.AddObject(guest);
             }
+            Entities.SaveChanges();
+        }
+
+        public static void SaveInvitation(Invitation invitation)
+        {
             Entities.SaveChanges();
         }
 
