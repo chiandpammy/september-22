@@ -21,5 +21,7 @@ namespace September22.DAL
         }
 
         public DateTime DateCreated { get; private set; }
+
+        public int Index { get; set; }
     }
 }

@@ -41,10 +41,6 @@
                     <li>Turn right onto State St.  Stay on State St for 0.2 Miles.</li>
                     <li>Turn left onto Monroe St.  Destination will be on the right in 0.1 Miles.</li>
                 </ol>
-                <p>
-                    * Your GPS may tell you to exit on Monroe St instead of Washington Blvd from I-90.
-                    There is construction along Wacker St, and you will not be able to take Monroe St all the way to the University Club.
-                </p>
             </div>
             <div class="step">
                 <h2><span>Parking</span></h2>
@@ -78,6 +74,7 @@
                     Deadline: Thursday August 30, 2012<br />
                     Confirmation Number: 3474090819<br />
                     * Children stay free.
+                    ** This hotel is literally across the street from the University Club of Chicago.
                 </p>
                 <table>
 				        <tr>

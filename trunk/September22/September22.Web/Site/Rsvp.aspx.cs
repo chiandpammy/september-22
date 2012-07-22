@@ -170,7 +170,7 @@ namespace September22
 
                     //we were already in step 3
                     //  and this is postback
-                    //  ie new item click, delte row click and so forth
+                    //  ie new item click, delete row click and so forth
                     return 0;
                 }
             }
@@ -193,6 +193,7 @@ namespace September22
             //add new person
             Guest newGuest = new Guest();
             newGuest.InvitationID = CurrentInvitation.ID;
+            newGuest.Index = CurrentInvitation.Guests.Any() ? CurrentInvitation.Guests.Max(g => g.Index) + 1 : 0;
             CurrentInvitation.Guests.Add(newGuest);
 
             //update listview
@@ -236,18 +237,13 @@ namespace September22
             UpdatePanel1.Update();
         }
 
-        private DateTime GuestSorter(Guest guest)
-        {
-            return guest.DateCreated;
-        }
-
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
             //possible errors
             var errors = new List<Exception>();
 
             //guests entered in the screen, but not necessarily in database yet
-            //UpdateGuests();
+            UpdateGuests();
 
             //get invitation
             Invitation invitation = CurrentInvitation;
@@ -262,8 +258,10 @@ namespace September22
                         string.Format("RSVP from {0}. Guest: {1}. Dinner Preference: {2}. ", invitation.FirstName, guest.FullName, guest.DinnerPreference));
                 }
                 //log special request
+                txtSpecialRequest.Text = txtSpecialRequest.Text.Trim();
                 if (!string.IsNullOrEmpty(txtSpecialRequest.Text))
                 {
+                    invitation.Notes = txtSpecialRequest.Text;
                     Utilities.LogMessage(
                         string.Format("Special Request from {0}. Request: {1}", invitation.FirstName, txtSpecialRequest.Text));
                 }
@@ -338,8 +336,10 @@ namespace September22
             invitation.Guests.Clear();
 
             //guests are loaded onto listview
-            foreach (ListViewDataItem item in lvGuests.Items)
+            //foreach (ListViewDataItem item in lvGuests.Items)
+            for (int i = 0; i < lvGuests.Items.Count; i++)
             {
+                ListViewDataItem item = lvGuests.Items.ElementAt(i);
                 TextBox txtBox = item.FindControl("txtGuest") as TextBox;
                 DropDownList ddlDropDown = item.FindControl("ddlDinnerPreferences") as DropDownList;
 
@@ -350,6 +350,7 @@ namespace September22
                     guest.DinnerPreferenceID = null;
                 else
                     guest.DinnerPreferenceID = Int32.Parse(ddlDropDown.SelectedValue);
+                guest.Index = i;
                 invitation.Guests.Add(guest);
             }
 
@@ -389,5 +390,12 @@ namespace September22
             return null;
         }
         static string[] _invitationList;
+
+        private int GuestSorter(Guest guest)
+        {
+            return guest.Index;
+        }
     }
+
+ 
 }
