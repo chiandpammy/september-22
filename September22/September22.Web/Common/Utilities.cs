@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Net.Mail;
 using System.Net;
+using System.Net.Mail;
+using System.Web;
 
 namespace September22.Common
 {
@@ -13,6 +11,9 @@ namespace September22.Common
     public class Utilities
     {
         public const string THEME = "Theme";
+        public const string TO_ADDR1 = @"bebbiwebbi@gmail.com";
+        public const string TO_ADDR2 = @"sta12quest@gmail.com";
+        public const string FROM_ADDR = @"admin@september22.us";
 
         /// <summary>
         /// Saves theme into a browser cookie.
@@ -86,6 +87,18 @@ namespace September22.Common
             }
 
             return nextTheme.ToString();
+        }
+
+        /// <summary>
+        /// Sends email using default email addresses.
+        /// </summary>
+        public static void SendEmail(string subject, string body)
+        {
+            SendEmail(
+                FROM_ADDR,
+                new string[] { TO_ADDR1, TO_ADDR2 },
+                subject,
+                body);
         }
 
         /// <summary>

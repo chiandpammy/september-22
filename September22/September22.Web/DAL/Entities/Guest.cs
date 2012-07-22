@@ -9,7 +9,6 @@ namespace September22.DAL
     {
         public Guest()
         {
-            DateCreated = DateTime.Now;
         }
 
         public int SelectedDinnerPreferenceID
@@ -19,8 +18,6 @@ namespace September22.DAL
                 return DinnerPreferenceID ?? -1;
             }
         }
-
-        public DateTime DateCreated { get; private set; }
 
         public int Index { get; set; }
     }
