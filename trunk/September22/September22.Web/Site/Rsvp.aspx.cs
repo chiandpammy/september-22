@@ -91,12 +91,14 @@ namespace September22
                         lvGuests.DataSource = null;
                         lvGuests.DataBind();
 
+                        txtSpecialRequest.Text = CurrentInvitation.Notes;
+
                         UpdatePanel1.Update();
                         break;
 
                     //user chose accept/decline
                     case 3:
-                        UpdateGuests();
+                        UpdateInvitationFromScreen();
 
                         if (rbAccept.SelectedValue == bool.TrueString)
                         {
@@ -176,7 +178,7 @@ namespace September22
         protected void btnNewGuest_Click(object sender, EventArgs e)
         {
             //update invitation from screen
-            UpdateGuests();
+            UpdateInvitationFromScreen();
 
             //check viewstate
             if (CurrentInvitation.Guests.Count >= CurrentInvitation.MaxNumberOfGuests)
@@ -221,7 +223,7 @@ namespace September22
             lvGuests.Items.RemoveAt(e.ItemIndex);
 
             //update invitation from screen
-            UpdateGuests();
+            UpdateInvitationFromScreen();
 
             //update listview
             lvGuests.DataSource = CurrentInvitation.Guests.OrderBy(GuestSorter);
@@ -236,7 +238,7 @@ namespace September22
             var errors = new List<Exception>();
 
             //guests entered in the screen, but not necessarily in database yet
-            UpdateGuests();
+            UpdateInvitationFromScreen();
 
             //get invitation
             Invitation invitation = CurrentInvitation;
@@ -262,10 +264,8 @@ namespace September22
                     emailText.AppendLine();
                 }
                 //log special request
-                txtSpecialRequest.Text = txtSpecialRequest.Text.Trim();
-                if (!string.IsNullOrEmpty(txtSpecialRequest.Text))
+                if (!string.IsNullOrEmpty(invitation.Notes))
                 {
-                    invitation.Notes = txtSpecialRequest.Text;
                     Utilities.LogMessage(
                         string.Format(SPECIAL_REQUEST_STRING_FORMAT, invitation.FirstName, txtSpecialRequest.Text));
                     emailText.AppendFormat(SPECIAL_REQUEST_STRING_FORMAT, invitation.FirstName, txtSpecialRequest.Text);
@@ -348,7 +348,7 @@ namespace September22
         /// <summary>
         /// Update guest list with what user sees on the screen.
         /// </summary>
-        private Invitation UpdateGuests()
+        private void UpdateInvitationFromScreen()
         {
             //get invitation
             Invitation invitation = CurrentInvitation;
@@ -372,7 +372,8 @@ namespace September22
                 invitation.Guests.Add(guest);
             }
 
-            return invitation;
+            string specialRequest = txtSpecialRequest.Text.Trim();
+            invitation.Notes = string.IsNullOrEmpty(specialRequest) ? null : specialRequest;
         }
 
         [System.Web.Services.WebMethod]
