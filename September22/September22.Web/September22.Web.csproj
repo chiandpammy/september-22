@@ -288,6 +288,7 @@
     <Compile Include="Common\Navigation.cs" />
     <Compile Include="Common\Enums.cs" />
     <Compile Include="DAL\DataAccess.cs" />
+    <Compile Include="DAL\Entities\Guest.cs" />
     <Compile Include="DAL\Entities\Invitation.cs" />
     <Compile Include="DAL\Wedding.Designer.cs">
       <AutoGen>True</AutoGen>

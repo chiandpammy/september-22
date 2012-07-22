@@ -5,11 +5,10 @@
     <style type="text/css">
         div.accept label { position: absolute; text-align:right; width:90px; }
         div.accept input[type="text"], textarea, select { margin-left: 100px; }
-        /*div.accept label.input, label.select { position:relative; text-align:left; }*/
         div.accept label:after { content: ": " }
     </style>
 
-    <%--<script language="javascript" type="text/javascript">
+    <script language="javascript" type="text/javascript">
         function bounce() {
             $(".bounce").effect("bounce", { times: 4, distance: 8 }, 200);
         };
@@ -20,9 +19,9 @@
 
             __doPostBack(hdnValueID, "");
         }
-    </script>--%>
+    </script>
     <style type="text/css">
-        .completion_list
+        .invitation_list
         {
             margin: 0px;
             overflow: hidden;
@@ -31,7 +30,7 @@
             cursor: pointer;
         }
         
-        .completion_list > :first-child
+        .invitation_list > :first-child
         {
             -webkit-border-top-left-radius: 10px; /* chrome and safari */
             -khtml-border-top-left-radius: 10px;
@@ -43,7 +42,7 @@
             border-top-right-radius: 10px;
         }
         
-        .completion_list > :last-child
+        .invitation_list > :last-child
         {
             -webkit-border-bottom-left-radius: 10px; /* chrome and safari */
             -khtml-border-bottom-left-radius: 10px;
@@ -55,7 +54,7 @@
             border-bottom-right-radius: 10px;
         }
         
-        .completion_list_item
+        .invitation_list_item
         {
             /*padding: 4px 8px;*/ /* background-color: #00447e;*/
             padding: 2px 8px 6px 8px;
@@ -63,7 +62,7 @@
             color: #c7d6e3;
         }
         
-        .completion_list_item_highlighted
+        .invitation_list_item_highlighted
         {
             padding: 4px 8px;
             background-color: #0fc0f3;
@@ -74,10 +73,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MiddleColumnContent" runat="server">
     <h2>
         <span>RSVP</span></h2>
-        <img src="../App_Themes/Wedding/Images/coming-soon.gif" alt="Coming soon!" />
+        <%--<img src="../App_Themes/Wedding/Images/coming-soon.gif" alt="Coming soon!" />
         <h3>Sorry! We're not quite ready yet.</h3>
-        <h4>You'll be able to RSVP online starting Sunday 07/22/2012.</h4>
-    <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+        <h4>You'll be able to RSVP online starting Sunday 07/22/2012.</h4>--%>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div style="height: 8px;">
             </div>
@@ -88,9 +87,9 @@
                 <div>
                     <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
                     <ajaxToolkit:AutoCompleteExtender ID="acextName" runat="server" TargetControlID="txtName"
-                        ServicePath="Rsvp.aspx" ServiceMethod="GetCompletionList" MinimumPrefixLength="2"
-                        OnClientItemSelected="selected" CompletionListCssClass="completion_list" CompletionListItemCssClass="completion_list_item"
-                        CompletionListHighlightedItemCssClass="completion_list_item_highlighted" CompletionInterval="1">
+                        ServicePath="Rsvp.aspx" ServiceMethod="GetInvitationList" MinimumPrefixLength="2"
+                        OnClientItemSelected="selected" CompletionListCssClass="invitation_list" CompletionListItemCssClass="invitation_list_item"
+                        CompletionListHighlightedItemCssClass="invitation_list_item_highlighted" CompletionInterval="1">
                     </ajaxToolkit:AutoCompleteExtender>
                     <asp:HiddenField ID="hfInvitationName" runat="server" />
                 </div>
@@ -103,8 +102,8 @@
                 </div>
                 <asp:RadioButtonList ID="rbAccept" runat="server" RepeatDirection="Horizontal" AutoPostBack="True"
                     OnSelectedIndexChanged="rbAccept_SelectedIndexChanged">
-                    <asp:ListItem Value="Yes">Accept with Pleasure</asp:ListItem>
-                    <asp:ListItem Value="No">Decline with regret</asp:ListItem>
+                    <asp:ListItem Value="True">Accept with Pleasure</asp:ListItem>
+                    <asp:ListItem Value="False">Decline with regret</asp:ListItem>
                 </asp:RadioButtonList>
             </asp:Panel>
             <div style="height: 8px;">
@@ -128,10 +127,11 @@
                                     </div>
                                     <div class="accept">
                                         <label for="txtGuest" style="vertical-align:top">Name</label>
-                                        <asp:TextBox ID="txtGuest" runat="server" Text='<%# Eval("Name") %>'></asp:TextBox>
+                                        <asp:TextBox ID="txtGuest" runat="server" Text='<%# Eval("FullName") %>'></asp:TextBox>
                                         <label class="dinnerOptions" for="ddlDinnerPreferences">Dinner Options</label>
                                         <asp:DropDownList ID="ddlDinnerPreferences" runat="server" DataSourceID="odsDinnerPreferences"
-                                            DataTextField="Name" DataValueField="ID" SelectedValue='<%# Eval("DinnerPreference") %>'>
+                                            DataTextField="Name" DataValueField="ID" SelectedValue='<%# Bind("SelectedDinnerPreferenceID") %>' AppendDataBoundItems="True">
+                                            <asp:ListItem Text="" Value="-1" />
                                         </asp:DropDownList>
                                         <asp:ImageButton ID="ibtnDelete" runat="server" ImageUrl="~/App_Themes/Wedding/Images/delete.gif"
                                             CommandName="Delete" ImageAlign="AbsMiddle" />
@@ -174,11 +174,10 @@
             <asp:AsyncPostBackTrigger ControlID="btnConfirm" EventName="Click" />
             <asp:AsyncPostBackTrigger ControlID="btnNewGuest" EventName="Click" />
         </Triggers>
-    </asp:UpdatePanel>--%>
+    </asp:UpdatePanel>
     <asp:ObjectDataSource ID="odsDinnerPreferences" runat="server" SelectMethod="GetDinnerPreferences"
         TypeName="September22.DAL.DataAccess">
         <SelectParameters>
-            <asp:Parameter Name="addBlank" Type="Boolean" DefaultValue="true" />
             <asp:Parameter Name="excludeOther" Type="Boolean" DefaultValue="true" />
         </SelectParameters>
     </asp:ObjectDataSource>
