@@ -118,9 +118,6 @@ namespace September22
                                 pnlDeclined.CssClass += " " + CSS_BOUNCE;
                             }
                         }
-
-                        //show confirmation box
-                        btnConfirm.Visible = true;
                         break;
                 }
             }
@@ -319,19 +316,22 @@ namespace September22
                     newGuest.FullName = hfInvitationName.Value;
                     newGuest.Index = CurrentInvitation.Guests.Any() ? CurrentInvitation.Guests.Max(g => g.Index) + 1 : 0;
                     CurrentInvitation.Guests.Add(newGuest);
-
-                    //update listview
-                    lvGuests.DataSource = CurrentInvitation.Guests.OrderBy(GuestSorter);
-                    lvGuests.DataBind();
-
-                    UpdatePanel1.Update();
                 }
+
+                //update listview
+                lvGuests.DataSource = CurrentInvitation.Guests.OrderBy(GuestSorter);
+                lvGuests.DataBind();
+
+                UpdatePanel1.Update();
             }
             else
             {
                 mvRSVP.SetActiveView(viewDeclined);
                 btnNewGuest.Visible = false;
             }
+
+            //show confirmation box
+            btnConfirm.Visible = true;
 
             //Update viewmodel
             Invitation invitation = CurrentInvitation;
@@ -365,9 +365,6 @@ namespace September22
                 guest.Index = i;
                 invitation.Guests.Add(guest);
             }
-
-            //save invitation
-            //CurrentInvitation = invitation;
 
             return invitation;
         }
