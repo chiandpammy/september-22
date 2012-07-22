@@ -186,7 +186,6 @@ namespace September22
 
             //add new person
             Guest newGuest = new Guest();
-            //newGuest.InvitationID = CurrentInvitation.ID;
             newGuest.Index = CurrentInvitation.Guests.Any() ? CurrentInvitation.Guests.Max(g => g.Index) + 1 : 0;
             CurrentInvitation.Guests.Add(newGuest);
 
@@ -244,7 +243,6 @@ namespace September22
 
             if (invitation.Attending.HasValue && !invitation.Attending.Value)
             {
-                //invitation.Guests.Clear();
                 DataAccess.DeleteGuests(invitation.Guests.ToList());
             }
 
@@ -321,7 +319,6 @@ namespace September22
                 {
                     //add new person
                     Guest newGuest = new Guest();
-                    //newGuest.InvitationID = CurrentInvitation.ID;
                     newGuest.FullName = hfInvitationName.Value;
                     newGuest.Index = CurrentInvitation.Guests.Any() ? CurrentInvitation.Guests.Max(g => g.Index) + 1 : 0;
                     CurrentInvitation.Guests.Add(newGuest);
@@ -355,7 +352,6 @@ namespace September22
         {
             //get invitation
             Invitation invitation = CurrentInvitation;
-            //invitation.Guests.Clear();
             DataAccess.DeleteGuests(invitation.Guests.ToList());
 
             //guests are loaded onto listview
@@ -367,7 +363,6 @@ namespace September22
 
                 var guest = new Guest();
                 guest.FullName = txtBox.Text;
-                //guest.InvitationID = invitation.ID;
                 if (ddlDropDown.SelectedValue == null)
                     guest.DinnerPreferenceID = null;
                 else
