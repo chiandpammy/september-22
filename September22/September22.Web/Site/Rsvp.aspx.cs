@@ -241,6 +241,13 @@ namespace September22
 
             //get invitation
             Invitation invitation = CurrentInvitation;
+
+            if (invitation.Attending.HasValue && !invitation.Attending.Value)
+            {
+                //invitation.Guests.Clear();
+                DataAccess.DeleteGuests(invitation.Guests.ToList());
+            }
+
             StringBuilder emailText = new StringBuilder();
 
             //file log
@@ -254,6 +261,7 @@ namespace September22
                                       guest.DinnerPreference));
                     emailText.AppendFormat(RSVP_GUEST_STRING_FORMAT,
                                            invitation.FirstName, guest.FullName, guest.DinnerPreference);
+                    emailText.AppendLine();
                 }
                 //log special request
                 txtSpecialRequest.Text = txtSpecialRequest.Text.Trim();
@@ -263,6 +271,7 @@ namespace September22
                     Utilities.LogMessage(
                         string.Format(SPECIAL_REQUEST_STRING_FORMAT, invitation.FirstName, txtSpecialRequest.Text));
                     emailText.AppendFormat(SPECIAL_REQUEST_STRING_FORMAT, invitation.FirstName, txtSpecialRequest.Text);
+                    emailText.AppendLine();
                 }
             }
             catch (Exception ex)
@@ -274,9 +283,9 @@ namespace September22
             try
             {
                 //send email
-                Utilities.SendEmail(
-                    "RSVP from " + hfInvitationName.Value,
-                    emailText.ToString());
+                //Utilities.SendEmail(
+                //    "RSVP from " + hfInvitationName.Value,
+                //    emailText.ToString());
             }
             catch (Exception ex)
             {
@@ -346,7 +355,8 @@ namespace September22
         {
             //get invitation
             Invitation invitation = CurrentInvitation;
-            invitation.Guests.Clear();
+            //invitation.Guests.Clear();
+            DataAccess.DeleteGuests(invitation.Guests.ToList());
 
             //guests are loaded onto listview
             for (int i = 0; i < lvGuests.Items.Count; i++)
