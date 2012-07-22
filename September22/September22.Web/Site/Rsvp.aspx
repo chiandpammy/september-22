@@ -29,7 +29,7 @@
     </style>
     <script language="javascript" type="text/javascript">
         function bounce() {
-            $(".bounce").effect("bounce", { times: 4, distance: 8 }, 200);
+            $(".bounce").effect("bounce", { times: 3, distance: 8 }, 200);
         };
 
         function selected(source, eventArgs) {
@@ -139,18 +139,20 @@
             <asp:MultiView ID="mvRSVP" runat="server">
                 <asp:View ID="viewAccepted" runat="server">
                     <asp:Panel runat="server" ID="pnlAccepted" CssClass="listview rounded-corner">
-                        <div>
+                        <div style="float:left">
                             <h5>
                                 Step 3: Tell us who's coming and what they'd like to eat.
                             </h5>
+  
                         </div>
-                        <!--[if (IE 9)]><!-->
-                        <div class="gradient-wrapper">
-                            <!--<![endif]-->
-                            <asp:Button runat="server" ID="btnNewGuest" Text="Add another Guest" UseSubmitBehavior="False"
-                                OnClick="btnNewGuest_Click" Visible="false" />
-                        </div>
-                        <asp:ListView runat="server" ID="lvGuests" OnDataBound="lvGuests_DataBound" OnItemDeleting="lvGuests_ItemDeleting">
+                                                 <!--[if (IE 9)]><!-->
+                            <div class="gradient-wrapper" style="margin:8px;">
+                                <!--<![endif]-->
+                                <asp:Button runat="server" ID="btnNewGuest" Text="Add another Guest" UseSubmitBehavior="False"
+                                    OnClick="btnNewGuest_Click" Visible="false" />
+                            </div>
+                        <div style="clear:both">
+                            <asp:ListView runat="server" ID="lvGuests" OnDataBound="lvGuests_DataBound" OnItemDeleting="lvGuests_ItemDeleting">
                             <ItemTemplate>
                                 <asp:Panel runat="server" ID="itemPlaceHolder">
                                     <div style="height: 4px;">
@@ -176,6 +178,7 @@
                                 </asp:Panel>
                             </ItemTemplate>
                         </asp:ListView>
+                        </div>
                         <div class="left_indent" style="vertical-align: top">
                             <label for="txtSpecialRequest">
                                 Special Request:
