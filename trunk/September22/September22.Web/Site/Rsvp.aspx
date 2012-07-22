@@ -3,11 +3,30 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
-        div.accept label { position: absolute; text-align:right; width:90px; }
-        div.accept input[type="text"], textarea, select { margin-left: 100px; }
-        div.accept label:after { content: ": " }
+        div.left_indent label
+        {
+            position: absolute;
+            text-align: right;
+            width: 140px;
+            margin-top: 4px;
+        }
+        div.left_indent input[type="text"], textarea, select
+        {
+            margin-left: 150px;
+        }
+        div.left_indent input[type="image"]
+        {
+            margin-top: -4px;
+        }
+        div.left_indent td
+        {
+            width: 150px;
+        }
+        div.left_indent td label
+        {
+            text-align: left;
+        }
     </style>
-
     <script language="javascript" type="text/javascript">
         function bounce() {
             $(".bounce").effect("bounce", { times: 4, distance: 8 }, 200);
@@ -73,7 +92,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MiddleColumnContent" runat="server">
     <h2>
         <span>RSVP</span></h2>
-        <%--<img src="../App_Themes/Wedding/Images/coming-soon.gif" alt="Coming soon!" />
+    <%--<img src="../App_Themes/Wedding/Images/coming-soon.gif" alt="Coming soon!" />
         <h3>Sorry! We're not quite ready yet.</h3>
         <h4>You'll be able to RSVP online starting Sunday 07/22/2012.</h4>--%>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
@@ -82,9 +101,14 @@
             </div>
             <div class="listview rounded-corner">
                 <div>
-                    Step 1: Look for your invitation.  Please enter the name on your invitation.
+                    <h5>
+                        Step 1: Please enter the name on your invitation.
+                    </h5>
                 </div>
-                <div>
+                <div class="left_indent">
+                    <label for="txtInvitation" style="vertical-align: top">
+                        Name on the invitation:
+                    </label>
                     <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
                     <ajaxToolkit:AutoCompleteExtender ID="acextName" runat="server" TargetControlID="txtName"
                         ServicePath="Rsvp.aspx" ServiceMethod="GetInvitationList" MinimumPrefixLength="2"
@@ -98,13 +122,17 @@
             </div>
             <asp:Panel runat="server" ID="pnlDecision" CssClass="listview rounded-corner" Visible="false">
                 <div>
-                    Step 2: Tell us if you're coming.
+                    <h5>
+                        Step 2: Tell us if you're coming.
+                    </h5>
                 </div>
-                <asp:RadioButtonList ID="rbAccept" runat="server" RepeatDirection="Horizontal" AutoPostBack="True"
-                    OnSelectedIndexChanged="rbAccept_SelectedIndexChanged">
-                    <asp:ListItem Value="True">Accept with Pleasure</asp:ListItem>
-                    <asp:ListItem Value="False">Decline with regret</asp:ListItem>
-                </asp:RadioButtonList>
+                <div class="left_indent">
+                    <asp:RadioButtonList ID="rbAccept" runat="server" RepeatDirection="Horizontal" AutoPostBack="True"
+                        OnSelectedIndexChanged="rbAccept_SelectedIndexChanged">
+                        <asp:ListItem Value="True">Accept with Pleasure</asp:ListItem>
+                        <asp:ListItem Value="False">Decline with regret</asp:ListItem>
+                    </asp:RadioButtonList>
+                </div>
             </asp:Panel>
             <div style="height: 8px;">
             </div>
@@ -112,7 +140,9 @@
                 <asp:View ID="viewAccepted" runat="server">
                     <asp:Panel runat="server" ID="pnlAccepted" CssClass="listview rounded-corner">
                         <div>
-                            Step 3: Tell us who's coming and what they'd like to eat.
+                            <h5>
+                                Step 3: Tell us who's coming and what they'd like to eat.
+                            </h5>
                         </div>
                         <!--[if (IE 9)]><!-->
                         <div class="gradient-wrapper">
@@ -125,12 +155,17 @@
                                 <asp:Panel runat="server" ID="itemPlaceHolder">
                                     <div style="height: 4px;">
                                     </div>
-                                    <div class="accept">
-                                        <label for="txtGuest" style="vertical-align:top">Name</label>
+                                    <div class="left_indent">
+                                        <label for="txtGuest" style="vertical-align: top">
+                                            Guest Name:
+                                        </label>
                                         <asp:TextBox ID="txtGuest" runat="server" Text='<%# Eval("FullName") %>'></asp:TextBox>
-                                        <label class="dinnerOptions" for="ddlDinnerPreferences">Dinner Options</label>
+                                        <label class="dinnerOptions" for="ddlDinnerPreferences">
+                                            Dinner Options:
+                                        </label>
                                         <asp:DropDownList ID="ddlDinnerPreferences" runat="server" DataSourceID="odsDinnerPreferences"
-                                            DataTextField="Name" DataValueField="ID" SelectedValue='<%# Bind("SelectedDinnerPreferenceID") %>' AppendDataBoundItems="True">
+                                            DataTextField="Name" DataValueField="ID" SelectedValue='<%# Bind("SelectedDinnerPreferenceID") %>'
+                                            AppendDataBoundItems="True">
                                             <asp:ListItem Text="" Value="-1" />
                                         </asp:DropDownList>
                                         <asp:ImageButton ID="ibtnDelete" runat="server" ImageUrl="~/App_Themes/Wedding/Images/delete.gif"
@@ -141,16 +176,21 @@
                                 </asp:Panel>
                             </ItemTemplate>
                         </asp:ListView>
-                        <div class="accept" style="vertical-align:top">
-                            <label for="txtSpecialRequest">Special Request</label>
-                            <asp:TextBox ID="txtSpecialRequest" runat="server" ClientIDMode="Static" TextMode="MultiLine" Height="100px" MaxLength="500" class="border blue" Width="500px"></asp:TextBox>
+                        <div class="left_indent" style="vertical-align: top">
+                            <label for="txtSpecialRequest">
+                                Special Request:
+                            </label>
+                            <asp:TextBox ID="txtSpecialRequest" runat="server" ClientIDMode="Static" TextMode="MultiLine"
+                                Height="100px" MaxLength="500" class="border blue" Width="350px"></asp:TextBox>
                         </div>
                     </asp:Panel>
                 </asp:View>
                 <asp:View ID="viewDeclined" runat="server">
                     <asp:Panel runat="server" ID="pnlDeclined" CssClass="listview rounded-corner">
                         <div>
-                            Step 3: Tell us who's coming.
+                            <h5>
+                                Step 3: Awww...
+                            </h5>
                         </div>
                         <p>
                             Awww... That's a shame. We're sorry you can't make it.
