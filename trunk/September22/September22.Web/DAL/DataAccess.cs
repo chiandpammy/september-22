@@ -11,53 +11,68 @@ namespace September22.DAL
 {
     public static class DataAccess
     {
-        private static WeddingEntities Entities = new WeddingEntities();
-
         public static IQueryable<DinnerPreference> GetDinnerPreferences(bool excludeOther = true)
         {
-            //result
-            var dinnerPreferences = new List<DinnerPreference>(Entities.DinnerPreferences);
-            
-            //check exclude other condition
-            if (excludeOther)
-                dinnerPreferences.RemoveAll(pref => pref.Name == "Other");
-
-            return dinnerPreferences.AsQueryable();
-        }
-
-        public static void SaveGuests(List<Guest> guests)
-        {
-            foreach (var guest in guests)
+            using (var entities = new WeddingEntities())
             {
-                Entities.Guests.AddObject(guest);
+                //result
+                var dinnerPreferences = new List<DinnerPreference>(entities.DinnerPreferences);
+
+                //check exclude other condition
+                if (excludeOther)
+                    dinnerPreferences.RemoveAll(pref => pref.Name == "Other");
+
+                return dinnerPreferences.AsQueryable();
             }
-            Entities.SaveChanges();
         }
 
-        public static void DeleteGuests(List<Guest> guests)
-        {
-            foreach (var guest in guests)
-            {
-                Entities.Guests.DeleteObject(guest);
-            }
-            Entities.SaveChanges();
-        }
+        //public static void DeleteGuests(List<Guest> guests)
+        //{
+        //    using (var entities = new WeddingEntities())
+        //    {
+        //        foreach (var guest in guests)
+        //        {
+        //            entities.Guests.DeleteObject(guest);
+        //        }
+        //        //entities.SaveChanges();
+        //    }
+        //}
 
         public static void SaveInvitation(Invitation invitation)
         {
-            Invitation existingInvitation = GetInvitations().SingleOrDefault(inv => inv.ID == invitation.ID);
-            Entities.SaveChanges();
+            using (var entities = new WeddingEntities())
+            {
+                object existingInvitation;
+                if (entities.TryGetObjectByKey(invitation.EntityKey,out existingInvitation))
+                {
+                    entities.ApplyCurrentValues("Invitations",
+                                                existingInvitation);
+                    //entities.AddObject("Invitations", invitation);
+                    entities.SaveChanges();
+                }
+                //Invitation existingInvitation = entities.Invitations.Single(inv => inv.ID == invitation.ID);
+                //entities.ApplyCurrentValues("Invitations", invitation);
+                //entities.SaveChanges();
+            }
         }
 
-        public static IQueryable<Invitation> GetInvitations()
+        public static List<Invitation> GetInvitations()
         {
-            return Entities.Invitations;
+            using (var entities = new WeddingEntities())
+            {
+                return entities.Invitations.ToList();
+            }
         }
 
         public static Invitation GetInvitationByFullName(string fullName)
         {
-            IQueryable<Invitation> invitations = GetInvitations();
-            return invitations.ToList().Where(inv => inv.FullName == fullName).FirstOrDefault();
+            using (var entities = new WeddingEntities())
+            {
+                Invitation invitation = entities.Invitations.Include("Guests").Where(inv => inv.FirstName + " " + inv.LastName == fullName)
+                    .FirstOrDefault();
+//                Invitation invitation = GetInvitations().Where(inv => inv.FullName == fullName).FirstOrDefault();
+                return invitation;
+            }
         }
     }
 }
