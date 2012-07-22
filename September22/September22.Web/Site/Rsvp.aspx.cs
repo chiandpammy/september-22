@@ -245,7 +245,8 @@ namespace September22
 
             if (invitation.Attending.HasValue && !invitation.Attending.Value)
             {
-                DataAccess.DeleteGuests(invitation.Guests.ToList());
+                //DataAccess.DeleteGuests(invitation.Guests.ToList());
+                invitation.Guests.Clear();
             }
 
             StringBuilder emailText = new StringBuilder();
@@ -258,9 +259,9 @@ namespace September22
                 {
                     Utilities.LogMessage(
                         string.Format(RSVP_GUEST_STRING_FORMAT, invitation.FirstName, guest.FullName,
-                                      guest.DinnerPreference));
+                                      guest.DinnerPreferenceID));
                     emailText.AppendFormat(RSVP_GUEST_STRING_FORMAT,
-                                           invitation.FirstName, guest.FullName, guest.DinnerPreference);
+                                           invitation.FirstName, guest.FullName, guest.DinnerPreferenceID);
                     emailText.AppendLine();
                 }
                 //log special request
@@ -353,7 +354,8 @@ namespace September22
             //get invitation
             Invitation invitation = CurrentInvitation;
             if (invitation.Guests.Any())
-                DataAccess.DeleteGuests(invitation.Guests.ToList());
+                //DataAccess.DeleteGuests(invitation.Guests.ToList());
+                invitation.Guests.Clear();
 
             //guests are loaded onto listview
             for (int i = 0; i < lvGuests.Items.Count; i++)
@@ -364,10 +366,10 @@ namespace September22
 
                 var guest = new Guest();
                 guest.FullName = txtBox.Text;
-                if (ddlDropDown.SelectedValue == null)
-                    guest.DinnerPreferenceID = null;
-                else
-                    guest.DinnerPreferenceID = Int32.Parse(ddlDropDown.SelectedValue);
+
+                int selectedDinnerPreference = Int32.Parse(ddlDropDown.SelectedValue);
+                guest.DinnerPreferenceID = (selectedDinnerPreference == -1) ? (int?)null : selectedDinnerPreference;
+                
                 guest.Index = i;
                 invitation.Guests.Add(guest);
             }
@@ -385,7 +387,6 @@ namespace September22
                 if (_invitationList == null)
                 {
                     _invitationList = DataAccess.GetInvitations()
-                                        .ToList()
                                         .Select(a => a.FullName)
                                         .ToArray();
                 }
