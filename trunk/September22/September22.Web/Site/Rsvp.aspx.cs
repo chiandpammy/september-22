@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -14,13 +15,9 @@ namespace September22
     /// </summary>
     public partial class Rsvp : PageBase
     {
-        //private const string ACCEPTED = "Yes";
-        //private const string DECLINED = "No";
         private const string CSS_BOUNCE = "bounce";
-
-        private const string TO_ADDR1 = @"bebbiwebbi@gmail.com";
-        private const string TO_ADDR2 = @"sta12quest@gmail.com";
-        private const string FROM_ADDR = @"admin@september22.us";
+        private const string RSVP_GUEST_STRING_FORMAT = "RSVP from {0}. Guest: {1}. Dinner Preference: {2}.";
+        private const string SPECIAL_REQUEST_STRING_FORMAT = "Special Request from {0}. Request: {1}";
 
         private Invitation CurrentInvitation
         {
@@ -192,7 +189,7 @@ namespace September22
 
             //add new person
             Guest newGuest = new Guest();
-            newGuest.InvitationID = CurrentInvitation.ID;
+            //newGuest.InvitationID = CurrentInvitation.ID;
             newGuest.Index = CurrentInvitation.Guests.Any() ? CurrentInvitation.Guests.Max(g => g.Index) + 1 : 0;
             CurrentInvitation.Guests.Add(newGuest);
 
@@ -247,6 +244,7 @@ namespace September22
 
             //get invitation
             Invitation invitation = CurrentInvitation;
+            StringBuilder emailText = new StringBuilder();
 
             //file log
             try
@@ -255,7 +253,10 @@ namespace September22
                 foreach (var guest in invitation.Guests)
                 {
                     Utilities.LogMessage(
-                        string.Format("RSVP from {0}. Guest: {1}. Dinner Preference: {2}. ", invitation.FirstName, guest.FullName, guest.DinnerPreference));
+                        string.Format(RSVP_GUEST_STRING_FORMAT, invitation.FirstName, guest.FullName,
+                                      guest.DinnerPreference));
+                    emailText.AppendFormat(RSVP_GUEST_STRING_FORMAT,
+                                           invitation.FirstName, guest.FullName, guest.DinnerPreference);
                 }
                 //log special request
                 txtSpecialRequest.Text = txtSpecialRequest.Text.Trim();
@@ -263,7 +264,8 @@ namespace September22
                 {
                     invitation.Notes = txtSpecialRequest.Text;
                     Utilities.LogMessage(
-                        string.Format("Special Request from {0}. Request: {1}", invitation.FirstName, txtSpecialRequest.Text));
+                        string.Format(SPECIAL_REQUEST_STRING_FORMAT, invitation.FirstName, txtSpecialRequest.Text));
+                    emailText.AppendFormat(SPECIAL_REQUEST_STRING_FORMAT, invitation.FirstName, txtSpecialRequest.Text);
                 }
             }
             catch (Exception ex)
@@ -274,12 +276,10 @@ namespace September22
             //send email
             try
             {
-                //Utilities.SendEmail(
-                //    FROM_ADDR,
-                //    new string[] { TO_ADDR1, TO_ADDR2 },
-                //    null, //"Contact from " + txtName.Text + " (" + txtEmail.Text + ")",
-                //    null  //txtMessage.Text
-                //    );
+                //send email
+                Utilities.SendEmail(
+                    "RSVP from " + hfInvitationName.Value,
+                    emailText.ToString());
             }
             catch (Exception ex)
             {
@@ -289,9 +289,6 @@ namespace September22
             //save to database
             try
             {
-                //add guests to invitation
-                //guests.ForEach(invitation.Guests.Add);
-
                 //save to database
                 DataAccess.SaveInvitation(invitation);
             }
@@ -313,6 +310,22 @@ namespace September22
             {
                 mvRSVP.SetActiveView(viewAccepted);
                 btnNewGuest.Visible = true;
+
+                if (!CurrentInvitation.Guests.Any())
+                {
+                    //add new person
+                    Guest newGuest = new Guest();
+                    //newGuest.InvitationID = CurrentInvitation.ID;
+                    newGuest.FullName = hfInvitationName.Value;
+                    newGuest.Index = CurrentInvitation.Guests.Any() ? CurrentInvitation.Guests.Max(g => g.Index) + 1 : 0;
+                    CurrentInvitation.Guests.Add(newGuest);
+
+                    //update listview
+                    lvGuests.DataSource = CurrentInvitation.Guests.OrderBy(GuestSorter);
+                    lvGuests.DataBind();
+
+                    UpdatePanel1.Update();
+                }
             }
             else
             {
@@ -336,7 +349,6 @@ namespace September22
             invitation.Guests.Clear();
 
             //guests are loaded onto listview
-            //foreach (ListViewDataItem item in lvGuests.Items)
             for (int i = 0; i < lvGuests.Items.Count; i++)
             {
                 ListViewDataItem item = lvGuests.Items.ElementAt(i);
@@ -345,7 +357,7 @@ namespace September22
 
                 var guest = new Guest();
                 guest.FullName = txtBox.Text;
-                guest.InvitationID = invitation.ID;
+                //guest.InvitationID = invitation.ID;
                 if (ddlDropDown.SelectedValue == null)
                     guest.DinnerPreferenceID = null;
                 else
@@ -396,6 +408,4 @@ namespace September22
             return guest.Index;
         }
     }
-
- 
 }
