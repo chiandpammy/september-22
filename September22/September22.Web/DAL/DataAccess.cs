@@ -41,30 +41,11 @@ namespace September22.DAL
                 Entities.Guests.DeleteObject(guest);
             }
             Entities.SaveChanges();
-
-            //List<ChildObject> children = ParentObject.ChildObjects.ToList();
-            //for (int i = 0; i < children.Count; i++)
-            //{
-            //    try
-            //    {
-            //        //Delete the Child Object from your ObjectContext
-            //        //(We have a wrapper function to do that
-            //        dataAccessor.Delete(children[i]);
-            //    }
-            //    catch
-            //    {
-
-            //    }
-            //}
-
         }
 
         public static void SaveInvitation(Invitation invitation)
         {
             Invitation existingInvitation = GetInvitations().SingleOrDefault(inv => inv.ID == invitation.ID);
-            //existingInvitation.Attending = invitation.Attending;
-            //existingInvitation.Notes = invitation.Notes;
-            //existingInvitation.Guests = invitation.Guests;
             Entities.SaveChanges();
         }
 
