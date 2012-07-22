@@ -352,7 +352,8 @@ namespace September22
         {
             //get invitation
             Invitation invitation = CurrentInvitation;
-            DataAccess.DeleteGuests(invitation.Guests.ToList());
+            if (invitation.Guests.Any())
+                DataAccess.DeleteGuests(invitation.Guests.ToList());
 
             //guests are loaded onto listview
             for (int i = 0; i < lvGuests.Items.Count; i++)
