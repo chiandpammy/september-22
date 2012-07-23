@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Objects;
-using System.Data.Objects.DataClasses;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using September22.DAL;
 
 namespace September22.DAL
 {
@@ -26,33 +20,32 @@ namespace September22.DAL
             }
         }
 
-        //public static void DeleteGuests(List<Guest> guests)
-        //{
-        //    using (var entities = new WeddingEntities())
-        //    {
-        //        foreach (var guest in guests)
-        //        {
-        //            entities.Guests.DeleteObject(guest);
-        //        }
-        //        //entities.SaveChanges();
-        //    }
-        //}
-
         public static void SaveInvitation(Invitation invitation)
         {
             using (var entities = new WeddingEntities())
             {
-                object existingInvitation;
-                if (entities.TryGetObjectByKey(invitation.EntityKey,out existingInvitation))
+                object existingObject;
+                if (entities.TryGetObjectByKey(invitation.EntityKey, out existingObject))
                 {
                     entities.ApplyCurrentValues("Invitations",
-                                                existingInvitation);
-                    //entities.AddObject("Invitations", invitation);
+                                                invitation);
+
+                    List<Guest> existingGuests = (existingObject as Invitation).Guests.ToList();
+                    foreach (var existingGuest in existingGuests)
+                    {
+                        entities.DeleteObject(existingGuest);
+                    }
+
+                    foreach (var newGuest in invitation.DetachedGuests)
+                    {
+                        Guest guest = entities.Guests.CreateObject();
+                        guest.InvitationID = invitation.ID;
+                        guest.FullName = newGuest.FullName;
+                        guest.DinnerPreferenceID = newGuest.DinnerPreferenceID;
+                        entities.AddToGuests(guest);
+                    }
                     entities.SaveChanges();
                 }
-                //Invitation existingInvitation = entities.Invitations.Single(inv => inv.ID == invitation.ID);
-                //entities.ApplyCurrentValues("Invitations", invitation);
-                //entities.SaveChanges();
             }
         }
 
@@ -68,9 +61,16 @@ namespace September22.DAL
         {
             using (var entities = new WeddingEntities())
             {
-                Invitation invitation = entities.Invitations.Include("Guests").Where(inv => inv.FirstName + " " + inv.LastName == fullName)
+                Invitation invitation = entities.Invitations.Where(inv => inv.FirstName + " " + inv.LastName == fullName)
                     .FirstOrDefault();
-//                Invitation invitation = GetInvitations().Where(inv => inv.FullName == fullName).FirstOrDefault();
+                entities.Detach(invitation);
+
+                invitation.DetachedGuests = entities.Guests.Where(guest => guest.InvitationID == invitation.ID).ToList();
+                foreach (var guest in invitation.DetachedGuests)
+                {
+                    entities.Detach(guest);
+                }
+
                 return invitation;
             }
         }

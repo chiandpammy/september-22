@@ -12,9 +12,6 @@ namespace September22.DAL
             get { return FirstName + " " + LastName; }
         }
 
-        //public string Decision
-        //{
-        //    get { return Attending.HasValue ? Attending.Value.ToString() : null; }
-        //}
+        public List<Guest> DetachedGuests { get; set; }
     }
 }

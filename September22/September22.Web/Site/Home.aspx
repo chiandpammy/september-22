@@ -13,7 +13,7 @@
         often, as we will be adding new details regularly.
     </p>
     <p>
-        Wow! Time has flown by!  There's only 3 months left until the wedding.  If
+        Wow! Time has flown by!  There's only 2 months left until the wedding.  If
         you need a hotel, please visit the "Places to Stay" link on the "Our Wedding"
         page.
     </p>

@@ -16,7 +16,7 @@ namespace September22
     public partial class Rsvp : PageBase
     {
         private const string CSS_BOUNCE = "bounce";
-        private const string RSVP_GUEST_STRING_FORMAT = "RSVP from {0}. Guest: {1}. Dinner Preference: {2}.";
+        private const string RSVP_GUEST_STRING_FORMAT = "RSVP from {0} {1}. Guest: {2}. Dinner Preference: {3}.";
         private const string SPECIAL_REQUEST_STRING_FORMAT = "Special Request from {0}. Request: {1}";
 
         private Invitation CurrentInvitation
@@ -108,7 +108,7 @@ namespace September22
                             }
 
                             //update listview
-                            lvGuests.DataSource = CurrentInvitation.Guests.OrderBy(GuestSorter);
+                            lvGuests.DataSource = CurrentInvitation.DetachedGuests.OrderBy(GuestSorter);
                             lvGuests.DataBind();
 
                             UpdatePanel1.Update();
@@ -181,18 +181,18 @@ namespace September22
             UpdateInvitationFromScreen();
 
             //check viewstate
-            if (CurrentInvitation.Guests.Count >= CurrentInvitation.MaxNumberOfGuests)
+            if (CurrentInvitation.DetachedGuests.Count >= CurrentInvitation.MaxNumberOfGuests)
             {
                 return;
             }
 
             //add new person
             Guest newGuest = new Guest();
-            newGuest.Index = CurrentInvitation.Guests.Any() ? CurrentInvitation.Guests.Max(g => g.Index) + 1 : 0;
-            CurrentInvitation.Guests.Add(newGuest);
+            newGuest.Index = CurrentInvitation.DetachedGuests.Any() ? CurrentInvitation.DetachedGuests.Max(g => g.Index) + 1 : 0;
+            CurrentInvitation.DetachedGuests.Add(newGuest);
 
             //update listview
-            lvGuests.DataSource = CurrentInvitation.Guests.OrderBy(GuestSorter);
+            lvGuests.DataSource = CurrentInvitation.DetachedGuests.OrderBy(GuestSorter);
             lvGuests.DataBind();
 
             UpdatePanel1.Update();
@@ -226,7 +226,7 @@ namespace September22
             UpdateInvitationFromScreen();
 
             //update listview
-            lvGuests.DataSource = CurrentInvitation.Guests.OrderBy(GuestSorter);
+            lvGuests.DataSource = CurrentInvitation.DetachedGuests.OrderBy(GuestSorter);
             lvGuests.DataBind();
 
             UpdatePanel1.Update();
@@ -245,8 +245,7 @@ namespace September22
 
             if (invitation.Attending.HasValue && !invitation.Attending.Value)
             {
-                //DataAccess.DeleteGuests(invitation.Guests.ToList());
-                invitation.Guests.Clear();
+                invitation.DetachedGuests.Clear();
             }
 
             StringBuilder emailText = new StringBuilder();
@@ -255,13 +254,13 @@ namespace September22
             try
             {
                 //log guests
-                foreach (var guest in invitation.Guests)
+                foreach (var guest in invitation.DetachedGuests)
                 {
                     Utilities.LogMessage(
-                        string.Format(RSVP_GUEST_STRING_FORMAT, invitation.FirstName, guest.FullName,
+                        string.Format(RSVP_GUEST_STRING_FORMAT, invitation.FirstName, invitation.LastName, guest.FullName,
                                       guest.DinnerPreferenceID));
                     emailText.AppendFormat(RSVP_GUEST_STRING_FORMAT,
-                                           invitation.FirstName, guest.FullName, guest.DinnerPreferenceID);
+                                           invitation.FirstName, invitation.LastName, guest.FullName, guest.DinnerPreferenceID);
                     emailText.AppendLine();
                 }
                 //log special request
@@ -282,9 +281,9 @@ namespace September22
             try
             {
                 //send email
-                //Utilities.SendEmail(
-                //    "RSVP from " + hfInvitationName.Value,
-                //    emailText.ToString());
+                Utilities.SendEmail(
+                    "RSVP from " + hfInvitationName.Value,
+                    emailText.ToString());
             }
             catch (Exception ex)
             {
@@ -307,6 +306,8 @@ namespace September22
             {
                 Utilities.LogException("RSVP btnConfirm_Click " + invitation.FullName, error);
             }
+
+            mvMain.SetActiveView(viewFinished);
         }
 
         protected void rbAccept_SelectedIndexChanged(object sender, EventArgs e)
@@ -316,17 +317,17 @@ namespace September22
                 mvRSVP.SetActiveView(viewAccepted);
                 btnNewGuest.Visible = true;
 
-                if (!CurrentInvitation.Guests.Any())
+                if (!CurrentInvitation.DetachedGuests.Any())
                 {
                     //add new person
                     Guest newGuest = new Guest();
                     newGuest.FullName = hfInvitationName.Value;
-                    newGuest.Index = CurrentInvitation.Guests.Any() ? CurrentInvitation.Guests.Max(g => g.Index) + 1 : 0;
-                    CurrentInvitation.Guests.Add(newGuest);
+                    newGuest.Index = CurrentInvitation.DetachedGuests.Any() ? CurrentInvitation.DetachedGuests.Max(g => g.Index) + 1 : 0;
+                    CurrentInvitation.DetachedGuests.Add(newGuest);
                 }
 
                 //update listview
-                lvGuests.DataSource = CurrentInvitation.Guests.OrderBy(GuestSorter);
+                lvGuests.DataSource = CurrentInvitation.DetachedGuests.OrderBy(GuestSorter);
                 lvGuests.DataBind();
 
                 UpdatePanel1.Update();
@@ -353,9 +354,8 @@ namespace September22
         {
             //get invitation
             Invitation invitation = CurrentInvitation;
-            if (invitation.Guests.Any())
-                //DataAccess.DeleteGuests(invitation.Guests.ToList());
-                invitation.Guests.Clear();
+            if (invitation.DetachedGuests.Any())
+                invitation.DetachedGuests.Clear();
 
             //guests are loaded onto listview
             for (int i = 0; i < lvGuests.Items.Count; i++)
@@ -371,7 +371,7 @@ namespace September22
                 guest.DinnerPreferenceID = (selectedDinnerPreference == -1) ? (int?)null : selectedDinnerPreference;
                 
                 guest.Index = i;
-                invitation.Guests.Add(guest);
+                invitation.DetachedGuests.Add(guest);
             }
 
             string specialRequest = txtSpecialRequest.Text.Trim();
