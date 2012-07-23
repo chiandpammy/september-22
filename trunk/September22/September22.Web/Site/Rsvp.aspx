@@ -214,7 +214,7 @@
                 <asp:View ID="viewFinished" runat="server">
                     <div class="view">
                         <br />
-                        Email has been sent. Thank you.
+                        Thank you for submitting your RSVP.  If you have any questions, please call us or send us an email <a href="http://www.september22.us/Contact/">here</a>.
                     </div>
                 </asp:View>
             </asp:MultiView>
