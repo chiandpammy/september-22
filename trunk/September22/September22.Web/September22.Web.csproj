@@ -14,8 +14,7 @@
     <AssemblyName>September22</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
-    <SilverlightApplicationList>
-    </SilverlightApplicationList>
+    <SilverlightApplicationList>{3B770A16-000E-4C37-B0E9-E0DC07CA86CB}|..\September22.Doodle\September22.Doodle.csproj|ClientBin|False</SilverlightApplicationList>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -177,6 +176,7 @@
     <Content Include="App_Themes\Wedding\Images\tmp_photo.gif" />
     <Content Include="App_Themes\Wedding\jquery-sliding.form.css" />
     <Content Include="App_Themes\Wedding\jquery.ad-gallery.css" />
+    <Content Include="ClientBin\DoodleApp.xap" />
     <Content Include="favicon.ico" />
     <Content Include="Photos\Anniversaries\2003 - 1st Anniversary - 1 of 2.jpg" />
     <Content Include="Photos\Anniversaries\2003 - 1st Anniversary - 2 of 2.jpg" />
@@ -233,8 +233,8 @@
     <Content Include="Scripts\jquery.easing.1.3.js" />
     <Content Include="App_Themes\Wedding\Images\loader.gif" />
     <Content Include="App_Themes\Wedding\Images\opa75.png" />
+    <Content Include="Scripts\silverlight.js" />
     <Content Include="September22.Web.Publish.xml" />
-    <Content Include="Silverlight.js" />
     <Content Include="Site\Contact.aspx" />
     <Content Include="Site\Guestbook.aspx" />
     <Content Include="Site\Map.aspx" />
@@ -416,7 +416,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Admin\" />
-    <Folder Include="ClientBin\" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="DAL\Wedding.edmx">

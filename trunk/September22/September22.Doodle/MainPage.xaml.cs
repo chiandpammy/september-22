@@ -13,7 +13,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace DoodleApp
+namespace September22.DoodleApp
 {
     public partial class MainPage : UserControl
     {
