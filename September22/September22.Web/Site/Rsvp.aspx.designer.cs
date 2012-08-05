@@ -139,6 +139,33 @@ namespace September22 {
         protected global::System.Web.UI.WebControls.TextBox txtSpecialRequest;
         
         /// <summary>
+        /// vldSpecialRequest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator vldSpecialRequest;
+        
+        /// <summary>
+        /// txtConfirmationEmailAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmationEmailAddress;
+        
+        /// <summary>
+        /// vldConfirmationEmailAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator vldConfirmationEmailAddress;
+        
+        /// <summary>
         /// viewDeclined control.
         /// </summary>
         /// <remarks>

@@ -70,11 +70,13 @@
                 <p>
                     17 East Monroe Street<br />Chicago, IL 60603<br />
                     Phone: 312.726.7500<br />
-                    <a href="http://www3.hilton.com/en/hotels/illinois/palmer-house-a-hilton-hotel-CHIPHHH/index.html" target="_blank">View Website</a><br />
+                    <a href="http://www3.hilton.com/en/hotels/illinois/palmer-house-a-hilton-hotel-CHIPHHH/index.html" target="_blank">View Website ***</a><br />
                     Deadline: Thursday August 30, 2012<br />
                     Confirmation Number: 3474090819<br />
-                    * Children stay free.
-                    ** This hotel is literally across the street from the University Club of Chicago.
+                    Phone number on reservation: 3102594539<br/>
+                    * Children stay free.<br/>
+                    ** This hotel is just half a block away from the University Club of Chicago.<br />
+                    *** Please call the hotel to make a reservation.
                 </p>
                 <table>
 				        <tr>

@@ -92,11 +92,15 @@ namespace September22.Common
         /// <summary>
         /// Sends email using default email addresses.
         /// </summary>
-        public static void SendEmail(string subject, string body)
+        public static void SendEmail(string subject, string body, string confirmationEmailAddress=null)
         {
+            string[] toEmailAddressList = !string.IsNullOrEmpty(confirmationEmailAddress)
+                                              ? new string[] {TO_ADDR1, TO_ADDR2, confirmationEmailAddress}
+                                              : new string[] {TO_ADDR1, TO_ADDR2};
+
             SendEmail(
                 FROM_ADDR,
-                new string[] { TO_ADDR1, TO_ADDR2 },
+                toEmailAddressList,
                 subject,
                 body);
         }

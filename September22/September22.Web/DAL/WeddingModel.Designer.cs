@@ -18,8 +18,8 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("WeddingModel", "FK_Guest_Invitation", "Invitation", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(September22.DAL.Invitation), "Guest", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(September22.DAL.Guest), true)]
-[assembly: EdmRelationshipAttribute("WeddingModel", "FK_Guest_DinnerPreference", "DinnerPreference", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(September22.DAL.DinnerPreference), "Guest", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(September22.DAL.Guest), true)]
+[assembly: EdmRelationshipAttribute("September22.DAL", "FK_Guest_DinnerPreference", "DinnerPreference", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(September22.DAL.DinnerPreference), "Guest", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(September22.DAL.Guest), true)]
+[assembly: EdmRelationshipAttribute("September22.DAL", "FK_Guest_Invitation", "Invitation", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(September22.DAL.Invitation), "Guest", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(September22.DAL.Guest), true)]
 
 #endregion
 
@@ -74,6 +74,22 @@ namespace September22.DAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<DinnerPreference> DinnerPreferences
+        {
+            get
+            {
+                if ((_DinnerPreferences == null))
+                {
+                    _DinnerPreferences = base.CreateObjectSet<DinnerPreference>("DinnerPreferences");
+                }
+                return _DinnerPreferences;
+            }
+        }
+        private ObjectSet<DinnerPreference> _DinnerPreferences;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<Guest> Guests
         {
             get
@@ -102,25 +118,17 @@ namespace September22.DAL
             }
         }
         private ObjectSet<Invitation> _Invitations;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<DinnerPreference> DinnerPreferences
-        {
-            get
-            {
-                if ((_DinnerPreferences == null))
-                {
-                    _DinnerPreferences = base.CreateObjectSet<DinnerPreference>("DinnerPreferences");
-                }
-                return _DinnerPreferences;
-            }
-        }
-        private ObjectSet<DinnerPreference> _DinnerPreferences;
 
         #endregion
         #region AddTo Methods
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the DinnerPreferences EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToDinnerPreferences(DinnerPreference dinnerPreference)
+        {
+            base.AddObject("DinnerPreferences", dinnerPreference);
+        }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the Guests EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
@@ -137,14 +145,6 @@ namespace September22.DAL
         {
             base.AddObject("Invitations", invitation);
         }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the DinnerPreferences EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToDinnerPreferences(DinnerPreference dinnerPreference)
-        {
-            base.AddObject("DinnerPreferences", dinnerPreference);
-        }
 
         #endregion
     }
@@ -157,7 +157,7 @@ namespace September22.DAL
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WeddingModel", Name="DinnerPreference")]
+    [EdmEntityTypeAttribute(NamespaceName="September22.DAL", Name="DinnerPreference")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class DinnerPreference : EntityObject
@@ -239,18 +239,18 @@ namespace September22.DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WeddingModel", "FK_Guest_DinnerPreference", "Guest")]
+        [EdmRelationshipNavigationPropertyAttribute("September22.DAL", "FK_Guest_DinnerPreference", "Guest")]
         public EntityCollection<Guest> Guests
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Guest>("WeddingModel.FK_Guest_DinnerPreference", "Guest");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Guest>("September22.DAL.FK_Guest_DinnerPreference", "Guest");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Guest>("WeddingModel.FK_Guest_DinnerPreference", "Guest", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Guest>("September22.DAL.FK_Guest_DinnerPreference", "Guest", value);
                 }
             }
         }
@@ -261,7 +261,7 @@ namespace September22.DAL
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WeddingModel", Name="Guest")]
+    [EdmEntityTypeAttribute(NamespaceName="September22.DAL", Name="Guest")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Guest : EntityObject
@@ -395,54 +395,16 @@ namespace September22.DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WeddingModel", "FK_Guest_Invitation", "Invitation")]
-        public Invitation Invitation
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Invitation>("WeddingModel.FK_Guest_Invitation", "Invitation").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Invitation>("WeddingModel.FK_Guest_Invitation", "Invitation").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Invitation> InvitationReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Invitation>("WeddingModel.FK_Guest_Invitation", "Invitation");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Invitation>("WeddingModel.FK_Guest_Invitation", "Invitation", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WeddingModel", "FK_Guest_DinnerPreference", "DinnerPreference")]
+        [EdmRelationshipNavigationPropertyAttribute("September22.DAL", "FK_Guest_DinnerPreference", "DinnerPreference")]
         public DinnerPreference DinnerPreference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<DinnerPreference>("WeddingModel.FK_Guest_DinnerPreference", "DinnerPreference").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<DinnerPreference>("September22.DAL.FK_Guest_DinnerPreference", "DinnerPreference").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<DinnerPreference>("WeddingModel.FK_Guest_DinnerPreference", "DinnerPreference").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<DinnerPreference>("September22.DAL.FK_Guest_DinnerPreference", "DinnerPreference").Value = value;
             }
         }
         /// <summary>
@@ -454,13 +416,51 @@ namespace September22.DAL
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<DinnerPreference>("WeddingModel.FK_Guest_DinnerPreference", "DinnerPreference");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<DinnerPreference>("September22.DAL.FK_Guest_DinnerPreference", "DinnerPreference");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<DinnerPreference>("WeddingModel.FK_Guest_DinnerPreference", "DinnerPreference", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<DinnerPreference>("September22.DAL.FK_Guest_DinnerPreference", "DinnerPreference", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("September22.DAL", "FK_Guest_Invitation", "Invitation")]
+        public Invitation Invitation
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Invitation>("September22.DAL.FK_Guest_Invitation", "Invitation").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Invitation>("September22.DAL.FK_Guest_Invitation", "Invitation").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Invitation> InvitationReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Invitation>("September22.DAL.FK_Guest_Invitation", "Invitation");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Invitation>("September22.DAL.FK_Guest_Invitation", "Invitation", value);
                 }
             }
         }
@@ -471,7 +471,7 @@ namespace September22.DAL
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WeddingModel", Name="Invitation")]
+    [EdmEntityTypeAttribute(NamespaceName="September22.DAL", Name="Invitation")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Invitation : EntityObject
@@ -485,15 +485,13 @@ namespace September22.DAL
         /// <param name="firstName">Initial value of the FirstName property.</param>
         /// <param name="lastName">Initial value of the LastName property.</param>
         /// <param name="maxNumberOfGuests">Initial value of the MaxNumberOfGuests property.</param>
-        /// <param name="attending">Initial value of the Attending property.</param>
-        public static Invitation CreateInvitation(global::System.Int32 id, global::System.String firstName, global::System.String lastName, global::System.Byte maxNumberOfGuests, global::System.Boolean attending)
+        public static Invitation CreateInvitation(global::System.Int32 id, global::System.String firstName, global::System.String lastName, global::System.Byte maxNumberOfGuests)
         {
             Invitation invitation = new Invitation();
             invitation.ID = id;
             invitation.FirstName = firstName;
             invitation.LastName = lastName;
             invitation.MaxNumberOfGuests = maxNumberOfGuests;
-            invitation.Attending = attending;
             return invitation;
         }
 
@@ -602,9 +600,9 @@ namespace September22.DAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Boolean? Attending
+        public Nullable<global::System.Boolean> Attending
         {
             get
             {
@@ -619,8 +617,8 @@ namespace September22.DAL
                 OnAttendingChanged();
             }
         }
-        private global::System.Boolean? _Attending;
-        partial void OnAttendingChanging(global::System.Boolean? value);
+        private Nullable<global::System.Boolean> _Attending;
+        partial void OnAttendingChanging(Nullable<global::System.Boolean> value);
         partial void OnAttendingChanged();
     
         /// <summary>
@@ -646,6 +644,30 @@ namespace September22.DAL
         private global::System.String _Notes;
         partial void OnNotesChanging(global::System.String value);
         partial void OnNotesChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String EmailAddress
+        {
+            get
+            {
+                return _EmailAddress;
+            }
+            set
+            {
+                OnEmailAddressChanging(value);
+                ReportPropertyChanging("EmailAddress");
+                _EmailAddress = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("EmailAddress");
+                OnEmailAddressChanged();
+            }
+        }
+        private global::System.String _EmailAddress;
+        partial void OnEmailAddressChanging(global::System.String value);
+        partial void OnEmailAddressChanged();
 
         #endregion
     
@@ -657,18 +679,18 @@ namespace September22.DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WeddingModel", "FK_Guest_Invitation", "Guest")]
+        [EdmRelationshipNavigationPropertyAttribute("September22.DAL", "FK_Guest_Invitation", "Guest")]
         public EntityCollection<Guest> Guests
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Guest>("WeddingModel.FK_Guest_Invitation", "Guest");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Guest>("September22.DAL.FK_Guest_Invitation", "Guest");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Guest>("WeddingModel.FK_Guest_Invitation", "Guest", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Guest>("September22.DAL.FK_Guest_Invitation", "Guest", value);
                 }
             }
         }

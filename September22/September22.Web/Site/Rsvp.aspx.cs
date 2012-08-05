@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,10 @@ namespace September22
     public partial class Rsvp : PageBase
     {
         private const string CSS_BOUNCE = "bounce";
-        private const string RSVP_GUEST_STRING_FORMAT = "RSVP from {0} {1}. Guest: {2}. Dinner Preference: {3}.";
-        private const string SPECIAL_REQUEST_STRING_FORMAT = "Special Request from {0}. Request: {1}";
+        private const string LOG_RSVP_GUEST_STRING_FORMAT = "RSVP from {0} {1}. Guest: {2}. Dinner Preference: {3}.";
+        private const string EMAIL_RSVP_GUEST_STRING_FORMAT = "Guest Name: {0}. Dinner Preference: {1}.";
+        private const string LOG_SPECIAL_REQUEST_STRING_FORMAT = "Special Request from {0}. Request: {1}";
+        private const string EMAIL_SPECIAL_REQUEST_STRING_FORMAT = "Special Request: {0}";
 
         private Invitation CurrentInvitation
         {
@@ -155,7 +158,10 @@ namespace September22
                 }
 
                 //check decision
-                string prevDecision = CurrentInvitation.Attending.HasValue ? CurrentInvitation.Attending.Value.ToString() : null;  //this is current invitation's last known decision
+                string prevDecision = CurrentInvitation.Attending.HasValue
+                                          ? CurrentInvitation.Attending.Value.ToString()
+                                          : null; //this is current invitation's last known decision)
+
                 if (rbAccept.SelectedIndex >= 0)
                 {
                     //set decision
@@ -243,34 +249,62 @@ namespace September22
             //get invitation
             Invitation invitation = CurrentInvitation;
 
-            if (invitation.Attending.HasValue && !invitation.Attending.Value)
+            if (!invitation.Attending.Value)
             {
                 invitation.DetachedGuests.Clear();
             }
+
+            invitation.DetachedGuests.RemoveAll(guest => guest.FullName.Trim().Length == 0);
 
             StringBuilder emailText = new StringBuilder();
 
             //file log
             try
             {
-                //log guests
-                foreach (var guest in invitation.DetachedGuests)
+                emailText.AppendFormat("{0},", invitation.FullName);
+                emailText.AppendLine();
+                emailText.AppendLine();
+                emailText.AppendLine(
+                    "Thank you for visiting our website.  We have received your RSVP to our wedding on Saturday September 22, 2012.");
+                emailText.AppendLine();
+
+                if (!invitation.Attending.Value)
                 {
-                    Utilities.LogMessage(
-                        string.Format(RSVP_GUEST_STRING_FORMAT, invitation.FirstName, invitation.LastName, guest.FullName,
-                                      guest.DinnerPreferenceID));
-                    emailText.AppendFormat(RSVP_GUEST_STRING_FORMAT,
-                                           invitation.FirstName, invitation.LastName, guest.FullName, guest.DinnerPreferenceID);
-                    emailText.AppendLine();
+                    emailText.AppendLine("We're sorry you can't make it.  Thank you for letting us know.");
                 }
-                //log special request
-                if (!string.IsNullOrEmpty(invitation.Notes))
+                else
                 {
-                    Utilities.LogMessage(
-                        string.Format(SPECIAL_REQUEST_STRING_FORMAT, invitation.FirstName, txtSpecialRequest.Text));
-                    emailText.AppendFormat(SPECIAL_REQUEST_STRING_FORMAT, invitation.FirstName, txtSpecialRequest.Text);
-                    emailText.AppendLine();
+                    emailText.AppendLine("We have recorded the following guests:");
+
+                    IEnumerable<DinnerPreference> dinnerPreferences = odsDinnerPreferences.Select().Cast<DinnerPreference>();
+
+                    //log guests)
+                    foreach (var guest in invitation.DetachedGuests)
+                    {
+                        DinnerPreference guestDinnerPreference =
+                            dinnerPreferences.FirstOrDefault(dinner => dinner.ID == (guest.DinnerPreferenceID ?? 1));
+
+                        Utilities.LogMessage(
+                            string.Format(LOG_RSVP_GUEST_STRING_FORMAT, invitation.FirstName, invitation.LastName,
+                                          guest.FullName, guestDinnerPreference.Name));
+                        emailText.AppendFormat(EMAIL_RSVP_GUEST_STRING_FORMAT, guest.FullName,
+                                               guestDinnerPreference.Name);
+                        emailText.AppendLine();
+                    }
+
+                    //log special request
+                    if (!string.IsNullOrEmpty(invitation.Notes))
+                    {
+                        Utilities.LogMessage(
+                            string.Format(LOG_SPECIAL_REQUEST_STRING_FORMAT, invitation.FirstName, invitation.Notes));
+                        emailText.AppendFormat(EMAIL_SPECIAL_REQUEST_STRING_FORMAT, invitation.Notes);
+                        emailText.AppendLine();
+                    }
                 }
+
+                emailText.AppendLine();
+                emailText.AppendLine("Sincerely,");
+                emailText.AppendLine("Chi and Pammy");
             }
             catch (Exception ex)
             {
@@ -283,7 +317,7 @@ namespace September22
                 //send email
                 Utilities.SendEmail(
                     "RSVP from " + hfInvitationName.Value,
-                    emailText.ToString());
+                    emailText.ToString(), invitation.EmailAddress);
             }
             catch (Exception ex)
             {
@@ -365,7 +399,7 @@ namespace September22
                 DropDownList ddlDropDown = item.FindControl("ddlDinnerPreferences") as DropDownList;
 
                 var guest = new Guest();
-                guest.FullName = txtBox.Text;
+                guest.FullName = txtBox.Text.Trim();
 
                 int selectedDinnerPreference = Int32.Parse(ddlDropDown.SelectedValue);
                 guest.DinnerPreferenceID = (selectedDinnerPreference == -1) ? (int?)null : selectedDinnerPreference;
@@ -375,7 +409,12 @@ namespace September22
             }
 
             string specialRequest = txtSpecialRequest.Text.Trim();
-            invitation.Notes = string.IsNullOrEmpty(specialRequest) ? null : specialRequest;
+            invitation.Notes = string.IsNullOrEmpty(specialRequest)
+                                   ? null
+                                   : (specialRequest.Length > 500 ? specialRequest.Substring(0, 500) : specialRequest);
+
+            string confirmationEmailAddress = txtConfirmationEmailAddress.Text.Trim();
+            invitation.EmailAddress = string.IsNullOrEmpty(confirmationEmailAddress) ? null : confirmationEmailAddress;
         }
 
         [System.Web.Services.WebMethod]

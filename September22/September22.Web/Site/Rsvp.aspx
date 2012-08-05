@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Rsvp" Language="C#" MasterPageFile="~/Master/Site_1Col.master" AutoEventWireup="true"
-    CodeBehind="Rsvp.aspx.cs" Inherits="September22.Rsvp" EnableViewState="true" %>
+    CodeBehind="Rsvp.aspx.cs" Inherits="September22.Rsvp" EnableViewState="true" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
@@ -179,11 +179,32 @@
                                 </div>
                                 <div class="left_indent" style="vertical-align: top">
                                     <label for="txtSpecialRequest">
-                                        Special Request:
+                                        Special Request:&nbsp;
                                     </label>
                                     <asp:TextBox ID="txtSpecialRequest" runat="server" ClientIDMode="Static" TextMode="MultiLine"
                                         Height="100px" MaxLength="500" class="border blue" Width="350px"></asp:TextBox>
+                                    <span class="override">
+                                    <label for="txtSpecialRequest" id="lblCharacterLimit">
+                                    <asp:RegularExpressionValidator ID="vldSpecialRequest" runat="server" 
+                                        ControlToValidate="txtSpecialRequest" ErrorMessage="*" ForeColor="Red" 
+                                        SetFocusOnError="True" ValidationExpression="^[\s\S]{0,500}$" 
+                                        Display="Dynamic"></asp:RegularExpressionValidator>
+                                    (500 character limit)</label></span></div>
+                                <div style="height: 4px;">
                                 </div>
+                                <div class="left_indent" style="vertical-align: top">
+                                    <label for="txtConfirmationEmailAddress">
+                                        Email Address:&nbsp;
+                                    </label>
+                                    <asp:TextBox ID="txtConfirmationEmailAddress" runat="server" ClientIDMode="Static"></asp:TextBox>
+                                    <span class="override">
+                                    <label for="txtConfirmationEmailAddress" id="lblConfirmationEmailAddress" style="text-align: left; width: 300px;">
+                                    <asp:RegularExpressionValidator ID="vldConfirmationEmailAddress" runat="server" 
+                                        ControlToValidate="txtConfirmationEmailAddress" ErrorMessage="<-- What is this?" ForeColor="Red"
+                                        SetFocusOnError="True" 
+                                        ValidationExpression='^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$' 
+                                        Display="Dynamic"></asp:RegularExpressionValidator>
+                                    (if you want a confirmation email)</label></span></div>
                             </asp:Panel>
                         </asp:View>
                         <asp:View ID="viewDeclined" runat="server">
@@ -204,6 +225,7 @@
                     </asp:MultiView>
                     <div style="height: 32px;">
                     </div>
+
                     <!--[if (IE 9)]><!-->
                     <div class="gradient-wrapper">
                         <!--<![endif]-->
@@ -214,7 +236,9 @@
                 <asp:View ID="viewFinished" runat="server">
                     <div class="view">
                         <br />
-                        Thank you for submitting your RSVP.  If you have any questions, please call us or send us an email <a href="http://www.september22.us/Contact/">here</a>.
+                        Thank you for submitting your RSVP.
+                        <br />
+                        <br />If you have any questions, please call us or <asp:HyperLink runat="server" NavigateUrl="~/Contact/" Text="contact us"></asp:HyperLink>.
                     </div>
                 </asp:View>
             </asp:MultiView>

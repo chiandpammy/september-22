@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="September22.DAL.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="September22DALStoreContainer">
+          <EntitySet Name="DinnerPreference" EntityType="September22.DAL.Store.DinnerPreference" store:Type="Tables" />
+          <EntitySet Name="Guest" EntityType="September22.DAL.Store.Guest" store:Type="Tables" />
+          <EntitySet Name="Invitation" EntityType="September22.DAL.Store.Invitation" store:Type="Tables" />
+          <AssociationSet Name="FK_Guest_DinnerPreference" Association="September22.DAL.Store.FK_Guest_DinnerPreference">
+            <End Role="DinnerPreference" EntitySet="DinnerPreference" />
+            <End Role="Guest" EntitySet="Guest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Guest_Invitation" Association="September22.DAL.Store.FK_Guest_Invitation">
+            <End Role="Invitation" EntitySet="Invitation" />
+            <End Role="Guest" EntitySet="Guest" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DinnerPreference">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Guest">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InvitationID" Type="int" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="DinnerPreferenceID" Type="int" />
+        </EntityType>
+        <EntityType Name="Invitation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="MaxNumberOfGuests" Type="tinyint" Nullable="false" />
+          <Property Name="Attending" Type="bit" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="500" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_Guest_DinnerPreference">
+          <End Role="DinnerPreference" Type="September22.DAL.Store.DinnerPreference" Multiplicity="0..1" />
+          <End Role="Guest" Type="September22.DAL.Store.Guest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DinnerPreference">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Guest">
+              <PropertyRef Name="DinnerPreferenceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Guest_Invitation">
+          <End Role="Invitation" Type="September22.DAL.Store.Invitation" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Guest" Type="September22.DAL.Store.Guest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invitation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Guest">
+              <PropertyRef Name="InvitationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="September22.DAL" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="WeddingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DinnerPreferences" EntityType="September22.DAL.DinnerPreference" />
+          <EntitySet Name="Guests" EntityType="September22.DAL.Guest" />
+          <EntitySet Name="Invitations" EntityType="September22.DAL.Invitation" />
+          <AssociationSet Name="FK_Guest_DinnerPreference" Association="September22.DAL.FK_Guest_DinnerPreference">
+            <End Role="DinnerPreference" EntitySet="DinnerPreferences" />
+            <End Role="Guest" EntitySet="Guests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Guest_Invitation" Association="September22.DAL.FK_Guest_Invitation">
+            <End Role="Invitation" EntitySet="Invitations" />
+            <End Role="Guest" EntitySet="Guests" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DinnerPreference">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Guests" Relationship="September22.DAL.FK_Guest_DinnerPreference" FromRole="DinnerPreference" ToRole="Guest" />
+        </EntityType>
+        <EntityType Name="Guest">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvitationID" Type="Int32" Nullable="false" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DinnerPreferenceID" Type="Int32" />
+          <NavigationProperty Name="DinnerPreference" Relationship="September22.DAL.FK_Guest_DinnerPreference" FromRole="Guest" ToRole="DinnerPreference" />
+          <NavigationProperty Name="Invitation" Relationship="September22.DAL.FK_Guest_Invitation" FromRole="Guest" ToRole="Invitation" />
+        </EntityType>
+        <EntityType Name="Invitation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="MaxNumberOfGuests" Type="Byte" Nullable="false" />
+          <Property Name="Attending" Type="Boolean" />
+          <Property Name="Notes" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Guests" Relationship="September22.DAL.FK_Guest_Invitation" FromRole="Invitation" ToRole="Guest" />
+        </EntityType>
+        <Association Name="FK_Guest_DinnerPreference">
+          <End Role="DinnerPreference" Type="September22.DAL.DinnerPreference" Multiplicity="0..1" />
+          <End Role="Guest" Type="September22.DAL.Guest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DinnerPreference">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Guest">
+              <PropertyRef Name="DinnerPreferenceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Guest_Invitation">
+          <End Role="Invitation" Type="September22.DAL.Invitation" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Guest" Type="September22.DAL.Guest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invitation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Guest">
+              <PropertyRef Name="InvitationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="September22DALStoreContainer" CdmEntityContainer="WeddingEntities">
+          <EntitySetMapping Name="DinnerPreferences"><EntityTypeMapping TypeName="September22.DAL.DinnerPreference"><MappingFragment StoreEntitySet="DinnerPreference">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Guests"><EntityTypeMapping TypeName="September22.DAL.Guest"><MappingFragment StoreEntitySet="Guest">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="InvitationID" ColumnName="InvitationID" />
+            <ScalarProperty Name="FullName" ColumnName="FullName" />
+            <ScalarProperty Name="DinnerPreferenceID" ColumnName="DinnerPreferenceID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Invitations"><EntityTypeMapping TypeName="September22.DAL.Invitation"><MappingFragment StoreEntitySet="Invitation">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+            <ScalarProperty Name="LastName" ColumnName="LastName" />
+            <ScalarProperty Name="MaxNumberOfGuests" ColumnName="MaxNumberOfGuests" />
+            <ScalarProperty Name="Attending" ColumnName="Attending" />
+            <ScalarProperty Name="Notes" ColumnName="Notes" />
+            <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="WeddingModel">
+        <EntityTypeShape EntityType="September22.DAL.DinnerPreference" Width="1.5" PointX="0.75" PointY="1.25" Height="1.5956835937499998" IsExpanded="true" />
+        <EntityTypeShape EntityType="September22.DAL.Guest" Width="1.5" PointX="3" PointY="0.875" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="September22.DAL.Invitation" Width="1.5" PointX="5.625" PointY="0.875" Height="2.5571907552083317" IsExpanded="true" />
+        <AssociationConnector Association="September22.DAL.FK_Guest_DinnerPreference" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.047841796875" />
+          <ConnectorPoint PointX="3" PointY="2.047841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="September22.DAL.FK_Guest_Invitation" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.625" PointY="1.9612939453124998" />
+          <ConnectorPoint PointX="4.5" PointY="1.9612939453124998" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
