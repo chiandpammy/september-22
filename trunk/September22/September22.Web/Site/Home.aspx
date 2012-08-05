@@ -13,9 +13,11 @@
         often, as we will be adding new details regularly.
     </p>
     <p>
-        Wow! Time has flown by!  There's only 2 months left until the wedding.  If
-        you need a hotel, please visit the "Places to Stay" link on the "Our Wedding"
-        page.
+        The online RSVP is now available!  If you would like to RSVP, please visit "RSVP".
+        Don't forget: The RSVP deadline is August 22nd, less than 3 weeks from now.
+    </p>
+    <p>If you need a hotel, please visit the "Places to Stay" link on the "Our Wedding"
+        page.  The hotel wedding blocks each have their own deadlines as well.
     </p>
     <p>
         If you want to learn a bit about how we met and came to be the fabulous
