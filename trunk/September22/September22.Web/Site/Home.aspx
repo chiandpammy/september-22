@@ -17,7 +17,9 @@
         Don't forget: The RSVP deadline is August 22nd, less than 3 weeks from now.
     </p>
     <p>If you need a hotel, please visit the "Places to Stay" link on the "Our Wedding"
-        page.  The hotel wedding blocks each have their own deadlines as well.
+        page.  The hotel wedding blocks each have their own deadlines as well.  Some
+        deadlines are as early as August 21st!  So book soon to take advantage of the 
+        reduced rates.
     </p>
     <p>
         If you want to learn a bit about how we met and came to be the fabulous
